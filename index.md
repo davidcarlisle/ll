@@ -19,12 +19,10 @@ you'd write, and they are available so you can try them out on-line.
 xxx
 
 <ul>
-{%- for page in site.pages -%}
-{%- assign nn = page.path  | remove_first: ".md" | remove_first: "en/lesson-" | plus 100 %}
-<p>nn={{nn}}</p>
-{%- endfor -%}
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains "en/lesson" %}
+{%- assign nn = page.path  | remove_first: ".md" | remove_first: "en/lesson-" | plus 100 %}
+<p>nn={{nn}}</p>
 <li><a href="{{page.path | replace: '.md',''}}">{{page.path}} - {{page.title}}</a></li>
 {%- endif -%}
 {%- endfor -%}
