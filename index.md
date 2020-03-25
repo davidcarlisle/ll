@@ -16,15 +16,15 @@ should not take too long to cover. In each lesson, we've given examples of what
 you'd write, and they are available so you can try them out on-line.
 
 ## The lessons
-xxx9
+xxxa
 <ul>
 {%- for page in site.pages | sort: 'path' -%}
 {% assign sz = page.path | size %}
 {%- if 14 == sz %}
 {%- if page.path  contains "en/lesson" %}
 <li><a href="{{page.path | replace: '.md',''}}">
-<b>&#160;{{page.path | replace: '.md','' | replace: 'en-lesson-',''}}</b>
-{{page.path}} - {{page.title}}</a></li>
+<b>&#160;{{page.path | replace: '.md','' | replace: 'en/lesson-',''}}</b>
+&mdash; {{page.title}}</a></li>
 {%- endif -%}
 {%- endif -%}
 {%- endfor -%}
@@ -33,8 +33,8 @@ xxx9
 {%- if 14 != sz %}
 {%- if page.path  contains "en/lesson" %}
 <li><a href="{{page.path | replace: '.md',''}}">
-<b>{{page.path | replace: '.md','' | replace: 'en-lesson-',''}}</b>
-{{page.path}} - {{page.title}}</a></li>
+<b>{{page.path | replace: '.md','' | replace: 'en/lesson-',''}}</b>
+&mdash; {{page.title}}</a></li>
 {%- endif -%}
 {%- endif -%}
 {%- endfor -%}
