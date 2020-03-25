@@ -17,4 +17,12 @@ you'd write, and they are available so you can try them out on-line.
 
 ## The lessons
 
+<ul>
+{%- for page in site.pages -%}
+{%- if page.path  contains "en/lesson" %}
+<li><a href="{{page.path | replace: '.md',''}}">{{page.path} - {{page.title}}</a></li>
+{%- endfor -%}
+
+</ul>
+
 ## Getting help and going further 
