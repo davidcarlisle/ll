@@ -27,7 +27,7 @@ xxx8
 {%- endif -%}
 {%- endfor -%}
 {%- for page in site.pages | sort: 'path' -%}
-% assign sz = page.path | size %}
+{% assign sz = page.path | size %}
 {%- if 14 != sz %}
 {%- if page.path  contains "en/lesson" %}
 <li>B{{sz}} <a href="{{page.path | replace: '.md',''}}">{{page.path}} - {{page.title}}</a></li>
