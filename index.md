@@ -21,7 +21,6 @@ xxx
 <ul>
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains "en/lesson" %}
-<p>{%- page.path  | remove_first: ".md" | remove_first: "en/lesson-" | plus 100 %}</p>
 <li><a href="{{page.path | replace: '.md',''}}">{{page.path}} - {{page.title}}</a></li>
 {%- endif -%}
 {%- endfor -%}
