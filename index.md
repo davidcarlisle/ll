@@ -20,12 +20,12 @@ xxx2
 <ul>
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains "en/lesson" and  page.path | size == 14%}
-<li><a href="{{page.path | replace: '.md',''}}">{{page.path}} - {{page.title}}</a></li>
+<li>A<a href="{{page.path | replace: '.md',''}}">{{page.path}} - {{page.title}}</a></li>
 {%- endif -%}
 {%- endfor -%}
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains "en/lesson" and  page.path | size != 14%}
-<li><a href="{{page.path | replace: '.md',''}}">{{page.path}} - {{page.title}}</a></li>
+<li>B<a href="{{page.path | replace: '.md',''}}">{{page.path}} - {{page.title}}</a></li>
 {%- endif -%}
 {%- endfor -%}
 </ul>
