@@ -17,12 +17,11 @@ you'd write, and they are available so you can try them out on-line.
 
 ## The lessons
 
-zzz
 
 <ul>
-{%- for page in site.pages -%}
-<p>{{page.title}}</p>
+{%- for page in site.pages | sort: 'path' | replace: '.md','' | replace: 'en/lesson-',''  | plus 100 -%}
 {%- if page.path  contains "en/lesson" %}
+
 <li><a href="{{page.path | replace: '.md',''}}">{{page.path}} - {{page.title}}</a></li>
 {%- endif -%}
 {%- endfor -%}
