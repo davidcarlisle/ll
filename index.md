@@ -19,7 +19,7 @@ you'd write, and they are available so you can try them out on-line.
 xxx
 
 <ul>
-{%- for page in site.pages | sort: 'n' -%}
+{%- for page in site.pages -%}
 {%- assign nn = page.path  | remove_first: ".md" | remove_first: "en/lesson-" | plus 100 %}
 <p>nn={{nn}}</p>
 {%- endfor -%}
