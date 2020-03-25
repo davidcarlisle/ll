@@ -16,7 +16,7 @@ should not take too long to cover. In each lesson, we've given examples of what
 you'd write, and they are available so you can try them out on-line.
 
 ## The lessons
-
+xxx
 
 <ul>
 {%- for page in site.pages | sort: 'path' | replace: '.md','' | replace: 'en/lesson-',''  | plus 100 -%}
