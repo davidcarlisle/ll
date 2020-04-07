@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<h1>{{ page.title | markdownify | remove: "<p>" | remove: "</p>"}}</h1>
+
+{{content}}
+
+{% if page.path contains "lesson-" %}
+  <p><small>
+    <a href = "{{page.name | replace: "lesson-", "more-" | remove_first: ".md"}}">See more on this topic</a>
+  </small></p>
+{% endif %}
