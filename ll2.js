@@ -11,6 +11,10 @@ function llexamples() {
 	b.innerText="edit";
 	b.setAttribute("onclick","pre" + i + '.contentEditable="true"');
 	p[i].parentNode.insertBefore(b, p[i].nextSibling);
+	var o = document.createElement("button");
+	o.innerText="Open in OverLeaf";
+	o.setAttribute("onclick",'openinoverleaf("pre' + i + '")');
+	p[i].parentNode.insertBefore(o, p[i].nextSibling);
     }
     }
 }
@@ -21,11 +25,17 @@ function latexonlinecc(nd) {
     if(ifr == null) {
 	ifr=document.createElement("iframe");
 	ifr.setAttribute("width","100%");
-	ifr.setAttribute("height","100%");
+	ifr.setAttribute("height","500em");
 	ifr.setAttribute("id",nd + "ifr");
 	p.parentNode.insertBefore(ifr, p.nextSibling);
     }
     ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(p.innerText));
+}
+
+
+// based on code from texnique.fr
+function openinoverleaf(nd) {
+    alert("OverLeaf link not yet operational");
 }
 
 window.addEventListener('load', llexamples, false);
