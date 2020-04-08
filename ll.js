@@ -11,6 +11,10 @@ function llexamples() {
 	b.innerText="edit";
 	b.setAttribute("onclick","pre" + i + '.contentEditable="true"');
 	p[i].parentNode.insertBefore(b, p[i].nextSibling);
+	var o = document.createElement("button");
+	o.innerText="Open in OverLeaf";
+	o.setAttribute("onclick","document.location='https://www.overleaf.com/read/kstsvwcdpqqm'");
+	p[i].parentNode.insertBefore(o, p[i].nextSibling);
     }
     }
 }
