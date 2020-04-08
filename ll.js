@@ -21,7 +21,7 @@ function latexonlinecc(nd) {
     if(ifr == null) {
 	ifr=document.createElement("iframe");
 	ifr.setAttribute("width","100%");
-	ifr.setAttribute("height","100%");
+	ifr.setAttribute("height","500em");
 	ifr.setAttribute("id",nd + "ifr");
 	p.parentNode.insertBefore(ifr, p.nextSibling);
     }
