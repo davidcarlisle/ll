@@ -18,7 +18,7 @@
 
 \begin{document}
 
-aaa \cite{aa}.
+aaa2 \cite{aa}.
 
 \bibliographystyle{alpha}
 \bibliography{test}
@@ -45,8 +45,8 @@ aaa \cite{aa}.
   action="https://www.overleaf.com/docs"
   method="post"
   target="_blank">
-   <input id="in1" name="encoded_snip" value="">
-   <input id="in2" name="encoded_snip" value="">
+   <input id="in1" name="encoded_snip[]" value="">
+   <input id="in2" name="encoded_snip[]" value="">
 </form>
 
 
@@ -57,7 +57,7 @@ aaa \cite{aa}.
       // what to do with p2 ?
       var p2=document.getElementById('pre2').innerText;
       document.getElementById("in1").value=encodeURIComponent(p1);
-      document.getElementById("in2").value=encodeURIComponent(p1);
+      document.getElementById("in2").value=encodeURIComponent(p2);
       document.getElementById("form-pre").submit();
   }
 </script>
