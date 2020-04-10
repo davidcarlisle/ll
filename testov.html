@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>two file test</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+
+<h1>two file test</h1>
+
+
+<p>text</p>
+<pre id="pre1">
+\documentclass{article}
+
+\begin{document}
+
+aaa \cite{aa}.
+
+\bibliographystyle{alpha}
+\bibliography{test}
+\end{document}
+</pre>
+    
+
+<p>bib</p>
+<pre id="pre2">
+@book{aa,
+  author = {Author, A.},
+  year = {2001},
+  title = {Title},
+  publisher = {Publisher},
+}
+</pre>
+    
+
+
+
+<form id="form-pre" style="display:none" action="https://httpbin.org/post" method="post" target="_blank">
+   <input id="in1" name="encoded_snip" value="">
+</form>
+
+
+
+<script>
+  function submitov () {
+      var p1=document.getElementById('pre1').innerText;
+      // what to do with p2 ?
+      var p2=document.getElementById('pre2').innerText;
+      document.getElementById("in1").value=encodeURIComponent(p1);
+      document.getElementById("form-pre").submit();
+  }
+</script>
+
+
+<button onclick="submitov()">OverLeaf</button>
