@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>two file test</title>
+    <meta charset="UTF-8">
+    <style>
+      pre {background-color: #EEE;}
+    </style>
+  </head>
+  <body>
+
+<h1>two file test</h1>
+
+
+<p><code>main.tex</code></p>
+<pre id="pre1">
+\documentclass{article}
+
+\begin{document}
+
+aaa \cite{aa}.
+
+\bibliographystyle{alpha}
+\bibliography{test}
+\end{document}
+</pre>
+    
+
+<p><code>test.bib</code></p>
+<pre id="pre2">
+@book{aa,
+  author = {Author, A.},
+  year = {2001},
+  title = {Title},
+  publisher = {Publisher},
+}
+</pre>
+    
+
+
+
+<form
+  id="form-pre"
+  style="display:none"
+  action="https://www.overleaf.com/docs"
+  method="post"
+  target="_blank">
+   <input id="in1" name="encoded_snip" value="">
+   <input id="in2" name="encoded_snip" value="">
+</form>
+
+
+
+<script>
+  function submitov () {
+      var p1=document.getElementById('pre1').innerText;
+      // what to do with p2 ?
+      var p2=document.getElementById('pre2').innerText;
+      document.getElementById("in1").value=encodeURIComponent(p1);
+      document.getElementById("in2").value=encodeURIComponent(p1);
+      document.getElementById("form-pre").submit();
+  }
+</script>
+
+
+<button onclick="submitov()">OverLeaf</button>
