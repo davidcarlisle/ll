@@ -21,11 +21,11 @@ function llexamples() {
 	p[i].parentNode.insertBefore(r, p[i].nextSibling);
 	// overleaf
 	var o = document.createElement("button");
-	o.innerText="Open in OverLeaf";
+	o.innerText="Open!1 in OverLeaf";
 	o.setAttribute("onclick",'openinoverleaf("pre' + i + '")');
 	p[i].parentNode.insertBefore(o, p[i].nextSibling);
 	var f=document.createElement("span");
-	f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip\" value=\"\" /></form>";
+	f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip\" value=\"\" /><input id=\"encoded_snip-pre" + i + "b\" name=\"encoded_snip\" value=\"test\" /></form>";
 	p[i].parentNode.insertBefore(f, p[i].nextSibling);
     }
     }
