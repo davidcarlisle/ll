@@ -12,6 +12,7 @@ preincludes = {
     "pre5": "frontcover.tex",
     "pre6": "dedication.tex",
     "pre7": "copyright.tex",
+    "pre8": "backcover.tex",
    }
 }
 </script>
@@ -111,7 +112,7 @@ EDIT
 
 ----
 
-### pref.tex
+#### pref.tex
 <!-- pre1 {% raw %} -->
 ```latex
 \chapter*{Preface}
@@ -119,7 +120,7 @@ The preface text.
 ```
 <!-- {% endraw %} -->
 
-### chap1.tex
+#### chap1.tex
 <!-- pre2 {% raw %} -->
 ```latex
 \chapter{Introduction}
@@ -127,7 +128,7 @@ The first chapter text.
 ```
 <!-- {% endraw %} -->
 
-### chap2.tex
+#### chap2.tex
 <!-- pre3 {% raw %} -->
 ```latex
 \chapter{Something}
@@ -135,7 +136,7 @@ The second chapter text.
 ```
 <!-- {% endraw %} -->
 
-###  append.tex
+####  append.tex
 <!-- pre4 {% raw %} -->
 ```latex
 \chapter*{Appendix}
@@ -143,7 +144,7 @@ The first appendix text.
 ```
 <!-- {% endraw %} -->
 
-### frontcover.tex
+#### frontcover.tex
 <!-- pre5 {% raw %} -->
 ```latex
 \begin{center}
@@ -152,7 +153,7 @@ The front cover
 ```
 <!-- {% endraw %} -->
 
-### dedication.tex
+#### dedication.tex
 <!-- pre6 {% raw %} -->
 ```latex
 \begin{center}
@@ -162,11 +163,20 @@ For \ldots
 ```
 <!-- {% endraw %} -->
 
-### copyright.tex
+#### copyright.tex
 <!-- pre7 {% raw %} -->
 ```latex
 \begin{center}
 Copyright 2020 learnlatex.
+\end{center}
+```
+<!-- {% endraw %} -->
+
+#### backcover.tex
+<!-- pre8 {% raw %} -->
+```latex
+\begin{center}
+The back cover
 \end{center}
 ```
 <!-- {% endraw %} -->
