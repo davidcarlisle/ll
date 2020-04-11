@@ -4,14 +4,12 @@ title: Selecting fonts and using Unicode engines
 
 
 ```latex
-
 \documentclass{article}
-%\usepackage{fontspec}
-%\setmainfont{TeX Gyre Termes}
+%\showthe\luatexversion
+\usepackage{fontspec}
+\setmainfont{texgyretermes-regular.otf}
 
 \begin{document}
-
-[\the\luatexversion]
 
 ABC → αβγ
 
