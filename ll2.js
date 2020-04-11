@@ -93,7 +93,7 @@ function openinoverleaf(nd) {
   var p = document.getElementById(nd);
     document.getElementById('encoded_snip-' + nd ).value =encodeURIComponent(fconts + p.innerText);
     if(p.innerText.indexOf("fontspec") !== -1) {
-	document.getElementById('engine' + nd ).value ="xelatex";
+	document.getElementById('engine-' + nd ).value ="xelatex";
     }
   document.getElementById('form-' + nd).submit();
 }
