@@ -31,18 +31,6 @@ It may have many entries; here is one.
 ```
 <!-- {% endraw %} -->
 
-<!-- {% raw %} -->
-```
-@BOOK
-  {ConcreteMath,  % string to use for citation
-  AUTHOR = {Ronald L. Graham and Donald E. Knuth and Oren Patashnik},
-  TITLE = {Concrete Mathematics},
-  PUBLISHER = {Addison-Wesley},
-  DATE = 1995
-  }
-```
-<!-- {% endraw %} -->
-
 To get the information into your document there are three steps.
 First, use LaTeX to compile your document, which
 creates a file with a list of the references that your document cites.
