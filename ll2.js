@@ -1,7 +1,6 @@
 function llexamples() {
     var p = document.getElementsByTagName("pre");
     for(var i=0;i<p.length;i++) {
-    if(p[i].textContent.indexOf("\\documentclass") !== -1) {
 	p[i].setAttribute("id","pre" + i);
 	// edit
 	var b = document.createElement("button");
@@ -13,21 +12,22 @@ function llexamples() {
 	c.innerText="copy";
 	c.setAttribute("onclick",'copytoclipboard("pre' + i + '")');
 	p[i].parentNode.insertBefore(c, p[i]);
-	// latexonline
-	var r = document.createElement("button");
-	r.innerText="LaTeX online";
-	r.setAttribute("onclick",'latexonlinecc("pre' + i + '")');
-	r.setAttribute("id","lo-pre" + i);
-	p[i].parentNode.insertBefore(r, p[i].nextSibling);
-	// overleaf
-	var o = document.createElement("button");
-	o.innerText="Open!1 in OverLeaf";
-	o.setAttribute("onclick",'openinoverleaf("pre' + i + '")');
-	p[i].parentNode.insertBefore(o, p[i].nextSibling);
-	var f=document.createElement("span");
-	f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip[]\" value=\"\" /></form>";
-	p[i].parentNode.insertBefore(f, p[i].nextSibling);
-    }
+	if(p[i].textContent.indexOf("\\documentclass") !== -1) {
+	    // latexonline
+	    var r = document.createElement("button");
+	    r.innerText="LaTeX online";
+	    r.setAttribute("onclick",'latexonlinecc("pre' + i + '")');
+	    r.setAttribute("id","lo-pre" + i);
+	    p[i].parentNode.insertBefore(r, p[i].nextSibling);
+	    // overleaf
+	    var o = document.createElement("button");
+	    o.innerText="Open!1 in OverLeaf";
+	    o.setAttribute("onclick",'openinoverleaf("pre' + i + '")');
+	    p[i].parentNode.insertBefore(o, p[i].nextSibling);
+	    var f=document.createElement("span");
+	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip[]\" value=\"\" /></form>";
+	    p[i].parentNode.insertBefore(f, p[i].nextSibling);
+	}
     }
 }
 
