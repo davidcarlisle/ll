@@ -2,12 +2,34 @@
 title: Citations and references
 ---
 
+<script>
+var includes= {
+ "pre1": {
+    pre0": "document.bib"
+   }
+}
+</script>
+ 
 For bibliographic citations, while
 you can include reference sources directly in your document,
 usually you will get that information from one or more external files.
 Such a file is a database of references,
 containing the information in a processing-friendly format.
 It may have many entries; here is one.
+
+
+
+<!-- {% raw %} -->
+```
+@BOOK
+  {ConcreteMath,  % string to use for citation
+  AUTHOR = {Ronald L. Graham and Donald E. Knuth and Oren Patashnik},
+  TITLE = {Concrete Mathematics},
+  PUBLISHER = {Addison-Wesley},
+  DATE = 1995
+  }
+```
+<!-- {% endraw %} -->
 
 <!-- {% raw %} -->
 ```

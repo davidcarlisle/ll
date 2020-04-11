@@ -25,7 +25,7 @@ function llexamples() {
 	o.setAttribute("onclick",'openinoverleaf("pre' + i + '")');
 	p[i].parentNode.insertBefore(o, p[i].nextSibling);
 	var f=document.createElement("span");
-	f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip[]\" value=\"\" /><input id=\"encoded_snip-pre" + i + "b\" name=\"snip_uri[]\" value=\"data:,test\" /></form>";
+	f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip[]\" value=\"\" /></form>";
 	p[i].parentNode.insertBefore(f, p[i].nextSibling);
     }
     }
@@ -53,8 +53,23 @@ function latexonlinecc(nd) {
 
 // based on code from texnique.fr
 function openinoverleaf(nd) {
+  fconts="";
+  if(typeof(preincludes) == "object") {
+      if(typeof(preincludes[nd]) == "object") {
+	  alert("stuff for " + nd);
+	  var incl=preincludes[nd];
+	  for(const prop in incl) {
+	      fconts=fconts+"\n\\begin{filecontents}{" +
+		  incl[prop] +
+		  "}\n" +
+		  document.getElementById(prop).innerText +
+		  "\n\\end{filecontents}\n";
+	  }
+      }
+  }
+    alert("filec:\n" + fconts);
   var p = document.getElementById(nd);
-  document.getElementById('encoded_snip-' + nd ).value =encodeURIComponent(p.innerText);
+  document.getElementById('encoded_snip-' + nd ).value =encodeURIComponent(fconts + p.innerText);
   document.getElementById('form-' + nd).submit();
 }
 
