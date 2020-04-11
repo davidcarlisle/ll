@@ -9,7 +9,7 @@ XeLaTeX example
 \documentclass{article}
 \usepackage{fontspec}
 \setmainfont{texgyretermes-regular.otf}
-\newfontfamily\devanagarifont[Script=Devanagari]{Lohit-Devanagari.ttf}
+\newfontfamily\devanagarifont[Script=Devanagari]{nakula.ttf}
 
 \begin{document}
 
