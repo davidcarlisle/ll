@@ -114,6 +114,7 @@ so for instance in the first chapter after it the header says `Appendix A`.
 \chapter*{Preface}
 The preface text.
 ```
+<!-- {% endraw %} -->
 
 ### chap1.tex
 <!-- pre2 {% raw %} -->
@@ -121,6 +122,7 @@ The preface text.
 \chapter{Introduction}
 The first chapter text.
 ```
+<!-- {% endraw %} -->
 
 ### chap2.tex
 <!-- pre3 {% raw %} -->
@@ -128,6 +130,7 @@ The first chapter text.
 \chapter{Something}
 The second chapter text.
 ```
+<!-- {% endraw %} -->
 
 ###  append.tex
 <!-- pre4 {% raw %} -->
@@ -135,6 +138,7 @@ The second chapter text.
 \chapter*{Appendix}
 The first appendix text.
 ```
+<!-- {% endraw %} -->
 
 ### frontcover.tex
 <!-- pre5 {% raw %} -->
@@ -143,6 +147,8 @@ The first appendix text.
 The front cover
 \end{center}
 ```
+<!-- {% endraw %} -->
+
 ### dedication.tex
 <!-- pre6 {% raw %} -->
 ```latex
@@ -151,6 +157,7 @@ The front cover
 For \ldots
 \end{center}
 ```
+<!-- {% endraw %} -->
 
 ### copyright.tex
 <!-- pre7 {% raw %} -->
@@ -159,6 +166,7 @@ For \ldots
 Copyright 2020 learnlatex.
 \end{center}
 ```
+<!-- {% endraw %} -->
 
 
 
