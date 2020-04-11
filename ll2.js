@@ -70,7 +70,7 @@ function latexonlinecc(nd) {
     }
     // that looks to have all lines but still need to zap comments for some reason..
     // alert(encodeURIComponent(fconts));
-    ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText) + ((p.innerText.indexOf("fontspec") !== -1) ? "&command=luatex" : ""));
+    ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText) + ((p.innerText.indexOf("fontspec") !== -1) ? "&command=lualatex" : ""));
 }
 
 const commentregex = / %.*/;
