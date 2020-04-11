@@ -66,12 +66,14 @@ function latexonlinecc(nd) {
 	d.setAttribute("onclick",'deleteoutput("' + nd + '")');
 	p.parentNode.insertBefore(d, b.nextSibling);
     }
-    alert(encodeURIComponent(fconts));
-    ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts + p.innerText));
+    // that looks to have all lines but still need to zap comments..
+    // alert(encodeURIComponent(fconts));
+    ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText));
 }
 
+const commentregex = / %.*$/;
 
-// based on code from texnique.fr
+// https://www.overleaf.com/devs
 function openinoverleaf(nd) {
     var fconts="";
     if(typeof(preincludes) == "object") {
