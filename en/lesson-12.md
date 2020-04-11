@@ -5,7 +5,7 @@ title: Citations and references
 <script>
 preincludes = {
  "pre1": {
-    pre0": "document.bib"
+    "pre0": "document.bib"
    }
 }
 </script>
