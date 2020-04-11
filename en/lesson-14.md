@@ -3,9 +3,10 @@ title: Selecting fonts and using Unicode engines
 ---
 
 
+XeLaTeX example
+
 ```latex
 \documentclass{article}
-%\showthe\luatexversion
 \usepackage{fontspec}
 \setmainfont{texgyretermes-regular.otf}
 
