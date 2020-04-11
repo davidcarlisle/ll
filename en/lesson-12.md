@@ -3,7 +3,7 @@ title: Citations and references
 ---
 
 <script>
-var includes= {
+var preincludes= {
  "pre1": {
     pre0": "document.bib"
    }
