@@ -66,9 +66,8 @@ function latexonlinecc(nd) {
 	d.setAttribute("onclick",'deleteoutput("' + nd + '")');
 	p.parentNode.insertBefore(d, b.nextSibling);
     }
-    // that looks to have all lines but still need to zap comments..
+    // that looks to have all lines but still need to zap comments for some reason..
     // alert(encodeURIComponent(fconts));
-    alert(fconts.replace(commentregex,''));
     ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText));
 }
 
