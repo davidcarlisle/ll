@@ -68,10 +68,11 @@ function latexonlinecc(nd) {
     }
     // that looks to have all lines but still need to zap comments..
     // alert(encodeURIComponent(fconts));
+    alert(fconts.replace(commentregex,''));
     ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText));
 }
 
-const commentregex = / %.*$/;
+const commentregex = / %.*/;
 
 // https://www.overleaf.com/devs
 function openinoverleaf(nd) {
