@@ -54,7 +54,9 @@ function latexonlinecc(nd) {
 // based on code from texnique.fr
 function openinoverleaf(nd) {
   fconts="";
-  if(typeof(preincludes) == "object") {
+    if(typeof(preincludes) == "object") {
+	alert("preincludes is object");
+	alert(" nd is" + nd);
       if(typeof(preincludes[nd]) == "object") {
 	  alert("stuff for " + nd);
 	  var incl=preincludes[nd];
