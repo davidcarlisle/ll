@@ -22,7 +22,7 @@ It may have many entries; here is one.
 <!-- {% raw %} -->
 ```
 @BOOK
-  {ConcreteMath,  
+  {ConcreteMath,  % string to use for citation
   AUTHOR = {Ronald L. Graham and Donald E. Knuth and Oren Patashnik},
   TITLE = {Concrete Mathematics},
   PUBLISHER = {Addison-Wesley},

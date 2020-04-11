@@ -66,6 +66,7 @@ function latexonlinecc(nd) {
 	d.setAttribute("onclick",'deleteoutput("' + nd + '")');
 	p.parentNode.insertBefore(d, b.nextSibling);
     }
+    alert(encodeURIComponent(fconts));
     ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts + p.innerText));
 }
 
