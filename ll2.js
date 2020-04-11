@@ -60,7 +60,7 @@ function openinoverleaf(nd) {
     alert("preincludes is " + typeof(preincludes));
     if(typeof(preincludes) == "object") {
 	alert("nd is " + nd);
-	alert("preincludes[nd] is typeof(preincludes[nd]);
+	alert("preincludes[nd] is " + typeof(preincludes[nd]);
       if(typeof(preincludes[nd]) == "object") {
 	  alert("stuff for " + nd);
 	  var incl=preincludes[nd];
