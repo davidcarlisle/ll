@@ -35,7 +35,23 @@ function llexamples() {
 }
 
 function latexonlinecc(nd) {
+    var fconts="";
+    if(typeof(preincludes) == "object") {
+      if(typeof(preincludes[nd]) == "object") {
+	  var incl=preincludes[nd];
+	  for(const prop in incl) {
+	      fconts=fconts+"\n\\begin{filecontents}{" +
+		  incl[prop] +
+		  "}\n" +
+		  document.getElementById(prop).innerText +
+		  "\n\\end{filecontents}\n";
+	  }
+      }
+  }
     var p = document.getElementById(nd);
+    if(p.innerText.indexOf("biblatex") !== -1) {
+	fconts=fconts + "\n\\RequirePackage[backend=bibtex]{biblatex}\n";
+    }
     var b = document.getElementById('lo-' + nd);
     var ifr= document.getElementById(nd + "ifr");
     if(ifr == null) {
@@ -50,22 +66,17 @@ function latexonlinecc(nd) {
 	d.setAttribute("onclick",'deleteoutput("' + nd + '")');
 	p.parentNode.insertBefore(d, b.nextSibling);
     }
-    ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(p.innerText));
+    ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts + p.innerText));
 }
 
 
 // based on code from texnique.fr
 function openinoverleaf(nd) {
     var fconts="";
-    alert("preincludes is " + typeof(preincludes));
     if(typeof(preincludes) == "object") {
-	alert("nd is " + nd);
-	alert("preincludes[nd] is " + typeof(preincludes[nd]));
       if(typeof(preincludes[nd]) == "object") {
-	  alert("stuff for " + nd);
 	  var incl=preincludes[nd];
 	  for(const prop in incl) {
-              alert("prop is" + prop);
 	      fconts=fconts+"\n\\begin{filecontents}{" +
 		  incl[prop] +
 		  "}\n" +
@@ -74,7 +85,6 @@ function openinoverleaf(nd) {
 	  }
       }
   }
-    alert("filec:\n" + fconts);
   var p = document.getElementById(nd);
   document.getElementById('encoded_snip-' + nd ).value =encodeURIComponent(fconts + p.innerText);
   document.getElementById('form-' + nd).submit();
