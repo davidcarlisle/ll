@@ -59,12 +59,13 @@ function openinoverleaf(nd) {
     var fconts="";
     alert("preincludes is " + typeof(preincludes));
     if(typeof(preincludes) == "object") {
-	alert("preincludes is object");
-	alert(" nd is" + nd);
+	alert("nd is " + nd);
+	alert("preincludes[nd] is typeof(preincludes[nd]);
       if(typeof(preincludes[nd]) == "object") {
 	  alert("stuff for " + nd);
 	  var incl=preincludes[nd];
 	  for(const prop in incl) {
+              alert("prop is" + prop);
 	      fconts=fconts+"\n\\begin{filecontents}{" +
 		  incl[prop] +
 		  "}\n" +
