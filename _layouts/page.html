@@ -12,7 +12,7 @@ layout: default
   {% unless page.path contains "lesson-15" %}
     <br>
     <a href = "{{page.name | replace: "lesson-", "more-" | remove_first: ".md"}}">S2ee more on this topic</a>
-  {% endif %}
+  {% endunless %}
   </small></p>
 
 {% endif %}
