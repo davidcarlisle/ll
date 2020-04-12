@@ -10,9 +10,13 @@ layout: default
   <p><small>
     <a href = "{{page.name | replace: "lesson-", "more-" | remove_first: ".md"}}">See more on this topic</a>
     {% unless page.path contains "lesson-15" %}
-    {% assign this_lesson = page.name | remove_first: "lesson-",| remove_first: ".md" %}
+    {% assign this_lesson = page.name | remove_first: "lesson-",| remove_first: ".md" 
     <br>
-    <a href = "lesson-{{if this_lesson < 10 0 endif}}{{thislesson | plus: 1}}">Next lesson</a>
+    {% if this_lesson < 10 %}
+    <a href = "lesson-0{{this_lesson}}">Next lesson</a>
+    {% else %)
+    <a href = "lesson-{{this_lesson}}">Next lesson</a>
+   {% endif %}	
   {% endunless %}
   </small></p>
 {% endif %}
