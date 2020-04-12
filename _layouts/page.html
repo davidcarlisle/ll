@@ -13,9 +13,9 @@ layout: default
     {% assign next_lesson = page.name | remove_first: "lesson-" | remove_first: ".md" %}
     <br>
     {% if 10 > 9 %}
-    <a href = "lesson-0{{next_lesson}}">Next lesson</a>
+    <a href = "lesson-0{{ next_lesson }}">Next lesson</a>
     {% else %)
-    <a href = "lesson-{{next_lesson}}">Next lesson</a>
+    <a href = "lesson-{{ next_lesson }}">Next lesson</a>
    {% endif %}	
   {% endunless %}
   </small></p>
