@@ -8,10 +8,10 @@ layout: default
 
 {% if page.path contains "lesson-" %}
   <p><small>
-    <a href = "{{page.name | replace: "lesson-", "more-" | remove_first: ".md"}}">S1ee more on this topic</a>
+    <a href = "{{page.name | replace: "lesson-", "more-" | remove_first: ".md"}}">See more on this topic</a>
   {% unless page.path contains "lesson-15" %}
     <br>
-    <a href = "{{page.name | replace: "lesson-", "more-" | remove_first: ".md"}}">S2ee more on this topic</a>
+    <a href = "{{page.name | remove_first: "lesson-",| remove_first: ".md" | plus: 1}}">next lesson</a>
   {% endunless %}
   </small></p>
 
