@@ -11,8 +11,8 @@ layout: default
     <a href = "{{page.name | replace: "lesson-", "more-" | remove_first: ".md"}}">See more on this topic</a>
     {% unless page.path contains "lesson-15" %}
      <br>
-     {% if page.path | remove_first: "lesson-" | remove_first: ".md" < 8 %}
-     <a href = "lesson-0{page.path | remove_first: "lesson-" | remove_first: ".md" | plus: 1)">Next lesson</a>
+     {% if 9 > page.path | remove_first: "lesson-" | remove_first: ".md"  %}
+     <a href = "lesson-0{{page.path | remove_first: "lesson-" | remove_first: ".md" | plus: 1}}">Next lesson</a>
      {% else %}
       <a href = "lesson-{{page.path | remove_first: "lesson-" | remove_first: ".md" | plus: 1}}">Next lesson</a>
     {% endif %}
