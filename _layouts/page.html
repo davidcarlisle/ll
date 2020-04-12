@@ -11,10 +11,10 @@ layout: default
     <a href = "{{page.name | replace: "lesson-", "more-" | remove_first: ".md"}}">See more on this topic</a>
     {% unless page.path contains "lesson-15" %}
      <br>
-    {% if 10 == 9 %}
-    <a href = "lesson-0{{ next_lesson }}">Next lesson</a>
+     {% if page.path contains "lesson-" %}
+     <a href = "lesson-09">Next lesson</a>
     {% else %)
-    <a href = "lesson-{{ next_lesson }}">Next lesson</a>
+    <a href = "lesson-12">Next lesson</a>
    {% endif %}	
   {% endunless %}
   </small></p>
