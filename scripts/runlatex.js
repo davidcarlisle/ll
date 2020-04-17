@@ -40,7 +40,7 @@ function llexamples() {
 	    var f=document.createElement("span");
 	    // https://httpbin.org/post
 	    // https://www.overleaf.com/docs
-	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://httpbin.org/post\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip\" value=\"\" /><input id=\"snip_url-pre" + i + "\" name=\"snip_url\" value=\"\" /><input id=\"engine-pre" + i + "\" name=\"engine\" value=\"pdflatex\" /></form>";
+	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://httpbin.org/post\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip\" value=\"\" /><input id=\"snip_uri-pre" + i + "\" name=\"snip_uri\" value=\"\" /><input id=\"engine-pre" + i + "\" name=\"engine\" value=\"pdflatex\" /></form>";
 	    p[i].parentNode.insertBefore(f, p[i].nextSibling);
 	}
     }
