@@ -16,6 +16,11 @@ function llexamples() {
 	c.setAttribute("onclick",'copytoclipboard("pre' + i + '")');
 	p[i].parentNode.insertBefore(c, p[i]);
 	if(p[i].textContent.indexOf("\\documentclass") !== -1) {
+	    //overleaf via zip 
+	    var olz = document.createElement("button");
+	    olz.innerText="OverLeaf Zip test";
+	    olz.setAttribute("onclick",'overleafzip("pre' + i + '")');
+	    p[i].parentNode.insertBefore(olz, p[i].nextSibling);   
 	    //download
 	    var dn = document.createElement("button");
 	    dn.innerText="Download";
@@ -33,7 +38,9 @@ function llexamples() {
 	    o.setAttribute("onclick",'openinoverleaf("pre' + i + '")');
 	    p[i].parentNode.insertBefore(o, p[i].nextSibling);
 	    var f=document.createElement("span");
-	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip\" value=\"\" /><input id=\"engine-pre" + i + "\" name=\"engine\" value=\"pdflatex\" /></form>";
+	    // https://httpbin.org/post
+	    // https://www.overleaf.com/docs
+	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://httpbin.org/post\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip\" value=\"\" /><input id=\"snip_url-pre" + i + "\" name=\"snip_url\" value=\"\" /><input id=\"engine-pre" + i + "\" name=\"engine\" value=\"pdflatex\" /></form>";
 	    p[i].parentNode.insertBefore(f, p[i].nextSibling);
 	}
     }
@@ -105,6 +112,35 @@ function openinoverleaf(nd) {
 
 
 
+function overleafzip(nd) {
+    var zipped=false;
+    if(typeof(preincludes) == "object") {
+	if(typeof(preincludes[nd]) == "object") {
+	    zipped=true;
+	    var zip = new JSZip();
+	    var p = document.getElementById(nd);
+	    zip.file("document/main.tex",p.innerText);
+	    var incl=preincludes[nd];
+	    for(const prop in incl) {
+		zip.file("document/" + incl[prop],document.getElementById(prop).innerText);
+	    }
+	      zip.generateAsync({type:"base64"})
+		.then(function (blob) {
+		    document.getElementById('snip_uri-' + nd ).value ="data:application/zip;base64," + base64;
+		});
+	}
+    }
+    if(! zipped) {
+	var p = document.getElementById(nd);
+    document.getElementById('encoded_snip-' + nd ).value =encodeURIComponent(fconts + p.innerText);
+    if(p.innerText.indexOf("fontspec") !== -1) {
+	document.getElementById('engine-' + nd ).value ="xelatex";
+    }
+    }
+    document.getElementById('form-' + nd).submit();
+}
+
+
 function downloadblob(nd) {
     var zipped=false;
     if(typeof(preincludes) == "object") {
@@ -129,6 +165,7 @@ function downloadblob(nd) {
 	saveAs(blob, "document.tex");
     }
 }
+
 
 function copytoclipboard(nd){
     var p = document.getElementById(nd);
