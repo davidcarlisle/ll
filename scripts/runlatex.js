@@ -125,7 +125,7 @@ function overleafzip(nd) {
 		zip.file("document/" + incl[prop],document.getElementById(prop).innerText);
 	    }
 	      zip.generateAsync({type:"base64"})
-		.then(function (blob) {
+		.then(function (base64) {
 		    document.getElementById('snip_uri-' + nd ).value ="data:application/zip;base64," + base64;
 		});
 	}
