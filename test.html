@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="scripts/runlatex.js"></script>
+    <script src="scripts/FileSaver.js"></script>
+    <script src="scripts/jszip.js"></script>
+    
+     <script>
+    preincludes={
+	"pre1": {
+	    "pre2": "test.bib"
+	}
+    }
+  </script>
+ </head>
+  <body>
+    <p>aaa</p>
+    <pre>
+      123
+      456
+    </pre>
+    <p>bbb</p>
+    <pre>
+   \documentclass{article}
+      \begin{document}
+aaa
+
+bbb
+
+\section{zzz}
+ one two three   one two three   one two three   one two three   one two three   one two three   one two three  
+ one two three   one two three   one two three   one two three   one two three   one two three  
+ one two three   one two three   one two three   one two three   one two three   one two three  
+
+zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz 
+   zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz zzz 224
+
+
+   xxx \cite{aa}
+   \bibliographystyle{plain}
+   \bibliography{test}
+\end{document}
+
+    </pre>
+    
+
+
+    <p>kkk7k</p>
+
+<pre>
+@book{aa,
+  author = {Author, A.},
+  year = {2001},
+  title = {Title},
+  publisher = {Publisher},
+}
+</pre>
+
+
+an example with no extra files
+
+<pre>
+
+\documentclass{article}
+
+\begin{document}
+
+zzz
+\end{document}
+</pre>
+

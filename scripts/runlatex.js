@@ -16,6 +16,11 @@ function llexamples() {
 	c.setAttribute("onclick",'copytoclipboard("pre' + i + '")');
 	p[i].parentNode.insertBefore(c, p[i]);
 	if(p[i].textContent.indexOf("\\documentclass") !== -1) {
+	    //download
+	    var dn = document.createElement("button");
+	    dn.innerText="Download";
+	    dn.setAttribute("onclick",'downloadblob("pre' + i + '")');
+	    p[i].parentNode.insertBefore(dn, p[i].nextSibling);   
 	    // latexonline
 	    var r = document.createElement("button");
 	    r.innerText="LaTeX online";
@@ -98,6 +103,32 @@ function openinoverleaf(nd) {
   document.getElementById('form-' + nd).submit();
 }
 
+
+
+function downloadblob(nd) {
+    var zipped=false;
+    if(typeof(preincludes) == "object") {
+	if(typeof(preincludes[nd]) == "object") {
+	    zipped=true;
+	    var zip = new JSZip();
+	    var p = document.getElementById(nd);
+	    zip.file("document/main.tex",p.innerText);
+	    var incl=preincludes[nd];
+	    for(const prop in incl) {
+		zip.file("document/" + incl[prop],document.getElementById(prop).innerText);
+	    }
+	      zip.generateAsync({type:"blob"})
+		.then(function (blob) {
+		    saveAs(blob, "document.zip");
+		});
+	}
+    }
+    if(! zipped) {
+	var p = document.getElementById(nd);
+	var blob = new Blob([p.innerText], {type: "text/plain;charset=utf-8"});
+	saveAs(blob, "document.tex");
+    }
+}
 
 function copytoclipboard(nd){
     var p = document.getElementById(nd);
