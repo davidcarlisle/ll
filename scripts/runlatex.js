@@ -132,7 +132,7 @@ function overleafzip(nd) {
     }
     if(! zipped) {
 	var p = document.getElementById(nd);
-    document.getElementById('encoded_snip-' + nd ).value =encodeURIComponent(fconts + p.innerText);
+    document.getElementById('encoded_snip-' + nd ).value =encodeURIComponent(p.innerText);
     if(p.innerText.indexOf("fontspec") !== -1) {
 	document.getElementById('engine-' + nd ).value ="xelatex";
     }
