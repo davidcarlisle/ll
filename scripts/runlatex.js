@@ -40,8 +40,8 @@ function llexamples() {
 	    var f=document.createElement("span");
 	    // https://httpbin.org/post
 	    // https://www.overleaf.com/docs
-	    //<input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip\" value=\"\" />
-	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"><input id=\"snip_uri-pre" + i + "\" name=\"snip_uri\" value=\"\" /><input id=\"engine-pre" + i + "\" name=\"engine\" value=\"pdflatex\" /></form>";
+	    // <input id=\"snip_uri-pre" + i + "\" name=\"snip_uri\" value=\"\" />
+	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip\" value=\"\" /><input id=\"engine-pre" + i + "\" name=\"engine\" value=\"pdflatex\" /></form>";
 	    p[i].parentNode.insertBefore(f, p[i].nextSibling);
 	}
     }
@@ -126,7 +126,8 @@ function overleafzip(nd) {
 		zip.file("document/" + incl[prop],document.getElementById(prop).innerText);
 	    }
 	      zip.generateAsync({type:"base64"}).then(function (base64) {
-		  document.getElementById('snip_uri-' + nd ).value ="data:application/zip;base64," + base64;
+		  document.getElementById('encoded_snip-' + nd ).name ="snip_uri";
+		  document.getElementById('encoded_snip-' + nd ).value ="data:application/zip;base64," + base64;
 		     document.getElementById('form-' + nd).submit();
 		});
 	}
