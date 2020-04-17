@@ -126,6 +126,8 @@ function overleafzip(nd) {
 	    }
 	      zip.generateAsync({type:"base64"})
 		.then(function (base64) {
+		    alert(document.getElementById('snip_uri-' + nd ));
+		    alert('### ' + base64)
 		    document.getElementById('snip_uri-' + nd ).value ="data:application/zip;base64," + base64;
 		});
 	}
