@@ -13,7 +13,7 @@
 
 
 <p><code>main.tex</code></p>
-<pre id="pre1">
+<pre id="pre1" contenteditable>
 \documentclass{article}
 
 \begin{document}
@@ -27,7 +27,7 @@ aaa3 \cite{aa}.
     
 
 <p><code>test.bib</code></p>
-<pre id="pre2">
+<pre id="pre2" contenteditable>
 @book{aa,
   author = {Author, A.},
   year = {2001},
@@ -40,13 +40,15 @@ aaa3 \cite{aa}.
 
 
 <form
-  id="form-pre"
+  id="form1-pre"
   style="display:none"
   action="https://www.overleaf.com/docs"
   method="post"
   target="_blank">
-   <input id="in1" name="snip_uri[]" value="">
-   <input id="in2" name="snip_uri[]" value="">
+   <input type="text" id="in1a" name="snip_uri[]" value="">
+   <input type="text" id="in1b" name="snip_uri[]" value="">
+   <input type="text" name="snip_name[]" value="document.tex">
+   <input type="text" name="snip_name[]" value="test.bib">
 </form>
 
 
@@ -54,13 +56,39 @@ aaa3 \cite{aa}.
 <script>
   function submitov () {
       var p1=document.getElementById('pre1').innerText;
-      // what to do with p2 ?
       var p2=document.getElementById('pre2').innerText;
-      document.getElementById("in1").value="data:," + encodeURIComponent(p1);
-      document.getElementById("in2").value="data:," + encodeURIComponent(p2);
-      document.getElementById("form-pre").submit();
+      document.getElementById("in1a").value="data:," + encodeURIComponent(p1);
+      document.getElementById("in1b").value="data:," + encodeURIComponent(p2);
+      document.getElementById("form1-pre").submit();
   }
 </script>
 
 
 <button onclick="submitov()">OverLeaf</button>
+
+<form
+  id="form2-pre"
+  style="display:none"
+  action="https://www.overleaf.com/docs"
+  method="post"
+  target="_blank">
+   <input type="text" id="in2a" name="encoded_snip[]" value="">
+   <input type="text" id="in2b" name="encoded_snip[]" value="">
+   <input type="text" name="snip_name[]" value="document.tex">
+   <input type="text" name="snip_name[]" value="test.bib">
+</form>
+
+
+
+<script>
+  function submitov2 () {
+      var p1=document.getElementById('pre1').innerText;
+      var p2=document.getElementById('pre2').innerText;
+      document.getElementById("in2a").value=encodeURIComponent(p1);
+      document.getElementById("in2b").value=encodeURIComponent(p2);
+      document.getElementById("form2-pre").submit();
+  }
+</script>
+
+
+<button onclick="submitov2()">OverLeaf2</button>
