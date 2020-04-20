@@ -192,7 +192,7 @@ function overleafform2(nd) {
 	      var inp=document.createElement("input");
 	      inp.setAttribute("type","text");
 	      inp.setAttribute("name","snip_name[]");
-	      inp.value=prop;
+	      inp.value=incl[prop];
 	      ovform.appendChild(inp);
 	  }
     ovform.submit();
