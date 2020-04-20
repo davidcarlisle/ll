@@ -54,7 +54,7 @@ function llexamples() {
 	    // https://httpbin.org/post
 	    // https://www.overleaf.com/docs
 	    // <input id=\"snip_uri-pre" + i + "\" name=\"snip_uri\" value=\"\" />
-	    f.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i +"\" action=\"https://httpbin.org/post\" method=\"post\" target=\"_blank\"></form>";
+	    f.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"></form>";
 	    p[i].parentNode.insertBefore(ff, p[i].nextSibling);
 	}
     }
