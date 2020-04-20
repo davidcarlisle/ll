@@ -18,7 +18,7 @@ function llexamples() {
 	if(p[i].textContent.indexOf("\\documentclass") !== -1) {
 	    //overleaf via multi file form 
 	    var olff = document.createElement("button");
-	    olff.innerText="OverLeaf Zip test";
+	    olff.innerText="OverLeaf form2test";
 	    olff.setAttribute("onclick",'overleafform2("pre' + i + '")');
 	    p[i].parentNode.insertBefore(olff, p[i].nextSibling);   
 	    //overleaf via zip 
@@ -195,7 +195,7 @@ function overleafform2(nd) {
 	      inp.value=prop;
 	      ovform.appendChild(inp);
 	  }
-    ofform.submit();
+    ovform.submit();
 }
 
 
