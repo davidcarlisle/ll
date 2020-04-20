@@ -16,6 +16,11 @@ function llexamples() {
 	c.setAttribute("onclick",'copytoclipboard("pre' + i + '")');
 	p[i].parentNode.insertBefore(c, p[i]);
 	if(p[i].textContent.indexOf("\\documentclass") !== -1) {
+	    //overleaf via multi file form 
+	    var olff = document.createElement("button");
+	    olff.innerText="OverLeaf Zip test";
+	    olff.setAttribute("onclick",'overleafform2("pre' + i + '")');
+	    p[i].parentNode.insertBefore(olff, p[i].nextSibling);   
 	    //overleaf via zip 
 	    var olz = document.createElement("button");
 	    olz.innerText="OverLeaf Zip test";
@@ -37,12 +42,20 @@ function llexamples() {
 	    o.innerText="Open in OverLeaf";
 	    o.setAttribute("onclick",'openinoverleaf("pre' + i + '")');
 	    p[i].parentNode.insertBefore(o, p[i].nextSibling);
+	    // form 1
 	    var f=document.createElement("span");
 	    // https://httpbin.org/post
 	    // https://www.overleaf.com/docs
 	    // <input id=\"snip_uri-pre" + i + "\" name=\"snip_uri\" value=\"\" />
 	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"><input id=\"encoded_snip-pre" + i + "\" name=\"encoded_snip\" value=\"\" /><input id=\"engine-pre" + i + "\" name=\"engine\" value=\"pdflatex\" /></form>";
 	    p[i].parentNode.insertBefore(f, p[i].nextSibling);
+	    // form 2
+	    var ff=document.createElement("span");
+	    // https://httpbin.org/post
+	    // https://www.overleaf.com/docs
+	    // <input id=\"snip_uri-pre" + i + "\" name=\"snip_uri\" value=\"\" />
+	    f.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i +"\" action=\"https://httpbin.org/post\" method=\"post\" target=\"_blank\"></form>";
+	    p[i].parentNode.insertBefore(ff, p[i].nextSibling);
 	}
     }
 }
@@ -143,6 +156,46 @@ function overleafzip(nd) {
 	    document.getElementById('form-' + nd).submit();
     }
 
+}
+
+
+
+
+function overleafform2(nd) {
+    var p = document.getElementById(nd);
+    var ovform=document.getElementById('form2-' + nd);
+    var incl=[];
+    var inp=document.createElement("input");
+    inp.setAttribute("type","text");
+    inp.setAttribute("name","snip_uri[]");
+    inp.value="data:," + encodeURIComponent(p.innerText);
+    ovform.appendChild(inp);
+    if(typeof(preincludes) == "object") {
+      if(typeof(preincludes[nd]) == "object") {
+	  incl=preincludes[nd];
+	  for(const prop in incl) {
+	      var inp=document.createElement("input");
+	      inp.setAttribute("type","text");
+	      inp.setAttribute("name","snip_uri[]");
+	      inp.value="data:," + encodeURIComponent(document.getElementById(prop).innerText);
+	      ovform.appendChild(inp);
+
+	  }
+      }
+    }
+        var inp=document.createElement("input");
+    inp.setAttribute("type","text");
+    inp.setAttribute("name","snip_name[]");
+    inp.value="document.tex";
+    ovform.appendChild(inp);
+	  for(const prop in incl) {
+	      var inp=document.createElement("input");
+	      inp.setAttribute("type","text");
+	      inp.setAttribute("name","snip_name[]");
+	      inp.value=prop;
+	      ovform.appendChild(inp);
+	  }
+    ofform.submit();
 }
 
 
