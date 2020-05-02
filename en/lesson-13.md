@@ -192,8 +192,9 @@ EDIT
 
 ----
 
-# A collapsible section containing code ZZ8
-<details><summary>Click to expand!</summary>
+# A collapsible section containing code ZZ8  md1
+<details markdown="1">
+<summary>Click to expand!</summary>
 
 ```javascript
     function whatIsLove() {
