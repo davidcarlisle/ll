@@ -192,16 +192,16 @@ EDIT
 
 ----
 
-# A collapsible section containing code ZZ
-<details>
-  <summary>Click to expand!</summary>
+# A collapsible section containing code ZZ8
+<details><summary>Click to expand!</summary>
 
-  ```javascript
+```javascript
     function whatIsLove() {
       console.log('Baby Don't hurt me. Don't hurt me');
       return 'No more';
     }
-  ```
+```
+
 </details>
 
 xx
