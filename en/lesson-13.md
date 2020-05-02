@@ -117,75 +117,75 @@ EDIT
 <details>
 <summary>Show code blocks for included files</summary>
   
-
-#### pref.tex
-<!-- pre1 {% raw %} -->
-```latex
-\chapter*{Preface}
-The preface text.
-```
-<!-- {% endraw %} -->
-
-#### chap1.tex
-<!-- pre2 {% raw %} -->
-```latex
-\chapter{Introduction}
-The first chapter text.
-```
-<!-- {% endraw %} -->
-
-#### chap2.tex
-<!-- pre3 {% raw %} -->
-```latex
-\chapter{Something}
-The second chapter text.
-```
-<!-- {% endraw %} -->
-
-####  append.tex
-<!-- pre4 {% raw %} -->
-```latex
-\chapter*{Appendix}
-The first appendix text.
-```
-<!-- {% endraw %} -->
-
-#### frontcover.tex
-<!-- pre5 {% raw %} -->
-```latex
-\begin{center}
-The front cover
-\end{center}
-```
-<!-- {% endraw %} -->
-
-#### dedication.tex
-<!-- pre6 {% raw %} -->
-```latex
-\begin{center}
-\large
-For \ldots
-\end{center}
-```
-<!-- {% endraw %} -->
-
-#### copyright.tex
-<!-- pre7 {% raw %} -->
-```latex
-\begin{center}
-Copyright 2020 learnlatex.
-\end{center}
-```
-<!-- {% endraw %} -->
-
-#### backcover.tex
-<!-- pre8 {% raw %} -->
-```latex
-\begin{center}
-The back cover
-\end{center}
-```
-<!-- {% endraw %} -->
+    
+    #### pref.tex
+    <!-- pre1 {% raw %} -->
+    ```latex
+    \chapter*{Preface}
+    The preface text.
+    ```
+    <!-- {% endraw %} -->
+    
+    #### chap1.tex
+    <!-- pre2 {% raw %} -->
+    ```latex
+    \chapter{Introduction}
+    The first chapter text.
+    ```
+    <!-- {% endraw %} -->
+    
+    #### chap2.tex
+    <!-- pre3 {% raw %} -->
+    ```latex
+    \chapter{Something}
+    The second chapter text.
+    ```
+    <!-- {% endraw %} -->
+    
+    ####  append.tex
+    <!-- pre4 {% raw %} -->
+    ```latex
+    \chapter*{Appendix}
+    The first appendix text.
+    ```
+    <!-- {% endraw %} -->
+    
+    #### frontcover.tex
+    <!-- pre5 {% raw %} -->
+    ```latex
+    \begin{center}
+    The front cover
+    \end{center}
+    ```
+    <!-- {% endraw %} -->
+    
+    #### dedication.tex
+    <!-- pre6 {% raw %} -->
+    ```latex
+    \begin{center}
+    \large
+    For \ldots
+    \end{center}
+    ```
+    <!-- {% endraw %} -->
+    
+    #### copyright.tex
+    <!-- pre7 {% raw %} -->
+    ```latex
+    \begin{center}
+    Copyright 2020 learnlatex.
+    \end{center}
+    ```
+    <!-- {% endraw %} -->
+    
+    #### backcover.tex
+    <!-- pre8 {% raw %} -->
+    ```latex
+    \begin{center}
+    The back cover
+    \end{center}
+    ```
+    <!-- {% endraw %} -->
 
 
 </details>
