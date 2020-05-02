@@ -113,82 +113,80 @@ EDIT
 ----
 
 
-# A collapsible section containing code3
+# A collapsible section containing code4
 
 <details>
-   <summary>Show code blocks for included files</summary>
+  <summary>Show code blocks for included files</summary>
   
-    
-    #### pref.tex
-
-    ```latex
-    \chapter*{Preface}
-    The preface text.
-    ```
-
-    
-    #### chap1.tex
-
-    ```latex
-    \chapter{Introduction}
-    The first chapter text.
-    ```
-
-    
-    #### chap2.tex
-
-    ```latex
-    \chapter{Something}
-    The second chapter text.
-    ```
-
-    
-    ####  append.tex
-
-    ```latex
-    \chapter*{Appendix}
-    The first appendix text.
-    ```
-
-    
-    #### frontcover.tex
-
-    ```latex
-    \begin{center}
-    The front cover
-    \end{center}
-    ```
-
-    
-    #### dedication.tex
-
-    ```latex
-    \begin{center}
-    \large
-    For \ldots
-    \end{center}
-    ```
-
-    
-    #### copyright.tex
-
-    ```latex
-    \begin{center}
-    Copyright 2020 learnlatex.
-    \end{center}
-    ```
-
-    
-    #### backcover.tex
-
-    ```latex
-    \begin{center}
-    The back cover
-    \end{center}
-    ```
-
-
-
+  
+  #### pref.tex
+  
+  ```latex
+  \chapter*{Preface}
+  The preface text.
+  ```
+  
+  
+  #### chap1.tex
+  
+  ```latex
+  \chapter{Introduction}
+  The first chapter text.
+  ```
+  
+  
+  #### chap2.tex
+  
+  ```latex
+  \chapter{Something}
+  The second chapter text.
+  ```
+  
+  
+  ####  append.tex
+  
+  ```latex
+  \chapter*{Appendix}
+  The first appendix text.
+  ```
+  
+  
+  #### frontcover.tex
+  
+  ```latex
+  \begin{center}
+  The front cover
+  \end{center}
+  ```
+  
+  
+  #### dedication.tex
+  
+  ```latex
+  \begin{center}
+  \large
+  For \ldots
+  \end{center}
+  ```
+  
+  
+  #### copyright.tex
+  
+  ```latex
+  \begin{center}
+  Copyright 2020 learnlatex.
+  \end{center}
+  ```
+  
+  
+  #### backcover.tex
+  
+  ```latex
+  \begin{center}
+  The back cover
+  \end{center}
+  ```
+  
 </details>
 
 
