@@ -113,9 +113,10 @@ EDIT
 ----
 
 
-# A collapsible section containing code2
+# A collapsible section containing code3
+
 <details>
-<summary>Show code blocks for included files</summary>
+   <summary>Show code blocks for included files</summary>
   
     
     #### pref.tex
@@ -189,6 +190,7 @@ EDIT
 
 
 </details>
+
 
 ----
 
