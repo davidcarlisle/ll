@@ -112,6 +112,12 @@ EDIT
 
 ----
 
+
+# A collapsible section containing code
+<details>
+<summary>Show code blocks for included files</summary>
+  
+
 #### pref.tex
 <!-- pre1 {% raw %} -->
 ```latex
@@ -180,6 +186,9 @@ The back cover
 \end{center}
 ```
 <!-- {% endraw %} -->
+
+
+</details>
 
 ----
 
