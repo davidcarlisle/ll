@@ -1,5 +1,5 @@
 ---
-title: Structuring longer documents
+title: "Structuring longer documents"
 ---
 
 <script>
@@ -108,102 +108,82 @@ The `appendix` command changes the numbering to `A`, `B`, etc.,
 so for instance in the first chapter after it the header says `Appendix A`. 
 
 
-EDIT
 
 ----
 
-
-# A collapsible section containing code4
-
-<details>
-  <summary>Show code blocks for included files</summary>
-  
-  
-  #### pref.tex
-  
-  ```latex
-  \chapter*{Preface}
-  The preface text.
-  ```
-  
-  
-  #### chap1.tex
-  
-  ```latex
-  \chapter{Introduction}
-  The first chapter text.
-  ```
-  
-  
-  #### chap2.tex
-  
-  ```latex
-  \chapter{Something}
-  The second chapter text.
-  ```
-  
-  
-  ####  append.tex
-  
-  ```latex
-  \chapter*{Appendix}
-  The first appendix text.
-  ```
-  
-  
-  #### frontcover.tex
-  
-  ```latex
-  \begin{center}
-  The front cover
-  \end{center}
-  ```
-  
-  
-  #### dedication.tex
-  
-  ```latex
-  \begin{center}
-  \large
-  For \ldots
-  \end{center}
-  ```
-  
-  
-  #### copyright.tex
-  
-  ```latex
-  \begin{center}
-  Copyright 2020 learnlatex.
-  \end{center}
-  ```
-  
-  
-  #### backcover.tex
-  
-  ```latex
-  \begin{center}
-  The back cover
-  \end{center}
-  ```
-  
-</details>
-
-
-----
-
-# A collapsible section containing code ZZ8  md1
+## Included files
 <details markdown="1">
-<summary>Click to expand!</summary>
+<summary>Click to show code blocks for the included files</summary>
 
-```javascript
-    function whatIsLove() {
-      console.log('Baby Don't hurt me. Don't hurt me');
-      return 'No more';
-    }
+#### pref.tex
+<!-- pre1 {% raw %} -->
+```latex
+\chapter*{Preface}
+The preface text.
 ```
+<!-- {% endraw %} -->
+
+#### chap1.tex
+<!-- pre2 {% raw %} -->
+```latex
+\chapter{Introduction}
+The first chapter text.
+```
+<!-- {% endraw %} -->
+
+#### chap2.tex
+<!-- pre3 {% raw %} -->
+```latex
+\chapter{Something}
+The second chapter text.
+```
+<!-- {% endraw %} -->
+
+####  append.tex
+<!-- pre4 {% raw %} -->
+```latex
+\chapter*{Appendix}
+The first appendix text.
+```
+<!-- {% endraw %} -->
+
+#### frontcover.tex
+<!-- pre5 {% raw %} -->
+```latex
+\begin{center}
+The front cover
+\end{center}
+```
+<!-- {% endraw %} -->
+
+#### dedication.tex
+<!-- pre6 {% raw %} -->
+```latex
+\begin{center}
+\large
+For \ldots
+\end{center}
+```
+<!-- {% endraw %} -->
+
+#### copyright.tex
+<!-- pre7 {% raw %} -->
+```latex
+\begin{center}
+Copyright 2020 learnlatex.
+\end{center}
+```
+<!-- {% endraw %} -->
+
+#### backcover.tex
+<!-- pre8 {% raw %} -->
+```latex
+\begin{center}
+The back cover
+\end{center}
+```
+<!-- {% endraw %} -->
 
 </details>
-
-xx
+----
 
