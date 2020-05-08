@@ -4,11 +4,13 @@ title: "What is LaTeX" | append:  site.latex  | append: " and how does it work?"
 
 
 
-# What is {{site.latex }} and how does it work?
 
-zz6 this is LaTeX  this is {{ site.latex }}.
+zz7 this is LaTeX  this is {{ site.latex }}.
 
-Unlike common word processors such as Microsoft Word or LibreOffice, LaTeX usually does not provide WYSIWYG. With LaTeX one takes a good text editor, writes the text and enriches the text with markup. This markup tells LaTeX about the logical meaning of certain elements of the text, similar to the way HTML does.
+
+## What is {{ site.latex }} and how does it work?
+
+Unlike common word processors such as Microsoft Word or LibreOffice, LaTeX {{ site.latex }} usually does not provide WYSIWYG. With LaTeX one takes a good text editor, writes the text and enriches the text with markup. This markup tells LaTeX about the logical meaning of certain elements of the text, similar to the way HTML does.
 
 Take for example a `<h2>` headline indicating a new section in an HTML-document. LaTeX also has a command for this, here one would use the `\section` command.
 
