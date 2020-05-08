@@ -3,7 +3,7 @@ title: What is LaTeX and how does it work?
 ---
 
 
-zz this is L<span style="font-variant: small-caps; color:red">a</span>TeX
+zz this is L<span style="font-variant: small-caps; vertical-align:text-top;color:red">a</span>TeX
 
 Unlike common word processors such as Microsoft Word or LibreOffice, LaTeX usually does not provide WYSIWYG. With LaTeX one takes a good text editor, writes the text and enriches the text with markup. This markup tells LaTeX about the logical meaning of certain elements of the text, similar to the way HTML does.
 
