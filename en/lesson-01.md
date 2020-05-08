@@ -1,8 +1,11 @@
 ---
-title: What is LaTeX {% include latex.html %} and how does it work?
+title: What is LaTeX {{ include latex.html }} and how does it work?
 ---
 
 # What is {% include latex.html %} and how does it work?
+
+
+# What is {{ include latex.html }} and how does it work?
 
 zz this is LaTeX  this is {% include latex.html %}.
 
