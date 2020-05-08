@@ -19,5 +19,5 @@ macros to edit his books. Leslie Lamport, who works for Microsoft nowadays, also
 developed a set of macros which simplify the use of TeX and called this macro
 set "LaTeX".
 
-Today {{ site.latex} is the most common way to interact with {{ site.tex }}. Another alternative is
+Today {{ site.latex }} is the most common way to interact with {{ site.tex }}. Another alternative is
 [ConTeXt](https://www.contextgarden.net/).
