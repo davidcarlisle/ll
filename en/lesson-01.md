@@ -1,5 +1,5 @@
 ---
-title: "What is LaTeX" | append:  site.latex  | append: " and how does it work?"
+title: "What is LaTeX and how does it work?"
 ---
 
 
