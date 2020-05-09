@@ -1,4 +1,4 @@
 ---
-title: Working with LaTeX  {{ site.latex }}
+title: Working with site.latex
 ---
 a

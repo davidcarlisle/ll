@@ -2,15 +2,8 @@
 layout: default
 ---
 
-{% if page.title == "What is LaTeX and how does it work?" %}
-  <h1>What is {{ site.latex }} and how does it work?</h1>
-{% else %}
-{% if page.title == "More on: What is LaTeX and how does it work?" %}
-  <h1>More on: What is {{ site.latex }} and how does it work?</h1>
-{% else %}
- <h1>{{ page.title | markdownify | remove: "<p>" | remove: "</p>" | replace: "\{\{ site.latex \}\}", site.latex }}</h1>
-{% endif %}
-{% endif %}
+ <h1>{{ page.title | markdownify | remove: "<p>" | remove: "</p>" | replace: "LaTeX", site.latex }}</h1>
+
 
 
 {{content}}
