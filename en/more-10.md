@@ -5,7 +5,7 @@ title: "More on: Math(s)"
 
 ## Further amsmath alignments
 
-In addition to the `align*` enviornment shown in teh main lesson,
+In addition to the `align*` enviornment shown in the main lesson,
 `amsmath` has several other display math constructs, notable `gather`
 for multi-line displays that do not need alignment,and `multline` for
 spiltting a larger single excpression over multiple lines, aligning the
@@ -58,7 +58,7 @@ $(x+\mathbf{y})(x-\mathbf{y})=x^{2}-{\mathbf{y}}^{2}$
 ```
 
 If you want to access bold symbols (as would be used by `\boldmath`)
-within an otherwise normal weith expression, then you can use teh
+within an otherwise normal weith expression, then you can use the
 commadn `\bm` from the `bm` package.
 
 ```latex
@@ -99,8 +99,8 @@ As will be seen in [Lesson 14](lesson-14) There are variant TeX
 engines that use OpenType fonts. By default these engines still use
 classic TeX math fonts but you may use the `unicode-math` package
 to use OpenType Math fonts. The details of this package are beyond
-this course and we refer you to the [package
-documentation)(https://texdoc.net/pkg/unicode-math)
+this course and we refer you to the
+[package documentation](https://texdoc.net/pkg/unicode-math)
 however we give a small example here.
 
 ```
