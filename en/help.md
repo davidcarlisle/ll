@@ -36,9 +36,9 @@ Whether or not the code block has been edited there are three basic ways that yo
 
    The resulting PDF document (or section of the error log) will be
    shown inline immediately below the example. A <button>Delete
-   Output</button> will be provided so that you may renove this output
+   Output</button> button will be provided so that you may remove this output
    (or you may leave it in place and continue the rest of the lesson
-   below.
+   below).
 
    Note that  **LaTeX Online** requires no login or signup of any sort
    so it is very convenient for small examples, but neither this site
