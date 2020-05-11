@@ -16,6 +16,7 @@ function llexamples() {
 	c.setAttribute("onclick",'copytoclipboard("pre' + i + '")');
 	p[i].parentNode.insertBefore(c, p[i]);
 	if(p[i].textContent.indexOf("\\documentclass") !== -1) {
+	    if(! document.location.href.match('/help')){
 	    //overleaf via multi file form 
 	    var olff = document.createElement("button");
 	    olff.innerText="OverLeaf form2test";
@@ -30,7 +31,8 @@ function llexamples() {
 	    var dn = document.createElement("button");
 	    dn.innerText="Download";
 	    dn.setAttribute("onclick",'downloadblob("pre' + i + '")');
-	    p[i].parentNode.insertBefore(dn, p[i].nextSibling);   
+		p[i].parentNode.insertBefore(dn, p[i].nextSibling);
+	    }
 	    // latexonline
 	    var r = document.createElement("button");
 	    r.innerText="LaTeX online";
