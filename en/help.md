@@ -42,25 +42,26 @@ Whether or not the code block has been edited there are three basic ways that yo
 
    Note that  **LaTeX Online** requires no login or signup of any sort
    so it is very convenient for small examples, but neither this site
-   more `latexonline.cc` site provide any mechanism to save your
-   document any changes that you make to the example are lost if you
+   nor `latexonline.cc` site provide any mechanism to save your
+   document. Any changes that you make to the example are lost if you
    move off the page.
 
-2. Use the **Overleaf* Service. The <button>Open in Overleaf</button>
-   Will submit the code to **Overleaf**.
+2. Use the **Overleaf** Service. The <button>Open in Overleaf</button>
+   button will submit the code to **Overleaf**.
 
    If you do not have an account, or the account details are not
-   already cached in your browser then you will be resirected to a
+   already cached in your browser, then you will be redirected to a
    login page where you may login or register with Overleaf. This is a
    free service but does require you to give some details and agree to
    terms and conditions.
 
-   If your Overleaf account is already cached in your browser a new
-   project will be opened with the code and you may edit it in
-   overleaf which will simultaneously run LaTeX on your code showing
+   If your Overleaf account is already cached in your browser, then
+   Overleaf will be opened in a new tab, with a new
+   project with the code and you may edit it in
+   Overleaf which will simultaneously run LaTeX on your code showing
    the resulting output or error log.
 
-   The editing fetaures in overleaf are far more extensive than on thsi
+   The editing fetaures in Overleaf are far more extensive than on this
    site, and you may save your project in your overleaf account and
    return to it later.
 
