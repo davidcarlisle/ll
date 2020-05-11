@@ -1,3 +1,8 @@
+<style>
+button[onclick=downloadblob] {display:none}
+button[onclick=overleafzip] {display:none}
+button[onclick=overleafform2] {display:none}
+</style>
 # Using the learnlatex.org site
 
 ## Navigating the site
