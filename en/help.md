@@ -1,3 +1,7 @@
+---
+title: "Using the learnlatex.org site"
+---
+
 # Using the learnlatex.org site
 
 ## Navigating the site
