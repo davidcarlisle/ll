@@ -2,8 +2,6 @@
 title: "Using the learnlatex.org site"
 ---
 
-# Using the learnlatex.org site
-
 ## Navigating the site
 
 The course consists of 15 core lessons reached from the table of contents on the [home page](/).
