@@ -12,12 +12,12 @@ typesetting industry switched from traditional typesetting with lead to
 photobased typesetting. Donald Knuth did not like the quality of the print and
 therefore decided to implement his own typesetting system.
 
-In May 1977 the development of {{ site.tex }} started.
+In May 1977 the development of TeX started.
 
-The original {{ site.tex }} was rather complicated to use, even Donald Knuth used various
+The original TeX was rather complicated to use, even Donald Knuth used various
 macros to edit his books. Leslie Lamport, who works for Microsoft nowadays, also
 developed a set of macros which simplify the use of TeX and called this macro
 set “LaTeX”.
 
-Today {{ site.latex }} is the most common way to interact with {{ site.tex }}. Another alternative is
+Today LaTeX is the most common way to interact with TeX. Another alternative is
 [ConTeXt](https://www.contextgarden.net/).
