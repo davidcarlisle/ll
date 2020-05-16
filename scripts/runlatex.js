@@ -100,7 +100,7 @@ function latexonlinecc(nd) {
        alert('here');
    };
     alert(navigator.userAgent);
-    if(navigator.userAgent.matches('Mobile.*Gecko') {
+    if(navigator.userAgent.match('Mobile.*Gecko')) {
 	document.location.href="https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText) + ((p.innerText.indexOf("fontspec") !== -1) ? "&command=xelatex" : "");
     } else {
 	ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText) + ((p.innerText.indexOf("fontspec") !== -1) ? "&command=xelatex" : ""));
