@@ -101,7 +101,7 @@ function latexonlinecc(nd) {
    };
     if(navigator.userAgent.match('Mobile.*Gecko')) {
     alert('MOBILE' + navigator.userAgent);
-	document.location.href="data:,Sorry Firefox mobile is not currently supported);
+	ifr.setAttribute("src","data:,Sorry Firefox mobile is not currently supported");
     } else {
 	ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText) + ((p.innerText.indexOf("fontspec") !== -1) ? "&command=xelatex" : ""));
     }
