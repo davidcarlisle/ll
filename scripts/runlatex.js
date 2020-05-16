@@ -98,7 +98,8 @@ function latexonlinecc(nd) {
     // alert(encodeURIComponent(fconts));
    ifr.onload=function(){
        alert('here');
-    };
+   };
+    alert(navigator.userAgent);
     ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText) + ((p.innerText.indexOf("fontspec") !== -1) ? "&command=xelatex" : ""));
 }
 
