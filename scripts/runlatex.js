@@ -100,7 +100,11 @@ function latexonlinecc(nd) {
        alert('here');
    };
     alert(navigator.userAgent);
-    ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText) + ((p.innerText.indexOf("fontspec") !== -1) ? "&command=xelatex" : ""));
+    if(navigator.userAgent.matches('Mobile.*Gecko') {
+	document.location.href="https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText) + ((p.innerText.indexOf("fontspec") !== -1) ? "&command=xelatex" : "");
+    } else {
+	ifr.setAttribute("src","https://latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + p.innerText) + ((p.innerText.indexOf("fontspec") !== -1) ? "&command=xelatex" : ""));
+    }
 }
 
 const commentregex = / %.*/;
