@@ -2,6 +2,11 @@
 title: About
 ---
 
+It's easier to add information than it is to decide that information is no
+longer needed: questions are therefore not deleted but are "retired" (removed
+from the main index) over time.
+
+
 The learnlatex.org site is aimed at providing a basic introduction to LaTeX. To
 make the material accessible, it is broken down into a series of small lessons.
 The demonstration files provided are also hosted on-line to let new users get
