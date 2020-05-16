@@ -7,6 +7,17 @@ longer needed: questions are therefore not deleted but are "retired" (removed
 from the main index) over time.
 
 
+- We use the following HTML entities for special characters:
+  - `&hellip;` Ellipsis &hellip;
+  - `&mdash;` Em-dash &mdash;
+  - `&ndash;` En-dash &ndash;
+  - `&nbsp;` Non-breaking space [&nbsp;]
+
+- quotes you can use ASCII double and single quotes, which will be changed
+  to typographical quotes: `"abc" 'abc' abc's` produces "abc" 'abc' abc's.
+
+
+
 The learnlatex.org site is aimed at providing a basic introduction to LaTeX. To
 make the material accessible, it is broken down into a series of small lessons.
 The demonstration files provided are also hosted on-line to let new users get
