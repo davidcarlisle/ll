@@ -133,6 +133,7 @@ something arbitrary. This can be done with
 type        | description
 ---         | :--
 `@{decl}` | replace the space between two columns with `decl`
+`&verbar;`| testing
 `!{decl}` | add `decl` in the centre of the existing space
 
 In case you're wondering now, by default each column has a horizontal space of
