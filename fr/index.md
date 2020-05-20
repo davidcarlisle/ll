@@ -44,9 +44,9 @@ erreurs, vous voudrez peut-être vérifier si votre système LaTeX est à jour.
 <li><a href="{{page.path | replace: '.md',''}}">
 <b>
 {% if page.path contains "fr/lesson-0" %}
-&#160;{{page.path | replace: '.md','' | replace: 'lesson-0',''}}
+&#160;{{page.path | replace: '.md','' | replace: 'fr/lesson-0',''}}
 {% else %}
-{{page.path | replace: '.md','' | replace: 'lesson-',''}}
+{{page.path | replace: '.md','' | replace: 'fr/lesson-',''}}
 {% endif %}
 </b>
 &mdash; {{page.title}}</a></li>

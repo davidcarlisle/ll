@@ -1,5 +1,5 @@
 ---
-titre: "Citations et références"
+title: "Citations et références"
 ---
 <script>
 comprend = {
