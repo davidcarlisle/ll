@@ -101,7 +101,8 @@ function openinoverleaf(nd) {
     var inp=document.createElement("input");
     inp.setAttribute("type","text");
     inp.setAttribute("name","encoded_snip[]");
-    inp.value =encodeURIComponent(t);
+    // the lax engine comment syntax confuses overleaf
+    inp.value =encodeURIComponent(t.replace(engineregex,''));
     fm.appendChild(inp);
     var inp2=document.createElement("input");
     inp2.setAttribute("type","text");
