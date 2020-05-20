@@ -13,13 +13,13 @@ exemple pour l'essayer! Nous vous suggérons d'essayer les options en ligne mêm
 avoir installé LaTeX localement; c'est une bonne occasion de voir comment les différents
 les options fonctionnent.
 ```latex
-\ documentclass {article}
+\documentclass {article}
 
-\ begin {document}
+\begin {document}
 Salut le monde!
 
 Ceci est un premier document.
-\ end {document}
+\end {document}
 ```
 
 Enregistrez le fichier et composez-le dans un document PDF; si vous utilisez un LaTeX local
@@ -59,33 +59,33 @@ et ont parfois des arguments entre accolades
 (ou parfois des arguments facultatifs entre crochets).
 Ensuite, vous obtenez un PDF de sortie en disant à LaTeX de composer votre fichier.
 
-Chaque document LaTeX a un `\ begin {document}` et un correspondant
-`\ end {document}`.
+Chaque document LaTeX a un `\begin{document}` et un correspondant
+`\end{document}`.
 Entre ces deux se trouve le * corps du document *, où va votre contenu.
 Ici, le corps a deux paragraphes (dans LaTeX vous séparez les paragraphes
 avec une ligne vierge).
-Avant `\ begin {document}` est le * préambule du document *,
+Avant `\begin{document}` est le * préambule du document *,
 qui a du code pour configurer la mise en page du document.
 
-LaTeX a d'autres paires `\ begin {...}` et `\ end {...}`; ceux-ci sont
+LaTeX a d'autres paires `\begin {...}` et `\end {...}`; ceux-ci sont
 appelés * environnements *.
-Vous devez les faire correspondre, de sorte que pour chaque `\ begin {x}` il y ait un `\ end {x}`.
+Vous devez les faire correspondre, de sorte que pour chaque `\begin {x}` il y ait un `\end {x}`.
 Vous devez également les imbriquer, de sorte que si vous avez
-`\ begin {x} ... \ begin {y}` alors vous devez avoir
-`\ end {y} ... \ end {x}`.
+`\begin {x} ... \begin {y}` alors vous devez avoir
+`\end {y} ... \end {x}`.
 
 Nous pouvons ajouter des commentaires à un fichier LaTeX en les commençant par `%`; utilisons
 que pour montrer la structure:
 ```latex
-\ documentclass [a4paper, 12pt] {article}% La classe de document avec des options
+\documentclass [a4paper, 12pt] {article}% La classe de document avec des options
 % Un commentaire dans le préambule
-\ begin {document}
+\begin {document}
 % Ceci est un commentaire
 C'est simple
-document \ footnote {avec une note de bas de page}.
+document \footnote {avec une note de bas de page}.
 
 Ceci est un nouveau paragraphe.
-\ end {document}
+\end {document}
 ```
 
 Vous pouvez voir ci-dessus que nous avons deux paragraphes: notez l'utilisation d'une ligne vierge
@@ -97,8 +97,8 @@ particulièrement utile lorsque nous commençons à créer des références croi
 
 ## Caractères spéciaux
 
-Vous avez probablement remarqué que `` \ ``, `{` et `}` ont une signification particulière pour LaTeX.
-Un `` \ '' démarre une instruction pour LaTeX: une 'commande'. Les personnages accolades
+Vous avez probablement remarqué que `\ `, `{` et `}` ont une signification particulière pour LaTeX.
+Un `\ ` démarre une instruction pour LaTeX: une 'commande'. Les personnages accolades
  `{` et `}` sont utilisés pour afficher les arguments obligatoires: les informations qui commandent
  exiger.
 
