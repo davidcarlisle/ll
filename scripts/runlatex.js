@@ -30,7 +30,7 @@ function llexamples() {
 	    var f=document.createElement("span");
 	    // action=\"https://httpbin.org/post\"
 	    // action=\"https://www.overleaf.com/docs\"
-	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\"  action=\"https://httpbin.org/post\" method=\"post\" target=\"_blank\"></form>";
+	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\"  action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"></form>";
 	    p[i].parentNode.insertBefore(f, p[i].nextSibling);
 	}
     }
