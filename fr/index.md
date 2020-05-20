@@ -54,6 +54,24 @@ erreurs, vous voudrez peut-être vérifier si votre système LaTeX est à jour.
 {%- endfor -%}
 </ul>
 
+### Leçons supplémentaires spécifiques à learnlatex.org/fr
+
+<ul>
+{%- for page in site.pages | sort: 'path' -%}
+{%- if page.path  contains "fr/language" %}
+<li><a href="{{page.path | replace: '.md','' | replace: 'fr/', ''}}">
+<b>
+{% if page.path contains "en/language-0" %}
+&#160;{{page.path | replace: '.md','' | replace: 'fr/language-0',''}}
+{% else %}
+{{page.path | replace: '.md','' | replace: 'fr/language-',''}}
+{% endif %}
+</b>
+&mdash; {{page.title}}</a></li>
+{%- endif -%}
+{%- endfor -%}
+</ul>
+
 
 ## Aller plus loin
 
