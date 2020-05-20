@@ -59,7 +59,7 @@ Let's have some font fun: \textbf{bold}, \textit{italic}, \textrm{roman},
 \end{document}
 ```
 
-For running text, we use commands that alter the font set up: the commands
+For running text, we use commands that alter the font setup; the commands
 here are for example `\bfseries` and `\itshape`. Because these don't 'stop',
 we need to place them in a _group_ if we want to prevent them applying to
 the whole document. LaTeX environments are groups, as are table cells,
@@ -80,10 +80,10 @@ So it this: the effect is not limited to a paragraph.
 \end{document}
 ```
 
-We can set font size in a similar way: these commands all work on an ongoing
+We can set font size in a similar way; these commands all work on an ongoing
 basis. The sizes we set are relative: `\huge`, `\large`, `\normalsize`,
 `\small` and `\footnotesize` are common. It's important to finish a paragraph
-_before_ changing the font size back: see how we add an explicit `\par`
+_before_ changing the font size back; see how we add an explicit `\par`
 (paragraph) here.
 
 ```latex

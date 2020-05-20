@@ -15,17 +15,24 @@
   </script>
  </head>
   <body>
-    <p>aaa</p>
+    <p>aaa zz this is L<span style="font-variant: small-caps; vertical-align:.5ex;margin-left:-.25em;margin-right:-.05em;">a</span>T<span style="text-transform:uppercase; vertical-align:-.5ex;margin-left:-.1em;">e</span>X</p>
     <pre>
       123
       456
     </pre>
     <p>bbb</p>
     <pre>
-   \documentclass{article}
+% !TEX lualatex
+\documentclass{article}
       \begin{document}
 aaa
 
+$\pi \approx \directlua{
+print('##: ' .. math.pi)
+tex.print{math.pi}
+}$
+
+xetex \meaning\XeTeXrevision
 bbb
 
 \section{zzz}

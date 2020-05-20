@@ -39,13 +39,13 @@ effect. (The standard hyphenation rules are US English; use the `UKenglish`
 option to tell `babel` if you are in UK.)
 
 The `babel` package does a lot more than hyphenation, depending on the language
-involved: we've given [some more details](more-06) if you need them.
+involved; we've given [some more details](more-06) if you need them.
 
 ## Changing design
 
 It's useful to be able to adjust some aspects of design independent of the
 document class. The most obvious one are the page margins. We've just used
-the `geometry` package in the example above, but lets now have an example
+the `geometry` package in the example above, but let's now have an example
 specifically about margins.
 
 ```latex
