@@ -36,7 +36,7 @@
       <h1>	{% if lang =="en" %}
 	<a href="{{ "/" | absolute_url }}">{{ site.title }}</a>
 	{%- else -%}
-	<a href="{{ "/" | absolute_url }}/{{ lang }}">{{ site.title }}</a>
+	<a href="{{ "/" | absolute_url }}{{ lang }}">{{ site.title }}</a>
 	{% endif %}
       </h1>
       {% endif %}
