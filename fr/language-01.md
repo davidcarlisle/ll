@@ -1,5 +1,5 @@
 ---
-title: "Language-specifcs for English"
+title: "babel Français"
 ---
 
 ## hyphenation
@@ -11,8 +11,8 @@ using US English patterns, but you can switch to UK ones using `babel`.
 
 ```latex
 \documentclass{article}
-\usepackage[UKenglish]{babel}
+\usepackage[french]{babel}
 \begin{document}
-Some text
+Du texte
 \end{document}
 ```
