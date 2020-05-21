@@ -1,5 +1,4 @@
 ---
-title: "---
 title: "Formatage: polices et espacement"
 ---
 <script>
