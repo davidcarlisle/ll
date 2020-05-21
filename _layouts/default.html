@@ -22,7 +22,7 @@
       <select id = "myList" onchange="switchlang(this);">
 	{% assign lang = "en" %}
 	{%- for l in site.langs -%}
-	{% assign lx = l prepend "/" %}
+	{% assign lx = l | prepend: "/" %}
 	{%- if page.path contains lx -%}
 	{% assign lang = l %}
                <option selected value = "{{l}}">{{lx}}</option>
