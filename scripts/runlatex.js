@@ -37,7 +37,7 @@ function llexamples() {
 }
 
 const commentregex = / %.*/;
-const engineregex = /% *!TEX.*((pdf|xe|lua)latex)/i;
+const engineregex = /% *!TEX.*((pdf|xe|lua|up)latex)/i;
 
 function latexonlinecc(nd) {
     var fconts="";
