@@ -1,3 +1,9 @@
+---
+langs:
+   - en
+   - fr
+   - de
+---
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
@@ -12,8 +18,21 @@
     <script src="../scripts/jszip.js"></script>
     <script src="../scripts/runlatex.js"></script>
     {% endif %}
+<script>
+  function switchlang(e) {
+      window.location.href=window.location.href.replace(/\/(en|fr|de)\//,'/'+e.value+'/');
+  }
+</script>
   </head>
   <body>
+    <div style="float:right;">
+      <select id = "myList" onchange="switchlang(this);">
+	{%- for l in page.langs -%}
+               <option value = "{{l}}">{{l}}</option>
+	      {%- endfor -%}
+    </select>
+    <div>
+    
     <div class="container-lg px-3 my-5 markdown-body">
       {% if site.title and site.title != page.title %}
       <h1>
