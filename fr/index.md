@@ -24,13 +24,13 @@ façon si vous ne le faites pas.
 ## Fonctionnement des exemples
 
 Pour soutenir votre apprentissage, le site comprend de nombreux exemples. Dans
-[Leçon 2] (fr / leçon-02) nous parlerons de la façon dont vous utilisez LaTeX à la fois en ligne et avec
+[Leçon 2](fr/lesson-02) nous parlerons de la façon dont vous utilisez LaTeX à la fois en ligne et avec
 une installation locale sur votre propre PC. Pour vous lancer, nous avons mis en place
 nos exemples pour que vous puissiez les modifier et les exécuter _dans la page_ sur laquelle ils se trouvent. nous
-les ont également liés à [Overleaf] (https://www.overleaf.com), l'un des
+les ont également liés à [Overleaf](https://www.overleaf.com), l'un des
 les sites d'édition en ligne LaTeX les plus populaires. Mais ne vous inquiétez pas, vous pouvez aussi
 utilisez les exemples sur votre propre machine. Vous pouvez en savoir plus sur l'utilisation du
-exemples [dans l'aide du site] (en / help).
+exemples [dans l'aide du site](fr/help).
 
 Nos exemples sont basés sur l'utilisation d'une installation LaTeX à jour. Ils
 tous fonctionnent avec nos deux systèmes de démonstration en ligne, donc si vous devenez étrange
@@ -78,6 +78,6 @@ erreurs, vous voudrez peut-être vérifier si votre système LaTeX est à jour.
 Les leçons ciblées ici ne visent pas à couvrir tout ce dont vous aurez besoin pour
 connaître LaTeX; nous voulons vous donner assez pour commencer et pour _comprendre_
 exemples et conseils ailleurs. Nous couvrons obtenir plus d'informations dans [le dernier
-leçon] (fr / leçon-15), mais il vaut la peine de dire maintenant que l'accès à un livre
+leçon](fr/lesson-15), mais il vaut la peine de dire maintenant que l'accès à un livre
 à propos de LaTeX est toujours le meilleur moyen d'apprendre les détails. Nous en avons donné
 recommandations de la dernière leçon.

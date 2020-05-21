@@ -4,7 +4,7 @@ title: "Votre premier document LaTeX"
 
 Notre premier document LaTeX va être très simple: l'idée est de vous montrer
 à quoi ressemble un document et comment le composer avec succès. C'est aussi votre
-première chance de [voir comment utiliser les exemples ici sur `learnlatex.org`] (aide).
+première chance de [voir comment utiliser les exemples ici sur `learnlatex.org`](help).
 
 Si vous utilisez une installation LaTeX locale, créez dans votre éditeur un nouveau fichier
 appelé `first.tex`, et copiez-collez le texte ci-dessous ou saisissez-le.
@@ -77,7 +77,7 @@ Vous devez également les imbriquer, de sorte que si vous avez
 Nous pouvons ajouter des commentaires à un fichier LaTeX en les commençant par `%`; utilisons
 que pour montrer la structure:
 ```latex
-\documentclass [a4paper, 12pt] {article}% La classe de document avec des options
+\documentclass [a4paper, 12pt]{article}% La classe de document avec des options
 % Un commentaire dans le préambule
 \begin {document}
 % Ceci est un commentaire
@@ -106,7 +106,7 @@ Il y a quelques autres caractères avec une signification spéciale; nous venons
 est un espace «dur», par exemple. Presque tous ces personnages sont _très_
 rare dans le texte normal, c'est pourquoi ils ont été choisis pour des significations spéciales.
 Si vous devez montrer l'un de ces caractères spéciaux, nous avons mis
-[informations dans la page des détails] (more-03).
+[informations dans la page des détails](more-03).
 
 ## Exercice
 

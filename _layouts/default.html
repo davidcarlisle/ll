@@ -18,7 +18,7 @@
       {% if site.title and site.title != page.title %}
       <h1>
 	<a href="{{ "/" | absolute_url }}">{{ site.title }}</a>
-	zzz{% if page.path contains "fr/" %}
+	{% if page.path contains "fr/" %}
 	<a href="{{ "/" | absolute_url }}/fr">{{ site.title }}/fr</a>
 	{% endif %}
       </h1>

@@ -68,7 +68,7 @@ certaines entrées sont dans un jeu supplémentaire d'accolades; ce sont là pou
 changement de cas appliqué.
 
 La modification manuelle des fichiers `.bib` est assez fastidieuse, donc la plupart des gens utilisent un
-éditeur. [JabRef] (https://www.jabref.org) est largement utilisé et multiplateforme,
+éditeur. [JabRef](https://www.jabref.org) est largement utilisé et multiplateforme,
 mais il existe plusieurs autres interfaces disponibles. Ici, nous allons utiliser le court
 exemple de base de données ci-dessus pour nos démonstrations; nous l'avons «sauvegardé» sous
 `learnlatex.bib`.
@@ -140,22 +140,22 @@ les bases de données dans le préambule mais l'imprimer dans le corps du docume
 quelques nouvelles commandes pour cela.
 
 ```latex
-\ documentclass {article}
-\ usepackage [style = authoryear] {biblatex}
-\ addbibresource {learnlatex.bib}% fichier d'informations de référence
+\documentclass {article}
+\usepackage [style = authoryear]{biblatex}
+\addbibresource {learnlatex.bib}% fichier d'informations de référence
 
-\ begin {document}
-La vitrine mathématique vient de \ cite {Graham1995}.
+\begin {document}
+La vitrine mathématique vient de \cite {Graham1995}.
 
-Quelques citations plus complexes: \ citeauthor {Thomas2008},
-\ citetitle {Graham1995}, \ parencite {Thomas2008}.
+Quelques citations plus complexes: \citeauthor {Thomas2008},
+\citetitle {Graham1995}, \parencite {Thomas2008}.
 
-\ printbibliography
-\ end {document}
+\printbibliography
+\end {document}
 ```
 
-Notez que `\ addbibresource` _requiert_ le nom de fichier complet de la base de données, tandis que
-nous avons omis le `.bib` pour` \ bibliography` avec `natbib`. Notez également que
+Notez que `\addbibresource` _requiert_ le nom de fichier complet de la base de données, tandis que
+nous avons omis le `.bib` pour` \bibliography` avec `natbib`. Notez également que
 `biblatex` utilise des noms plutôt longs pour ses commandes de citation, mais ce sont
 tous assez faciles à deviner.
 

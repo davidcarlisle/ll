@@ -16,14 +16,14 @@ des programmes et des fichiers «en coulisses» qui sont nécessaires pour faire
 la plupart du temps, vous ne «lancez» pas cela directement.
 
 Il existe deux principaux systèmes TeX disponibles aujourd'hui,
-[MiKTeX] (https://www.miktex.org) et [TeX Live] (https://tug.org/texlive). Tous les deux
+[MiKTeX](https://www.miktex.org) et [TeX Live](https://tug.org/texlive). Tous les deux
 sont disponibles pour Windows, macOS et Linux.
 MiKTeX possède une solide expérience sous Windows;
-sur macOS, TeX Live est intégré dans une plus grande collection appelée [MacTeX] (http://www.tug.org/mactex/).
+sur macOS, TeX Live est intégré dans une plus grande collection appelée [MacTeX](http://www.tug.org/mactex/).
 Il y a [avantages pour chacun
-système] (https://tex.stackexchange.com/questions/20036), et vous voudrez peut-être
+système](https://tex.stackexchange.com/questions/20036), et vous voudrez peut-être
 regardez [quelques conseils supplémentaires de LaTeX
-Projet] (https://www.latex-project.org/get/).
+Projet](https://www.latex-project.org/get/).
 
 Comme TeX Live est disponible sur toutes les plateformes courantes, et comme il a des performances
 avantages, nous recommandons que si vous ne savez pas quel système installer, vous
@@ -40,9 +40,9 @@ directement dans votre PDF, ou inversement.
 
 Il y a beaucoup plus d’éditeurs LaTeX que ce que nous pouvons espérer énumérer ici: il
 [liste complète sur
-StackExchange] (https://tex.stackexchange.com/questions/339/latex-editors-ides).
-Un éditeur de base, [TeXworks] (https://tug.org/texworks), est inclus dans TeX Live
-et MiKTeX sur Windows et Linux, et [TeXShop] (https://pages.uoregon.edu/koch/texshop/)
+StackExchange](https://tex.stackexchange.com/questions/339/latex-editors-ides).
+Un éditeur de base, [TeXworks](https://tug.org/texworks), est inclus dans TeX Live
+et MiKTeX sur Windows et Linux, et [TeXShop](https://pages.uoregon.edu/koch/texshop/)
 est inclus dans MacTeX.
 
 Quel que soit l'éditeur que vous choisissez, nous vous recommandons de l'installer _après_ votre système TeX,
@@ -60,13 +60,13 @@ tandis que d'autres sont plus axés sur vous permettant de voir le code LaTeX et
 sont donc plus proches d'avoir une installation locale.
 
 Il existe des systèmes qui vous permettent d'exécuter LaTeX sans avoir besoin d'être connecté, et nous
-utilisez l'un d'entre eux, [LaTeX.Online] (https://latexonline.cc), pour vous permettre
+utilisez l'un d'entre eux, [LaTeX.Online](https://latexonline.cc), pour vous permettre
 éditez et testez les exemples que nous donnons. Pour un travail plus complet, le meilleur en ligne
 les systèmes nécessitent que vous vous inscriviez avant de les utiliser. Cela vous permet de sauvegarder votre
 fonctionne mais aide également les sites à ne pas être surchargés. Nous avons mis en place des liens pour que vous
-pouvez modifier nos exemples à l'aide de [Overleaf] (https://www.overleaf.com), l'un des
+pouvez modifier nos exemples à l'aide de [Overleaf](https://www.overleaf.com), l'un des
 principaux sites Web pour LaTeX en ligne. Il y en a bien sûr d'autres:
-[Papeeria] (https://papeeria.com/) en est un exemple.
+[Papeeria](https://papeeria.com/) en est un exemple.
 
 ## Exercice
 
@@ -76,6 +76,6 @@ pour choisir un éditeur aussi: nous vous recommandons de commencer avec TeXwork
 (voir ci-dessus), puis en regardant d'autres éditeurs plus tard une fois que vous saurez comment _vous_
 fonctionne mieux avec LaTeX.
 
-Vous pourrez [exécuter tous nos autres exercices dans votre navigateur] (aide), mais nous voulons
+Vous pourrez [exécuter tous nos autres exercices dans votre navigateur](help), mais nous voulons
 pour vous aider à travailler avec de vrais documents, c'est donc le moment idéal pour
 vous prêt.

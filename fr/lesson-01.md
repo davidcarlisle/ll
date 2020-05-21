@@ -32,7 +32,7 @@ plus d'une fois. Nous vous dirons quand c'est le cas.
 
 ## {{site.latex}} ou pdf {{site.latex}} ou ...
 
-Dans la [leçon suivante] (leçon 02), nous allons voir que LaTeX n'est pas un
+Dans la [leçon suivante](lesson 02), nous allons voir que LaTeX n'est pas un
 programme unique. Pour garder les choses simples, nous allons nous concentrer sur un
 Programme LaTeX, pdfLaTeX, pour créer vos PDF. Nous examinerons quelques autres
 et pourquoi vous voudrez peut-être les utiliser plus tard dans le cours.
