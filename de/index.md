@@ -54,7 +54,7 @@ errors, you might want to check if your LaTeX system is up-to-date.
 {%- endfor -%}
 </ul>
 
-### Additional lessons specific to learnlatex.org/en
+### Additional lessons specific to learnlatex.org/de
 
 <ul>
 {%- for page in site.pages | sort: 'path' -%}
