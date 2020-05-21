@@ -29,11 +29,11 @@
                <option value = "{{l}}">{{l}}</option>
 	{%- endif -%}
 	      {%- endfor -%}
-    </select>
+      </select>
+      [[ {{lang }}]]
     </div>
       {% if site.title and site.title != page.title %}
-      <h1>
-	{% if lang =="en" %}
+      <h1>	{% if lang =="en" %}
 	<a href="{{ "/" | absolute_url }}">{{ site.title }}</a>
 	{%- else -%}
 	<a href="{{ "/" | absolute_url }}/{{ lang }}">{{ site.title }}</a>
