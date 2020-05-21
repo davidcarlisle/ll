@@ -1,5 +1,5 @@
 ---
-title: "Accessing documentation and getting help" (German)
+title: "Accessing documentation and getting help (German)"
 ---
 
 

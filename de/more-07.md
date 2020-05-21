@@ -1,5 +1,5 @@
 ---
-title: "More on: Including graphics and making things 'float'" (German)
+title: "More on: Including graphics and making things 'float' (German)"
 ---
 
 ## Naming graphic files

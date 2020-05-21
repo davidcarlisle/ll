@@ -1,5 +1,5 @@
 ---
-title: "Your first LaTeX document" (German)
+title: "Your first LaTeX document (German)"
 ---
 
 Our first LaTeX document is going to be very simple: the idea is to show you

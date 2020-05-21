@@ -1,5 +1,5 @@
 ---
-title: "More on: Logical structure" (German)
+title: "More on: Logical structure (German)"
 ---
 
 ## Document titles

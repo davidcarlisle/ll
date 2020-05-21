@@ -1,5 +1,5 @@
 ---
-title: "More on: Extending LaTeX using packages" (German)
+title: "More on: Extending LaTeX using packages (German)"
 ---
 
 ## Loading multiple packages

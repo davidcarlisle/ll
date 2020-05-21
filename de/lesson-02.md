@@ -1,5 +1,5 @@
 ---
-title: "Working with LaTeX" (German)
+title: "Working with LaTeX (German)"
 ---
 
 Unlike many computer programs, LaTeX is not a single application containing

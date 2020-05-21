@@ -1,5 +1,5 @@
 ---
-title: "More on: Using document classes to influence design" (German)
+title: "More on: Using document classes to influence design (German)"
 ---
 
 ## Journal-specific classes

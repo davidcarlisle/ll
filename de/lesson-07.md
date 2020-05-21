@@ -1,5 +1,5 @@
 ---
-title: "Including graphics and making things 'float'" (German)
+title: "Including graphics and making things 'float' (German)"
 ---
 
 ## Including graphics

@@ -1,5 +1,5 @@
 ---
-title: "More on: Tables" (German)
+title: "More on: Tables (German)"
 ---
 
 

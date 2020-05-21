@@ -1,5 +1,5 @@
 ---
-title: "More on: Citations and references" (German)
+title: "More on: Citations and references (German)"
 ---
 
 ## Dealing with non-English sorting

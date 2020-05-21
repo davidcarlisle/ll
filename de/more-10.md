@@ -1,5 +1,5 @@
 ---
-title: "More on: Mathematics" (German)
+title: "More on: Mathematics (German)"
 ---
 
 

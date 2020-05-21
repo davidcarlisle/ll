@@ -1,5 +1,5 @@
 ---
-title: "More on: Structuring longer documents" (German)
+title: "More on: Structuring longer documents (German)"
 ---
 
 ## Making an index

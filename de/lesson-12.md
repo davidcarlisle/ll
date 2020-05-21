@@ -1,5 +1,5 @@
 ---
-title: "Citations and references" (German)
+title: "Citations and references (German)"
 ---
 <script>
 preincludes = {

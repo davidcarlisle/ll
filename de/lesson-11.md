@@ -1,5 +1,5 @@
 ---
-title: "Formatting: fonts and spacing" (German)
+title: "Formatting: fonts and spacing (German)"
 ---
 
 ## Paragraph spacing

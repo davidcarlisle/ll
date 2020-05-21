@@ -1,5 +1,5 @@
 ---
-title: "Extending LaTeX using packages" (German)
+title: "Extending LaTeX using packages (German)"
 ---
 
 After having declared a class, in the preamble you can modify functionality in

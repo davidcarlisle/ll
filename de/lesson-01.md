@@ -1,5 +1,5 @@
 ---
-title: "What is LaTeX and how does it work?" (German)
+title: "What is LaTeX and how does it work? (German)"
 ---
 
 Unlike common word processors such as Microsoft Word or LibreOffice, LaTeX

@@ -1,5 +1,5 @@
 ---
-title: "Tables" (German)
+title: "Tables (German)"
 ---
 
 

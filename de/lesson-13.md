@@ -1,5 +1,5 @@
 ---
-title: "Structuring longer documents" (German)
+title: "Structuring longer documents (German)"
 ---
 
 <script>

@@ -1,5 +1,5 @@
 ---
-title: "Selecting fonts and using Unicode engines" (German)
+title: "Selecting fonts and using Unicode engines (German)"
 ---
 
 When TeX and LaTeX first started being widely used they largely only handled European languages out of the box, although there was some capability for using other alphabets such as Greek and Russian.

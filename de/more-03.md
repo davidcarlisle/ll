@@ -1,5 +1,5 @@
 ---
-title: "More on: Your first LaTeX document" (German)
+title: "More on: Your first LaTeX document (German)"
 ---
 
 ## Running LaTeX

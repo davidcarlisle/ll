@@ -1,3 +1,3 @@
 ---
-title: "More on: Accessing documentation and getting help" (German)
+title: "More on: Accessing documentation and getting help (German)"
 ---

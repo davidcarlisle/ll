@@ -1,5 +1,5 @@
 ---
-title: "More on: Cross-referencing" (German)
+title: "More on: Cross-referencing (German)"
 ---
 
 ## Making cross-references into links

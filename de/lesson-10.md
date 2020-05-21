@@ -1,5 +1,5 @@
 ---
-title: "Mathematics" (German)
+title: "Mathematics (German)"
 ---
 
 ## Math mode

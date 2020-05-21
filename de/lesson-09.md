@@ -1,5 +1,5 @@
 ---
-title: "Cross-referencing" (German)
+title: "Cross-referencing (German)"
 ---
 
 ## The `\label` and `\ref` mechanism
