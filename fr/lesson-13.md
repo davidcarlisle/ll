@@ -1,5 +1,5 @@
 ---
-title: "Structuring longer documents"
+title: "Structurer des documents plus longs"
 ---
 
 <script>
