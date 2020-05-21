@@ -13,7 +13,7 @@
     <script>
  {% if site.title and site.title == page.title %}
   function switchlang(e) {
-      window.location.href={{ "/" | absolute_url }} + e.value;
+      window.location.href="{{ "/" | absolute_url }}" + e.value;
   }
       {% else %}
   function switchlang(e) {
