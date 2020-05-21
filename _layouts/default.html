@@ -8,8 +8,6 @@
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     {% if page.path contains "-" or page.path contains "help" %}
-    <script src="../scripts/FileSaver.js"></script>
-    <script src="../scripts/jszip.js"></script>
     <script src="../scripts/runlatex.js"></script>
     {% endif %}
 <script>
@@ -19,20 +17,26 @@
 </script>
   </head>
   <body>
-    
     <div class="container-lg px-3 my-5 markdown-body">
     <div style="float:right;">
       <select id = "myList" onchange="switchlang(this);">
+	{% assign lang = "en" %}
 	{%- for l in site.langs -%}
+	{%- if page.path contains l prepend "/" -%}
+	{% assign lang = l %}
+               <option selected value = "{{l}}">{{l}}</option>
+	{%- else -%}
                <option value = "{{l}}">{{l}}</option>
+	{%- endif -%}
 	      {%- endfor -%}
     </select>
     </div>
       {% if site.title and site.title != page.title %}
       <h1>
-	<a href="{{ "/" | absolute_url }}">{{ site.title }}</a>
-	{% if page.path contains "fr/" %}
-	<a href="{{ "/" | absolute_url }}/fr">{{ site.title }}/fr</a>
+	{% if lang =="en" %}
+	<a href="{{ "/" | absolute_url }}">{{ site.title }}/fr</a>
+	{%- else -%}
+	<a href="{{ "/" | absolute_url }}/lang}">{{ site.title }}/fr</a>
 	{% endif %}
       </h1>
       {% endif %}

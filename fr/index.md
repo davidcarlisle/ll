@@ -1,5 +1,5 @@
 ---
-titre: learnlatex.org
+title: learnlatex.org
 ---
 
 ## Bienvenue sur learnlatex.org!
