@@ -100,7 +100,7 @@ Today will I depart. \\*
 
 
 
-
+<!-- {% raw %} -->
 ```latex
 \documentclass{article}
 \usepackage{tikz}
@@ -133,3 +133,4 @@ x
 
 \end{tikzpicture}
 ```
+<!-- {% endraw %} -->
