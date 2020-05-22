@@ -4,10 +4,11 @@
 <li><a href="{{page.path | replace: '.md',''}}">
 <b style="display:inline-block;width:1.5em;text-align:right;font-variant-numeric: tabular-nums;">
 {% if page.path contains "-0" %}
-{{page.path | replace: '.md','' | replace: "-0" | prepend: include.prefix ,''}}
+{% assign pp = "-0" | prepend: include.prefix %}
 {% else %}
-{{page.path | replace: '.md','' | replace: "-" | prepend: include.prefix ,''}}
+{% assign pp = "-" | prepend: include.prefix %}
 {% endif %}
+{{page.path | replace: '.md','' | replace: pp ,''}}
 </b>
 &mdash; {{page.title}}</a></li>
 {%- endif -%}
