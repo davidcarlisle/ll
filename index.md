@@ -38,11 +38,11 @@ errors, you might want to check if your LaTeX system is up-to-date.
 
 ## The lessons
 
-{% include toc.html  prefix="en/lesson" }}
+{% include toc.html  prefix="en/lesson" %}
 
 ### Additional lessons specific to learnlatex.org/en
 
-{% include toc.html  prefix="en/language" }}
+{% include toc.html  prefix="en/language" %}
 
 
 ## Going further

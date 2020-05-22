@@ -1,4 +1,4 @@
-<ul>
+<ul class="zz">
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains prefix %}
 <li><a href="{{page.path | replace: '.md',''}}">
