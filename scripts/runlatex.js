@@ -30,14 +30,14 @@ function llexamples() {
 	    var f=document.createElement("span");
 	    // action=\"https://httpbin.org/post\"
 	    // action=\"https://www.overleaf.com/docs\"
-	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\"  action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"></form>";
+	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"></form>";
 	    p[i].parentNode.insertBefore(f, p[i].nextSibling);
 	}
     }
 }
 
 const commentregex = / %.*/;
-const engineregex = /% *!TEX.*((pdf|xe|lua|up)latex)/i;
+const engineregex = /% *!TEX.*((pdf|xe|lua|u?p)latex)/i;
 
 function latexonlinecc(nd) {
     var fconts="";
@@ -132,6 +132,19 @@ function openinoverleaf(nd) {
 	      inp3.setAttribute("value","pdflatex");
     var eng=t.match(engineregex);
     if(eng != null) {
+	if(eng[1].toLowerCase() == "platex" || eng[1].toLowerCase() == "uplatex") {
+	    var inp4=document.createElement("input");
+	      inp4.setAttribute("type","text");
+	      inp4.setAttribute("name","encoded_snip[]");
+	      inp4.value =encodeURIComponent("$latex = 'platex';\n$bibtex = 'pbibtex';\n$dvipdf = 'dvipdfmx %O -o %D %S';");
+	      fm.appendChild(inp4);
+	    var inp5=document.createElement("input");
+	    inp5.setAttribute("type","text");
+	    inp5.setAttribute("name","snip_name[]");
+	    inp5.value ="latexmkrc";
+	    fm.appendChild(inp5);
+	    eng[1]="latex_dvipdf";
+	}
 	inp3.setAttribute("value",eng[1].toLowerCase());
     } else if(t.indexOf("fontspec") !== -1) {
 	inp3.setAttribute("value","xelatex");
