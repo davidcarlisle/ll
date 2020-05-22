@@ -1,11 +1,11 @@
-<ul class="zz2">
+<ul class="zz3">
 {% assign l = include.prefix | slice: 0, 3 %}
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains include.prefix %}
 {% if l == "en/" %}
 <li><a href="{{page.path | replace: '.md',''}}">
 {% else %}
-<li><a href="{{page.path | replace: '.md','' | reomove_first: l }}">
+<li><a href="{{page.path | replace: '.md','' | remove_first: l }}">
 {% endif %}
 <b style="display:inline-block;width:1.5em;text-align:right;font-variant-numeric: tabular-nums;">
 {% if page.path contains "-0" %}
