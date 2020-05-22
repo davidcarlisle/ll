@@ -53,3 +53,8 @@ examples and advice elsewhere. We cover getting more information in [the last
 lesson](en/lesson-15), but it's worth saying now that getting access to a book
 about LaTeX is still the  best way to learn the detail. We've given some
 recommendations in the last lesson.
+
+Finally we offer a gallery of small examples showing a ` range of
+different subject areas and different LaTeX packages.
+
+{% include toc.html prefix="en/extra" %}
