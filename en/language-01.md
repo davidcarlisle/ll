@@ -19,7 +19,7 @@ Some text
 
 
 ```latex
-%! TEX platex
+% !TEX platex
 \documentclass{jsarticle}
 
 \bibliographystyle{jplain}
@@ -35,9 +35,9 @@ Some text
 \end{abstract}
 
 \section{導入}
-こんにちは世界！\cite{確率統計}
+こんにちは世界！%\cite{確率統計}
 
-\bibliography{refs}
+%\bibliography{refs}
 \end{document}
 ```
 
