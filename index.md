@@ -42,7 +42,7 @@ errors, you might want to check if your LaTeX system is up-to-date.
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains "en/lesson" %}
 <li><a href="{{page.path | replace: '.md',''}}">
-<b style="display:inline-block;width:1em;text-align:right">
+<b style="display:inline-block;width:1em;text-align:right;font-variant-numeric: tabular-nums;">
 {% if page.path contains "en/lesson-0" %}
 {{page.path | replace: '.md','' | replace: 'en/lesson-0',''}}
 {% else %}
@@ -60,7 +60,7 @@ errors, you might want to check if your LaTeX system is up-to-date.
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains "en/language" %}
 <li><a href="{{page.path | replace: '.md',''}}">
-<b style="display:inline-block;width:1em;text-align:right">
+<b style="display:inline-block;width:1em;text-align:right;font-variant-numeric: tabular-nums;">
 {% if page.path contains "en/language-0" %}
 {{page.path | replace: '.md','' | replace: 'en/language-0',''}}
 {% else %}
