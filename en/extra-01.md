@@ -28,7 +28,7 @@ The examples are taken from the package documentation unless otherwise noted.
 ### [`forest`](https://texdoc.net/pkg/forest)
 ```latex
 \documentclass{article}
-\usepackage{mhchem}
+\usepackage{forest}
 \begin{document}
 \begin{forest}
 [VP
@@ -45,7 +45,7 @@ The examples are taken from the package documentation unless otherwise noted.
 
 ## Chess
 
-### [`xskak`](https://texdoc.net/pkg/xskak)
+### [`xskak`](https://texdoc.net/pkg/xskak)% not 2017
 ```latex
 \documentclass{article}
 \usepackage{xskak}
@@ -96,7 +96,7 @@ Today will I depart. \\*
 ```
 
 ### Drawing
-### [`tikz`](https://texdoc.net/pkg/tikz)
+### [`tikz`](https://texdoc.net/pkg/tikz)% not 2017
 
 
 
