@@ -42,21 +42,8 @@ errors, you might want to check if your LaTeX system is up-to-date.
 
 ### Additional lessons specific to learnlatex.org/en
 
-<ul>
-{%- for page in site.pages | sort: 'path' -%}
-{%- if page.path  contains "en/language" %}
-<li><a href="{{page.path | replace: '.md',''}}">
-<b style="display:inline-block;width:1.5em;text-align:right;font-variant-numeric: tabular-nums;">
-{% if page.path contains "en/language-0" %}
-{{page.path | replace: '.md','' | replace: 'en/language-0',''}}
-{% else %}
-{{page.path | replace: '.md','' | replace: 'en/language-',''}}
-{% endif %}
-</b>
-&mdash; {{page.title}}</a></li>
-{%- endif -%}
-{%- endfor -%}
-</ul>
+{% include toc.html  prefix="en/language" }}
+
 
 ## Going further
 
