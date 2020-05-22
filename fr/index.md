@@ -38,6 +38,9 @@ erreurs, vous voudrez peut-être vérifier si votre système LaTeX est à jour.
 
 ## Les cours
 
+{% include toc.html  prefix="fr/lesson" %}
+
+
 <ul>
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains "fr/lesson" %}
@@ -55,6 +58,8 @@ erreurs, vous voudrez peut-être vérifier si votre système LaTeX est à jour.
 </ul>
 
 ### Leçons supplémentaires spécifiques à learnlatex.org/fr
+
+{% include toc.html  prefix="fr/language" %}
 
 <ul>
 {%- for page in site.pages | sort: 'path' -%}
@@ -81,3 +86,4 @@ exemples et conseils ailleurs. Nous couvrons obtenir plus d'informations dans [l
 leçon](lesson-15), mais il vaut la peine de dire maintenant que l'accès à un livre
 à propos de LaTeX est toujours le meilleur moyen d'apprendre les détails. Nous en avons donné
 recommandations de la dernière leçon.
+
