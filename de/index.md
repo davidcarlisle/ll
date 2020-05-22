@@ -38,39 +38,12 @@ errors, you might want to check if your LaTeX system is up-to-date.
 
 ## The lessons
 
-<ul>
-{%- for page in site.pages | sort: 'path' -%}
-{%- if page.path  contains "de/lesson" %}
-<li><a href="{{page.path | replace: '.md','' | replace: 'de/',''}}">
-<b>
-{% if page.path contains "de/lesson-0" %}
-&#160;{{page.path | replace: '.md','' | replace: 'de/lesson-0',''}}
-{% else %}
-{{page.path | replace: '.md','' | replace: 'de/lesson-',''}}
-{% endif %}
-</b>
-&mdash; {{page.title}}</a></li>
-{%- endif -%}
-{%- endfor -%}
-</ul>
+{% include toc.html  prefix="de/lesson" %}
+
 
 ### Additional lessons specific to learnlatex.org/de
 
-<ul>
-{%- for page in site.pages | sort: 'path' -%}
-{%- if page.path  contains "de/language" %}
-<li><a href="{{page.path | replace: '.md','' | replace: 'de/', ''}}">
-<b>
-{% if page.path contains "de/language-0" %}
-&#160;{{page.path | replace: '.md','' | replace: 'de/language-0',''}}
-{% else %}
-{{page.path | replace: '.md','' | replace: 'de/language-',''}}
-{% endif %}
-</b>
-&mdash; {{page.title}}</a></li>
-{%- endif -%}
-{%- endfor -%}
-</ul>
+{% include toc.html  prefix="de/language" %}
 
 ## Going further
 

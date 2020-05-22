@@ -1,4 +1,4 @@
-<ul class="zz3">
+<ul>
 {% assign l = include.prefix | slice: 0, 3 %}
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains include.prefix %}

@@ -41,41 +41,9 @@ erreurs, vous voudrez peut-être vérifier si votre système LaTeX est à jour.
 {% include toc.html  prefix="fr/lesson" %}
 
 
-<ul>
-{%- for page in site.pages | sort: 'path' -%}
-{%- if page.path  contains "fr/lesson" %}
-<li><a href="{{page.path | replace: '.md','' | replace: 'fr/',''}}">
-<b>
-{% if page.path contains "fr/lesson-0" %}
-&#160;{{page.path | replace: '.md','' | replace: 'fr/lesson-0',''}}
-{% else %}
-{{page.path | replace: '.md','' | replace: 'fr/lesson-',''}}
-{% endif %}
-</b>
-&mdash; {{page.title}}</a></li>
-{%- endif -%}
-{%- endfor -%}
-</ul>
-
 ### Leçons supplémentaires spécifiques à learnlatex.org/fr
 
 {% include toc.html  prefix="fr/language" %}
-
-<ul>
-{%- for page in site.pages | sort: 'path' -%}
-{%- if page.path  contains "fr/language" %}
-<li><a href="{{page.path | replace: '.md','' | replace: 'fr/', ''}}">
-<b>
-{% if page.path contains "fr/language-0" %}
-&#160;{{page.path | replace: '.md','' | replace: 'fr/language-0',''}}
-{% else %}
-{{page.path | replace: '.md','' | replace: 'fr/language-',''}}
-{% endif %}
-</b>
-&mdash; {{page.title}}</a></li>
-{%- endif -%}
-{%- endfor -%}
-</ul>
 
 
 ## Aller plus loin
