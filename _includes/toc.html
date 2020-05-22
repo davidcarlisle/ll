@@ -1,0 +1,16 @@
+<ul>
+{%- for page in site.pages | sort: 'path' -%}
+{%- if page.path  contains prefix %}
+<li><a href="{{page.path | replace: '.md',''}}">
+<b style="display:inline-block;width:1.5em;text-align:right;font-variant-numeric: tabular-nums;">
+{% if page.path contains "-0" %}
+{{page.path | replace: '.md','' | replace: "-0" | prepend: prefix ,''}}
+{% else %}
+{{page.path | replace: '.md','' | replace: "-" | prepend: prefix ,''}}
+{% endif %}
+</b>
+&mdash; {{page.title}}</a></li>
+{%- endif -%}
+{%- endfor -%}
+</ul>
+
