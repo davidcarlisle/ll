@@ -93,64 +93,45 @@ function latexonlinecc(nd) {
 
 
 // https://www.overleaf.com/devs
+function addinput(f,n,v) {
+    var inp=document.createElement("input");
+    inp.setAttribute("type","text");
+    inp.setAttribute("name",n);
+    inp.value =encodeURIComponent(v);
+    f.appendChild(inp);
+}
+
 function openinoverleaf(nd) {
     var fm = document.getElementById('form-' + nd);
     fm.innerHTML="";
     var p = document.getElementById(nd);
     var t = p.innerText;
-    var inp=document.createElement("input");
-    inp.setAttribute("type","text");
-    inp.setAttribute("name","encoded_snip[]");
     // the lax engine comment syntax confuses overleaf
-    inp.value =encodeURIComponent(t.replace(engineregex,''));
-    fm.appendChild(inp);
-    var inp2=document.createElement("input");
-    inp2.setAttribute("type","text");
-    inp2.setAttribute("name","snip_name[]");
-    inp2.value ="document.tex";
-    fm.appendChild(inp2);
+    addinput(fm,"encoded_snip[]",t.replace(engineregex,''));
+    addinput(fm,"snip_name[]","document.tex");
     if(typeof(preincludes) == "object") {
-      if(typeof(preincludes[nd]) == "object") {
-	  var incl=preincludes[nd];
-	  for(prop in incl) {
-	      var inp=document.createElement("input");
-	      inp.setAttribute("type","text");
-	      inp.setAttribute("name","encoded_snip[]");
-	      inp.value =encodeURIComponent(document.getElementById(prop).innerText);
-	      fm.appendChild(inp);
-	      var inp2=document.createElement("input");
-	      inp2.setAttribute("type","text");
-	      inp2.setAttribute("name","snip_name[]");
-	      inp2.value =encodeURIComponent(incl[prop]);
-	      fm.appendChild(inp2);
-	      
-	  }
-      }
+	if(typeof(preincludes[nd]) == "object") {
+	    var incl=preincludes[nd];
+	    for(prop in incl) {
+		addinput(fm,"encoded_snip[]",document.getElementById(prop).innerText);
+		addinput(fm,"snip_name[]",incl[prop]);
+	    }
+	}
     }
-	      var inp3=document.createElement("input");
-	      inp3.setAttribute("name","engine");
-	      inp3.setAttribute("value","pdflatex");
+    var engv="pdflatex";
     var eng=t.match(engineregex);
     if(eng != null) {
-	if(eng[1].toLowerCase() == "platex" || eng[1].toLowerCase() == "uplatex") {
-	    var inp4=document.createElement("input");
-	      inp4.setAttribute("type","text");
-	      inp4.setAttribute("name","encoded_snip[]");
-	      inp4.value =encodeURIComponent("$latex = 'platex';\n$bibtex = 'pbibtex';\n$dvipdf = 'dvipdfmx %O -o %D %S';");
-	      fm.appendChild(inp4);
-	    var inp5=document.createElement("input");
-	    inp5.setAttribute("type","text");
-	    inp5.setAttribute("name","snip_name[]");
-	    inp5.value ="latexmkrc";
-	    fm.appendChild(inp5);
-	    eng[1]="latex_dvipdf";
+	engv=eng[1].toLowerCase();
+	if(engv == "platex" || engv == "uplatex") {
+	    addinput(fm,"encoded_snip[]","$latex = '" + engv + "';\n$bibtex = 'pbibtex';\n$dvipdf = 'dvipdfmx %O -o %D %S';");
+	    addinput(fm,"snip_name[]","latexmkrc");
+	    engv="latex_dvipdf";
 	}
-	inp3.setAttribute("value",eng[1].toLowerCase());
     } else if(t.indexOf("fontspec") !== -1) {
-	inp3.setAttribute("value","xelatex");
+	engv="xelatex";
     }
-    	      fm.appendChild(inp3);
-     fm.submit();
+    addinput(fm,"engine",engv);
+    fm.submit();
 }
 
 
