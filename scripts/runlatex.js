@@ -59,8 +59,8 @@ function latexonlinecc(nd) {
     var t = p.innerText;
     if(t.indexOf("biblatex") !== -1) {
 	//	fconts=fconts + "\n\\RequirePackage[backend=bibtex]{biblatex}\n";
-	t=t.replace(/usepackage\{biblatex/,'usepackage[]\{biblatex');
-	t=t.replace(/\]\{biblatex/,',backend=bibtex]\{biblatex');
+//	t=t.replace(/usepackage\{biblatex/,'usepackage[]\{biblatex');
+//	t=t.replace(/\]\{biblatex/,',backend=bibtex]\{biblatex');
     }
     var b = document.getElementById('lo-' + nd);
     var ifr= document.getElementById(nd + "ifr");
@@ -87,7 +87,7 @@ function latexonlinecc(nd) {
     } else {
 	t = "\\RequirePackage[utf8]{inputenc}\n" + t;
     }
-    ifr.setAttribute("src","https://texlive2020.latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + t.replace(engineregex,'')) + cmd);
+    ifr.setAttribute("src","https://texlive2020.latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + t.replace(engineregex,'')) + cmd + "&bibtex-cmd=biber");
 }
 
 
