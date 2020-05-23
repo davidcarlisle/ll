@@ -96,7 +96,7 @@ Today will I depart. \\*
 \end{document}
 ```
 
-### Drawing
+## Drawing
 <!-- not 2017 -->
 ### [`tikz`](https://texdoc.net/pkg/tikz)
 
