@@ -13,6 +13,8 @@ and display.
 \documentclass{article}
 \begin{document}
 A sentence with inline mathematics: $y = mx + c$.
+A second sentence with inline mathematics: $5^{2}=3^{2}+4^{2}$.
+
 
 A second paragraph containing display math.
 \[
@@ -35,6 +37,10 @@ As you can see above, inline math mode is marked using a pair of dollar
 symbols (`$...$`). It is also possible to use the notation `\( ... \)`.
 Simple expressions are entered without any special markup, and you'll see
 that the math is spaced out nicely and has letters in italic.
+
+Inline math mode restricts vertical size of the expression so that as
+far as possible the formula does not disturb the linespacing of the
+paragraph.
 
 Note that _all_ mathematics should be marked up as math, even if it is
 a single character  use `... $2$ ...`   not `... 2 ...` otherwise, for
