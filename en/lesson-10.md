@@ -187,8 +187,8 @@ be used to denote a product of variables. Use `\mathit` to make a word italic.
 The `\math..` font commands use fonts specified for math
 use. Sometimes you need to embed a word that is part of the outer
 sentence structure and needs the current text font, for that you can
-use `\text{...}` (`amsmath` package)or specific font styles such as
-`\textrm{..}`.
+use `\text{...}` (which is provided by the `amsmath` package) or
+specific font styles such as `\textrm{..}`.
 
 ```latex
 \documentclass{article}
