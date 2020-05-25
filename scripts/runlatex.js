@@ -18,13 +18,13 @@ function llexamples() {
 	if(p[i].textContent.indexOf("\\documentclass") !== -1) {
 	    // latexonline
 	    var r = document.createElement("button");
-	    r.innerText="LaTeX online";
+	    r.innerText="LaTeX.Online";
 	    r.setAttribute("onclick",'latexonlinecc("pre' + i + '")');
 	    r.setAttribute("id","lo-pre" + i);
 	    p[i].parentNode.insertBefore(r, p[i].nextSibling);
 	    // overleaf
 	    var o = document.createElement("button");
-	    o.innerText="Open in OverLeaf";
+	    o.innerText="Open in Overleaf";
 	    o.setAttribute("onclick",'openinoverleaf("pre' + i + '")');
 	    p[i].parentNode.insertBefore(o, p[i].nextSibling);
 	    var f=document.createElement("span");
@@ -84,8 +84,6 @@ function latexonlinecc(nd) {
 	cmd="&command=" + eng[1].toLowerCase();
     } else if(t.indexOf("fontspec") !== -1) {
 	cmd="&command=xelatex";
-    } else {
-	t = "\\RequirePackage[utf8]{inputenc}\n" + t;
     }
     ifr.setAttribute("src","https://texlive2020.latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + t.replace(engineregex,'')) + cmd);
 }
