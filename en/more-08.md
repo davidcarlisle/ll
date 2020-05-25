@@ -16,7 +16,7 @@ other preamble-tokens `>`, `<`, `@`, `!`, and `|`.
 ### Styling a column
 
 Since `>` and `<` can be used to put things before and after the cell contents
-of the respective column, you can use these to add macros which affect the looks
+of a column, you can use these to add commands which affect the look
 of a column. For instance, if you want to italicize the first column and put a
 colon after it, you can do the following:
 
@@ -68,7 +68,7 @@ it can be used to change a single cell's alignment as shown below.
 
 ### Manipulating the space between columns
 
-Usually LaTeX pads each column by some space on both ends to give a balanced
+Usually LaTeX pads each column by some space on both sides to give a balanced
 look and separate them. This space is defined with the length `\tabcolsep`. Due
 to the fact that each column is padded on both sides you get one `\tabcolsep` on
 either end of the table, and `2\tabcolsep` between two columns &ndash; one from
@@ -116,7 +116,7 @@ between the columns you specify as an argument:
 horizontal space.)
 
 The `!` preamble token does something pretty similar. The difference is, that it
-_adds_ its argument to the space in the center between two columns.
+_adds_ its argument in center of the space between two columns.
 
 <!-- {% raw %} -->
 ```latex
@@ -146,7 +146,7 @@ Sometimes you have to use vertical rules.
 
 \begin{document}
 \begin{tabular}{l|ll}
-  Animal & Food  & Size   \\
+  Animal & Food  & Size   \\[2pt]
   dog    & meat  & medium \\
   horse  & hay   & large  \\
   frog   & flies & small  \\
@@ -160,13 +160,14 @@ adds the vertical rule between two columns leaving the padding as it is. There
 is a huge downside to this though; vertical rules don't work with the
 horizontal rules provided by `booktabs`. You can use the horizontal rules
 provided by LaTeX; those are `\hline` (corresponding to `\toprule`, `\midrule`, and
-`\bottomrule`) and `\cline` (which behaves like `\cmidrule`).
+`\bottomrule`) and `\cline` (which behaves like `\cmidrule`). As shown above, vertical rules
+will span any space specified in the optional argument to `\\`.
 
 ## Customizing `booktabs` rules
 
 All the `booktabs` rules and also `\addlinespace` support an optional argument
 in brackets with which you can specify the rule's thickness. In addition the
-trimming provided by `\cmidrule` can be customized by specifying a thickness in
+trimming provided by `\cmidrule` can be customized by specifying a length in
 braces after `r` or `l`.
 
 <!-- {% raw %} -->
@@ -204,7 +205,7 @@ A simple example with two aligned numeric columns would be:
 \midrule
 1        &   2.3456 \\
 1.2      &   34.2345 \\
--2.3      &   90.473 \\
+-2.3     &   90.473 \\
 40       &   5642.5 \\
 5.3      &   1.2e3 \\
 0.2      &    1e4 \\
@@ -329,7 +330,7 @@ A `tabular` forms an unbreakable box so it must be small enough to fit
 on one page, and is often placed in a floating `table` environment.
 
 Several packages provide variants with similar syntax that do allow
-page breaking. Here we show use of the `longtable` package.
+page breaking. Here we show the `longtable` package:
 
 ```
 \documentclass{article}
@@ -406,7 +407,7 @@ for full details, but we show a simple example here.
 The default line breaking settings assume relatively long lines to
 give some flexibility in choosing line breaks. The following example
 shows some possible approaches. The first table shows interword spacing
-stretched and TeX warning about Underfull lines. Using `\raggedright`
+stretched and TeX warns about Underfull lines. Using `\raggedright`
 usually avoids this problem but may leave some lines ‘too ragged’. The
 `\RaggedRight` command from the `ragged2e` package is a compromise;
 it allows some raggedness in the line lengths, but will also
