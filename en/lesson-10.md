@@ -66,7 +66,7 @@ Superscripts $a^{b}$ and subscripts $a_{b}$.
 braces, but that is not the official syntax and can go wrong; always use
 braces.)
 
-There are a _lot_ of specialist math mode symbol commands. Some of them are quite
+There are a _lot_ of specialist math mode commands. Some of them are quite
 easy, for example `\sin` and `\log` for sine and logarithm or `\theta` for the
 Greek letter.
 
@@ -98,8 +98,7 @@ environments (this produces inconsisitent spacing) use one of the
 multi-line display environments such as `align` from the `amsmath`
 package described later.
 
-It's
-particularly useful for integrations, for example:
+It's particularly useful for integrations, for example:
 
 ```latex
 \documentclass{article}
@@ -132,7 +131,7 @@ A paragraph about a larger equation
 
 The equation number is incremented automatically and may be a simple
 number as in this example or may be prefixed by section number, so
-(2.5) for the 5th equation in section 2. the details of the formatting
+(2.5) for the 5th equation in section 2. The details of the formatting
 are set up by the document class and not described here.
 
 
@@ -167,6 +166,34 @@ Notice that here we used `align*`, and the equation didn't come out numbered.
 Most math environments number the equations by default, and the starred variant
 (with a `*`) disables numbering.
 
+The package also has several other convenient environments, for
+example for matrices.
+
+```latex
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+AMS matrices.
+\[
+\begin{matrix}
+a & b & c \\
+d & e & f
+\end{matrix}
+\quad
+\begin{pmatrix}
+a & b & c \\
+d & e & f
+\end{pmatrix}
+\quad
+\begin{bmatrix}
+a & b & c \\
+d & e & f
+\end{bmatrix}
+\]
+\end{document}
+```
+
+
 ## Fonts in math mode
 
 Unlike normal text, font changes in math mode often convey very specific meaning.
@@ -176,7 +203,7 @@ here:
 - `\mathrm`: roman (upright)
 - `\mathit`: italic spaced as 'text'
 - `\mathbf`: boldface
-- `\mathsf`: sans erif
+- `\mathsf`: sans serif
 - `\mathtt`: monospaced (typewriter)
 - `\mathbb`: double-struck ('blackboard bold')
 
@@ -226,8 +253,8 @@ able to guess the names.
 Experiment with the font changing commands: what happens when you try to
 nest them?
 
-Displayed math is centered by default, try adding the `[fleqn]` (flush
+Displayed math is centered by default; try adding the `[fleqn]` (flush
 left equation) option to some of the above examples to see a different
 layout. Similarly equation numbers are usually on the
-right. Experiment with adding `[leqno]` (left equation numbers)
+right. Experiment with adding the `[leqno]` (left equation numbers)
 document class option.

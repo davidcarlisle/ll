@@ -78,8 +78,8 @@ d&=c
 \end{document}
 ```
 
-`aligned` takes a positional optional argument similar to `tabular`,
-this is often useful to align an inline math formula on its top row,
+`aligned` takes a positional optional argument similar to `tabular`.
+This is often useful to align an inline math formula on its top row;
 compare the items in the list in the following example.
 
 ```latex
@@ -115,16 +115,18 @@ letters or words in upright bold roman.
 
 $(x+y)(x-y)=x^{2}-y^{2}$
 
-{\boldmath $(x+y)(x-y)=x^{2}-y^{2}$}
+{\boldmath $(x+y)(x-y)=x^{2}-y^{2}$ $\pi r^2$}
 
 $(x+\mathbf{y})(x-\mathbf{y})=x^{2}-{\mathbf{y}}^{2}$
+$\mathbf{\pi} r^2$ % bad use of \mathbf
 \end{document}
 ```
 
 If you want to access bold symbols (as would be used by `\boldmath`)
 within an otherwise normal weight expression, then you can use the
 command `\bm` from the `bm` package. Note that `\bm` also works with
-symbols such as = and Greek letters.
+symbols such as = and Greek letters. (Note that `\mathbf` has no effect
+on `\pi` in teh example above.)
 
 ```latex
 \documentclass[a4paper]{article}
