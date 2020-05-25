@@ -141,8 +141,7 @@ are set up by the document class and not described here.
 Mathematical notation is very rich, and this means that the tools built
 into the LaTeX kernel can't cover everything. The `amsmath` package
 extends the core support to cover a lot more ideas.
-The [`amsmath` User
-Guide](http://texdoc.net/texmf-dist/doc/latex/amsmath/amsldoc.pdf)
+The [`amsmath` User Guide](http://texdoc.net/pkg/amsmath)
 contains many more examples than we can show in this lesson.
 
 
