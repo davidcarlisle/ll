@@ -36,7 +36,7 @@ Multline
 
 ### Columns in math alignments
 
-The AMS Math alignment environments are designed to take pairs of
+The `amsmath` alignment environments are designed to take pairs of
 columns with the first column of each pair aligned to the right and
 the second aligned to the left. This allows multiple equations to be
 shown, each aligned towards its relation symbol.
@@ -48,7 +48,7 @@ shown, each aligned towards its relation symbol.
 Aligned equations
 \begin{align*}
 a &= b+1   &  c &= d+2  &  e &= f+3   \\
-r &= s^{2} &  t&=u^{3}  &  v &= w^{4}
+r &= s^{2} &  t &=u^{3} &  v &= w^{4}
 \end{align*}
 
 \end{document}
@@ -173,7 +173,7 @@ this course and we refer you to the
 However, we give a small example here.
 
 ```
-% !TEX xelatex
+% !TEX lualatex
 \documentclass[a4paper]{article}
 \usepackage{unicode-math}
 \setmainfont{TeX Gyre Pagella}
@@ -185,6 +185,9 @@ One two three
 \[
 \log \alpha + \log \beta = \log(\alpha\beta)
 \]
+
+Unicode Math Alphanumerics
+\[A + \symfrak{A}+\symbf{A}+ \symcal{A} + \symscr{A}+ \symbb{A}\]
 
 \end{document}
 ```
