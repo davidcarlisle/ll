@@ -1,5 +1,5 @@
 ---
-title: "Mathematics1"
+title: "Mathematics"
 ---
 
 ## Math mode
@@ -33,8 +33,18 @@ really using LaTeX.
 
 As you can see above, inline math mode is marked using a pair of dollar
 symbols (`$...$`). It is also possible to use the notation `\( ... \)`.
-Simple text is entered without any special markup, and you'll see that it's
-spaced out nicely and has letters in italic; this is normal for mathematics.
+Simple expressions are entered without any special markup, and you'll see
+that the math is spaced out nicely and has letters in italic.
+
+Note that _all_ mathematics should be marked up as math, even if it is
+a single character  use `... $2$ ...`   not `... 2 ...` otherwise, for
+example, when you need a negative number and need math to get a minus
+sign the `... $-2$ ...` may use math digits which may not be the same
+font as the text digits (depending on the document class).
+Conversely
+beware of math mode constructs appearing in plain text copied from
+elsewhere such as  monetary values using `$` or filenames using` _` (which
+may be marked up as `\$` and `\_` respectively).
 
 We can easily add superscripts and subscripts; these are marked using `^` and
 `_`, respectively.
@@ -57,21 +67,33 @@ Greek letter.
 ```latex
 \documentclass{article}
 \begin{document}
-Some symbols: $y = 2 \sin \theta^{2}$.
+Some mathematics: $y = 2 \sin \theta^{2}$.
 \end{document}
 ```
 
 We cannot cover all the standard LaTeX math mode commands here, but there are
-many online resources listing the standard set. You can look up math mode
-symbols using the great
-[Detexify](https://personaljournal.ca/paulsutton/detexify) tool.
+many online resources listing the standard set. You can look up commands for math math mode symbols using the
+[Detexify](https://detexify.kirelabs.org/classify.html) tool.
+
 
 ## Display mathematics
 
-You can use exactly the same commands for display math mode as for inline
-work. Display math mode is set centered and is meant to be 'part of a paragraph'
-where the equation is larger. It's particularly useful for integrations, for
-example:
+You can use exactly the same commands for display math mode as for
+inline work. Display math mode is set centered by default and is meant
+to be 'part of a paragraph' where the equation is larger. Note that
+display math enviornments do not allow a paragraph to end within the
+mathematics, so you may not have blank lines within the source of the
+display.
+
+The paragraph should always be started _before_ the display so do not
+leave a blank line before the display math environment. If you need
+several lines of mathematics, do not use consecutive display math
+environments (this produces inconsisitent spacing) use one of the
+multi-line display environments such as `align` from the `amsmath`
+package described later.
+
+It's
+particularly useful for integrations, for example:
 
 ```latex
 \documentclass{article}
@@ -98,6 +120,11 @@ A paragraph about a larger equation
 \end{equation}
 \end{document}
 ```
+
+The equation number is incremented automatically and may be a simple
+number as in this example or may be prefixed by section number, so
+(2.5) for the 5th equation in section 2. the details of the formatting
+are set up by the document class and not described here.
 
 We've added one piece of manual spacing here: `\,` makes a thin space before the
 `dx`, which we need so it does not look like a product.
@@ -140,7 +167,7 @@ here:
 - `\mathrm`: roman (upright)
 - `\mathit`: italic spaced as 'text'
 - `\mathbf`: boldface
-- `\mathsf`: sanserif
+- `\mathsf`: sans erif
 - `\mathtt`: monospaced (typewriter)
 - `\mathbb`: double-struck ('blackboard bold')
 
@@ -154,7 +181,30 @@ The matrix $\mathbf{M}$.
 \end{document}
 ```
 
-If you need to make other symbols bold, [see the extra details](more-10).
+Note that the default math italic separates letters so that they may
+be used to denote a product of variables. Use `\mathit` to make a word italic.
+
+The `\math..` font commands use fonts specified for math
+use. Sometimes you need to embed a word that is part of the outer
+sentence structure and needs the current ftext font, for that you can
+use `\text{...}` (`amsmath` package)or specific font styles such as
+`\textrm{..}`.
+
+```latex
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+
+$\text{bad use } size  \neq \mathit{size} \neq \mathrm{size} $
+
+\textit{$\text{bad use } size \neq \mathit{size} \neq \mathrm{size} $}
+
+\end{document}
+```
+
+
+If you need to make other
+symbols bold, [see the extra details](more-10).
 
 ## Exercises
 
