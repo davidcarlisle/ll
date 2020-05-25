@@ -143,8 +143,7 @@ extends the core support to cover a lot more ideas.
 \begin{document}
 Solve the following recurrence for $ n,k\geq 0 $:
 \begin{align*}
-  Q_{n,0} &= 1
-  \quad Q_{0,k} = [k=0];  \\
+  Q_{n,0} &= 1   \quad Q_{0,k} = [k=0];  \\
   Q_{n,k} &= Q_{n-1,k}+Q_{n-1,k-1}+\binom{n}{k}, \quad\text{for $n$, $k>0$.}
 \end{align*}
 \end{document}
