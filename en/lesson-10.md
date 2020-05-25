@@ -108,6 +108,9 @@ A paragraph about a larger equation
 Notice here how sub-/superscript notation is used to set the limits on the
 integration.
 
+We've added one piece of manual spacing here: `\,` makes a thin space before the
+`dx`, which we need so it does not look like a product.
+
 You often want a numbered equation, which is created using the `equation`
 environment. Let's try the same example again:
 
@@ -126,8 +129,6 @@ number as in this example or may be prefixed by section number, so
 (2.5) for the 5th equation in section 2. the details of the formatting
 are set up by the document class and not described here.
 
-We've added one piece of manual spacing here: `\,` makes a thin space before the
-`dx`, which we need so it does not look like a product.
 
 ## The `amsmath` package
 
@@ -216,3 +217,9 @@ able to guess the names.
 
 Experiment with the font changing commands: what happens when you try to
 nest them?
+
+Displayed math is centered by default, try adding the `[fleqn]` (flush
+left equation) option to some of the above examples to see a different
+layout. Similarly equation numbers are usually on the
+right. Experiment with adding `[leqno]` (left equation numbers)
+document class option.
