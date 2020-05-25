@@ -80,7 +80,7 @@ many online resources listing the standard set. You can look up commands for mat
 
 You can use exactly the same commands for display math mode as for
 inline work. Display math mode is set centered by default and is meant
-for lareger equataions that are 'part of a paragraph'. Note that
+for larger equations that are 'part of a paragraph'. Note that
 display math environments do not allow a paragraph to end within the
 mathematics, so you may not have blank lines within the source of the
 display.
