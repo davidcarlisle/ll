@@ -1,8 +1,8 @@
 ---
-title: "Language-specifics for English"
+title: "Language-specifics for Japanese"
 ---
 
-## Japanese
+## platex
 
 ```latex
 % !TEX platex
