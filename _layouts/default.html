@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     {% if page.path contains "-" or page.path contains "help" %}
     <script src="../scripts/runlatex.js"></script>
-    <script>{% include_relative includes/buttons.js %}</script>
+    <script src="includes/buttons.js"></script>
     {% endif %}
     <script>
  {% if site.title and site.title == page.title %}
