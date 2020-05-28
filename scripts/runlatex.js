@@ -5,7 +5,7 @@ var buttons ={
     "edit":             "edit",
     "copy":             "copy",
     "Open in Overleaf": "Open in Overleaf",
-    "Latex.Online":     "Latex.Online",
+    "LaTeX.Online":     "LaTeX.Online",
     "Delete Output":    "Delete Output"
 }
 
