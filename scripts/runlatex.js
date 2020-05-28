@@ -17,7 +17,7 @@ function llexamples() {
 	p[i].setAttribute("id","pre" + i);
 	// edit
 	var b = document.createElement("button");
-	b.innerText="edit";
+	b.innerText=buttons["edit"];
 	b.setAttribute("onclick",'allowedit("pre' + i + '")');
 	p[i].parentNode.insertBefore(b, p[i]);
 	// copy
