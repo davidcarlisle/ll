@@ -1,5 +1,6 @@
 ---
 title: "Language-specifics for Japanese"
+next: "extra-01"
 ---
 
 ## platex
