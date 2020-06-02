@@ -178,14 +178,14 @@ function latexonhttp(nd) {
 	d.setAttribute("onclick",'deleteoutput("' + nd + '")');
 	p.parentNode.insertBefore(d, b.nextSibling);
     }
-    var cmd="";
+    var cmd="pdflatex";
     var eng=t.match(engineregex);
     if(eng != null) {
 	cmd=eng[1].toLowerCase();
     } else if(t.indexOf("fontspec") !== -1) {
 	cmd="xelatex";
     }
-alert(JSON.stringify(jsn);
+    alert(JSON.stringify(jsn));
 }
 
 
