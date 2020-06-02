@@ -89,6 +89,7 @@ function latexonlinecc(nd) {
 	ifr.setAttribute("width","100%");
 	ifr.setAttribute("height","500em");
 	ifr.setAttribute("id",nd + "ifr");
+	ifr.setAttribute("name",nd + "ifr");
 	p.parentNode.insertBefore(ifr, b.nextSibling);
 	d=document.createElement("button");
 	d.innerText=buttons["Delete Output"];
