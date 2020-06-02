@@ -203,7 +203,9 @@ function latexonhttp(nd) {
     fm.innerHTML="";
     addinput2(fm,"compiler",cmd);
     addinput2(fm,"resources",JSON.stringify(jsn));
-    fm.submit();
+    //fm.submit();
+    alert(fm.getattribute("target"));
+    alert(ifr.getAttribute(name));
 
 }
 
