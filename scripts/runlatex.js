@@ -26,6 +26,11 @@ function llexamples() {
 	c.setAttribute("onclick",'copytoclipboard("pre' + i + '")');
 	p[i].parentNode.insertBefore(c, p[i]);
 	if(p[i].textContent.indexOf("\\documentclass") !== -1) {
+	    // latexonhttp
+	    var r = document.createElement("button");
+	    r.innerText="LaTeX HTTP";
+	    r.setAttribute("onclick",'latexonhttp("pre' + i + '")');
+	    p[i].parentNode.insertBefore(r, p[i].nextSibling);
 	    // latexonline
 	    var r = document.createElement("button");
 	    r.innerText=buttons["LaTeX.Online"];
@@ -142,6 +147,49 @@ function openinoverleaf(nd) {
     fm.submit();
 }
 
+// https://github.com/YtoTech/latex-on-http
+
+function latexonhttp(nd) {
+    var jsn=[];
+    if(typeof(preincludes) == "object") {
+	if(typeof(preincludes[nd]) == "object") {
+	    var incl=preincludes[nd];
+	    for(prop in incl) {
+		jsn.push({path: incl[prop],
+			  content: document.getElementById(prop).innerText
+			 })
+	    }
+	}
+    }
+    var p = document.getElementById(nd);
+    var t = p.innerText;
+    jsn.push({main: true, content: t});
+    var b = document.getElementById('lo-' + nd);
+    var ifr= document.getElementById(nd + "ifr");
+    if(ifr == null) {
+	ifr=document.createElement("iframe");
+	ifr.setAttribute("width","100%");
+	ifr.setAttribute("height","500em");
+	ifr.setAttribute("id",nd + "ifr");
+	p.parentNode.insertBefore(ifr, b.nextSibling);
+	d=document.createElement("button");
+	d.innerText=buttons["Delete Output"];
+	d.setAttribute("id","del-" + nd);
+	d.setAttribute("onclick",'deleteoutput("' + nd + '")');
+	p.parentNode.insertBefore(d, b.nextSibling);
+    }
+    var cmd="";
+    var eng=t.match(engineregex);
+    if(eng != null) {
+	cmd="eng[1].toLowerCase();
+    } else if(t.indexOf("fontspec") !== -1) {
+	cmd="xelatex";
+    }
+alert(JSON.stringify(jsn);
+}
+
+
+//
 
 function copytoclipboard(nd){
     var p = document.getElementById(nd);
