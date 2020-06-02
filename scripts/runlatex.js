@@ -50,7 +50,7 @@ function llexamples() {
 	    var f2=document.createElement("span");
 	    // action=\"https://httpbin.org/post\"
 	    // action=\"https://latex.ytotech.com/builds/sync\"
-	    f2.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i + \" name=\"form2-pre" + i +"\" enctype=\"multipart/form-data\" action=\"https://latex.ytotech.com/builds/sync method=\"post\" target=\"" + i + "ifr\"></form>";
+	    f2.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i + "\" name=\"form2-pre" + i +"\" enctype=\"multipart/form-data\" action=\"https://latex.ytotech.com/builds/sync\" method=\"post\" target=\"" + i + "ifr\"></form>";
 	    p[i].parentNode.insertBefore(f2, p[i].nextSibling);
 	}
     }
