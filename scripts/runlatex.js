@@ -204,8 +204,8 @@ function latexonhttp(nd) {
     addinput2(fm,"compiler",cmd);
     addinput2(fm,"resources",JSON.stringify(jsn));
     //fm.submit();
-    alert(fm.getattribute("target"));
-    alert(ifr.getAttribute(name));
+    alert(fm.getAttribute("target"));
+    alert(ifr.getAttribute("name"));
 
 }
 
