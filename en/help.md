@@ -11,6 +11,10 @@ Each lesson has a link to one associated lesson on the same subject
 that goes into greater depth. It should be possible to work through
 all 15 lessons _without_  reading the additional lessons.
 
+At the end of the course there are one or more lessons specific to the
+language being used for the lessons, and finally a gallery of examples
+of packages demonstrating LaTeX use not covered by this course.
+
 ## Running the examples
 
 Each example consists of a complete small LaTeX document shown within
@@ -33,8 +37,8 @@ there is no TeX specific editing help as found in typical editing systems that y
 
 Whether or not the code block has been edited, there are three basic ways that you can run the example.
 
-1. Use the **LaTeX Online** service. The <button style="padding:0 1px;font-size:90%">LaTeX online</button> button
-   will submit the code to the [latexonline.cc](https://latexonline.cc/) service.
+1. Use the **LaTeX.Online** service. The <button style="padding:0 1px;font-size:90%">LaTeX.Online</button> button
+   will submit the code to the [LaTeX.Online](https://latexonline.cc/) service.
 
    The resulting PDF document (or section of the error log) will be
    shown inline immediately below the example. A <button style="padding:0 1px;font-size:90%">Delete
@@ -42,7 +46,7 @@ Whether or not the code block has been edited, there are three basic ways that y
    (or you may leave it in place and continue the rest of the lesson
    below).
 
-   Note that  **LaTeX Online** requires no login or signup of any sort
+   Note that  **LaTeX.Online** requires no login or signup of any sort
    so it is very convenient for small examples, but neither this site
    nor the `latexonline.cc` site provide any mechanism to save your
    document. Any changes that you make to the example are lost if you
@@ -55,7 +59,7 @@ Whether or not the code block has been edited, there are three basic ways that y
      view in your PDF reading app, or it may not work at all.
      The exact behaviour depends on the details of browser and mobile operating system
      settings.  You may prefer to use the **Overleaf** link in some cases.
-     
+
 
 2. Use the **Overleaf** Service. The <button style="padding:0 1px;font-size:90%">Open in Overleaf</button>
    button will submit the code to [Overleaf](https://www.overleaf.com/about).
@@ -86,26 +90,21 @@ Whether or not the code block has been edited, there are three basic ways that y
 
 ## Choosing the {{ site.tex }} engine
 
-When submitting projects to Overleaf or LaTeX Online, by default the
+When submitting projects to Overleaf or LaTeX.Online, by default the
 `pdflatex` engine will be used unless the example uses the `fontspec`
 package in which case `xelatex` is used.
 
-You can force the choice of `pdflatex`, `xelatex` or `lualatex` by using a comment of the form:
+You can force the choice of `pdflatex`, `xelatex`, `lualatex`, `platex` or `uplatex` by using a comment of the form:
 
 `% !TEX ` _any text_ `lualatex`
 
 where the white space at the start is optional and case is ignored as
-is _any text_ between the first and last word.
+is _any text_ between the first and last word. (_Currently platex and uplatex are only available on Overleaf, not on LaTeX.Online._)
 
 This allows the form `% !TEX program=pdflatex` used by some TeX editors
 but does not require the `program=` and is currently restricted to
-specifying just one of the three engines that are supported on both of
+specifying just one of the five engines that are supported on
 the online systems being used.
 
 You can see an example of a comment being used to specify LuaLaTeX in
 [some of the examples on this site](more-14).
-
-
-
-   
-

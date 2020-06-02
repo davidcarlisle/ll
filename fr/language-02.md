@@ -1,7 +1,5 @@
 ---
-title: "Style typographique français"
+title: "More language-specifics for French"
+next: "extra-01"
 ---
-
-## Document classes
-
-Something about available document classes with a more European style (koma perhaps or something specifically French
+Translation to be added _after_ English text completed.

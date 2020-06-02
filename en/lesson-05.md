@@ -59,7 +59,7 @@ The text goes Here
 ```
 
 See how ``\\`` is used to separate lines of the address; we'll look at line
-breaking [a bit later](lesson-09). Also see how the `letter` class creates  a
+breaking [a bit later](lesson-11). Also see how the `letter` class creates  a
 new environment for each letter and has specialised commands.
 
 The standard `article`, `report` and `book` classes take the options `10pt`,
@@ -72,7 +72,7 @@ The core classes are very stable, but that means they are also quite
 conservative in both design and the range of commands available. Over time, a
 number of more powerful classes have been written, that let you alter the design
 without having to do things manually (which we'll mention [a bit
-later](lesson-09)).
+later](lesson-11)).
 
 The American Mathematical Society provide variants of the standard
 classes (`amsart`, `amsbook`) with a more traditional design closer to
@@ -87,6 +87,14 @@ These extended classes have lots of customisation hooks, which we'll explore a
 bit in an exercise. You might wonder how we can know about the hooks they
 provide; we will cover that [in the last lesson](lesson-15), but you can always
 jump ahead!
+
+## Presentations
+
+The `slides` class was developed for making physical slides in the mid-1980s, so
+doesn't have any features for creating interactive PDF-based presentations.
+There are modern classes that do exactly that: they are somewhat specialist
+compared to general LaTeX documents, so we've [covered them in the additional
+information](more-05).
 
 ## Exercises
 
