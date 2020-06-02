@@ -181,7 +181,7 @@ function latexonhttp(nd) {
     var cmd="";
     var eng=t.match(engineregex);
     if(eng != null) {
-	cmd="eng[1].toLowerCase();
+	cmd=eng[1].toLowerCase();
     } else if(t.indexOf("fontspec") !== -1) {
 	cmd="xelatex";
     }
