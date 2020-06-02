@@ -47,6 +47,11 @@ function llexamples() {
 	    // action=\"https://www.overleaf.com/docs\"
 	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"></form>";
 	    p[i].parentNode.insertBefore(f, p[i].nextSibling);
+	    var f2=document.createElement("span");
+	    // action=\"https://httpbin.org/post\"
+	    // action=\"https://latex.ytotech.com/builds/sync\"
+	    f2.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i +"\" enctype=\"multipart/form-data\" action=\"https://latex.ytotech.com/builds/sync method=\"post\" target=\"" + nd + "ifr\"></form>";
+	    p[i].parentNode.insertBefore(f2, p[i].nextSibling);
 	}
     }
 }
@@ -111,6 +116,14 @@ function addinput(f,n,v) {
     inp.setAttribute("type","text");
     inp.setAttribute("name",n);
     inp.value =encodeURIComponent(v);
+    f.appendChild(inp);
+}
+
+function addinput2(f,n,v) {
+    var inp=document.createElement("input");
+    inp.setAttribute("type","text");
+    inp.setAttribute("name",n);
+    inp.value =v;
     f.appendChild(inp);
 }
 
@@ -185,7 +198,12 @@ function latexonhttp(nd) {
     } else if(t.indexOf("fontspec") !== -1) {
 	cmd="xelatex";
     }
-    alert(JSON.stringify(jsn));
+    var fm = document.getElementById('form2-' + nd);
+    fm.innerHTML="";
+    addinput2(fm,"compiler",cmd);
+    addinput2(fm,"resources",JSON.stringify(jsn));
+    fm.submit();
+
 }
 
 
