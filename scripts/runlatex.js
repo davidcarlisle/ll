@@ -29,7 +29,7 @@ function llexamples() {
 	    // latexonhttp
 	    var r = document.createElement("button");
 	    r.innerText="LaTeX HTTP";
-	    r.setAttribute("onclick",'latexonhttp("pre' + i + '")');
+	    r.setAttribute("onclick",'latexonhttpbutton("pre' + i + '")');
 	    p[i].parentNode.insertBefore(r, p[i].nextSibling);
 	    // latexonline
 	    var r = document.createElement("button");
@@ -60,44 +60,8 @@ const commentregex = / %.*/;
 const engineregex = /% *!TEX.*[^a-zA-Z]((pdf|xe|lua|u?p)latex)/i;
 
 function latexonlinecc(nd) {
-    var fconts="";
-    if(typeof(preincludes) == "object") {
-	if(typeof(preincludes[nd]) == "object") {
-	    fconts= "\n\\makeatletter\\def\\input@path{{latex.out/}}\\makeatother\n";
-	    var incl=preincludes[nd];
-	    for(prop in incl) {
-		fconts=fconts+"\n\\begin{filecontents}{" +
-		    incl[prop] +
-		    "}\n" +
-		    document.getElementById(prop).innerText +
-		    "\n\\end{filecontents}\n";
-	    }
-	}
-    }
     var p = document.getElementById(nd);
     var t = p.innerText;
-    if(t.indexOf("biblatex") !== -1) {
-	//	fconts=fconts + "\n\\RequirePackage[backend=bibtex]{biblatex}\n";
-	t=t.replace(/usepackage\{biblatex/,'usepackage[]\{biblatex');
-	t=t.replace(/\]\{biblatex/,',backend=bibtex]\{biblatex');
-    }
-    var b = document.getElementById('lo-' + nd);
-    var ifr= document.getElementById(nd + "ifr");
-    if(ifr == null) {
-	ifr=document.createElement("iframe");
-	ifr.setAttribute("width","100%");
-	ifr.setAttribute("height","500em");
-	ifr.setAttribute("id",nd + "ifr");
-	ifr.setAttribute("name",nd + "ifr");
-	p.parentNode.insertBefore(ifr, b.nextSibling);
-	d=document.createElement("button");
-	d.innerText=buttons["Delete Output"];
-	d.setAttribute("id","del-" + nd);
-	d.setAttribute("onclick",'deleteoutput("' + nd + '")');
-	p.parentNode.insertBefore(d, b.nextSibling);
-    }
-    // that looks to have all lines but still need to zap comments for some reason..
-    // alert(encodeURIComponent(fconts));
     var cmd="";
     var eng=t.match(engineregex);
     if(eng != null) {
@@ -105,7 +69,50 @@ function latexonlinecc(nd) {
     } else if(t.indexOf("fontspec") !== -1) {
 	cmd="&command=xelatex";
     }
-    ifr.setAttribute("src","https://texlive2020.latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + t.replace(engineregex,'')) + cmd);
+    // no platex on latexonlinecc
+    // checking User Agent isn't great but better than looping
+    if(window.navigator.userAgent.match(/Android.*Firefox/) ||
+       cmd == "&command=platex" ||
+       cmd == "&command=uplatex" ){ 
+	latexonhttp(nd);
+    } else {
+	var fconts="";
+	if(typeof(preincludes) == "object") {
+	    if(typeof(preincludes[nd]) == "object") {
+		fconts= "\n\\makeatletter\\def\\input@path{{latex.out/}}\\makeatother\n";
+		var incl=preincludes[nd];
+		for(prop in incl) {
+		    fconts=fconts+"\n\\begin{filecontents}{" +
+			incl[prop] +
+			"}\n" +
+			document.getElementById(prop).innerText +
+			"\n\\end{filecontents}\n";
+		}
+	    }
+	}
+	// no biber support currently
+	if(t.indexOf("biblatex") !== -1) {
+	    t=t.replace(/usepackage\{biblatex/,'usepackage[]\{biblatex');
+	    t=t.replace(/\]\{biblatex/,',backend=bibtex]\{biblatex');
+	}
+	var b = document.getElementById('lo-' + nd);
+	var ifr= document.getElementById(nd + "ifr");
+	if(ifr == null) {
+	    ifr=document.createElement("iframe");
+	    ifr.setAttribute("width","100%");
+	    ifr.setAttribute("height","500em");
+	    ifr.setAttribute("id",nd + "ifr");
+	    ifr.setAttribute("name",nd + "ifr");
+	    p.parentNode.insertBefore(ifr, b.nextSibling);
+	    d=document.createElement("button");
+	    d.innerText=buttons["Delete Output"];
+	    d.setAttribute("id","del-" + nd);
+	    d.setAttribute("onclick",'deleteoutput("' + nd + '")');
+	    p.parentNode.insertBefore(d, b.nextSibling);
+	}
+	// that looks to have all lines but still need to zap comments for some reason..
+	ifr.setAttribute("src","https://texlive2020.latexonline.cc/compile?text=" + encodeURIComponent(fconts.replace(commentregex,'') + t.replace(engineregex,'')) + cmd);
+    }
 }
 
 
@@ -119,13 +126,22 @@ function addinput(f,n,v) {
     f.appendChild(inp);
 }
 
-function addinput2(f,n,v) {
+function addinputnoenc(f,n,v) {
     var inp=document.createElement("input");
     inp.setAttribute("type","text");
     inp.setAttribute("name",n);
     inp.value =v;
     f.appendChild(inp);
 }
+
+function addinputnoenc(f,n,v) {
+    var inp=document.createElement("input");
+    inp.setAttribute("type","text");
+    inp.setAttribute("name",n);
+    inp.value =v;
+    f.appendChild(inp);
+}
+
 
 function openinoverleaf(nd) {
     var fm = document.getElementById('form-' + nd);
@@ -162,7 +178,7 @@ function openinoverleaf(nd) {
 
 // https://github.com/YtoTech/latex-on-http
 
-function latexonhttp(nd) {
+function latexonhttpbuton(nd) {
     var jsn=[];
     if(typeof(preincludes) == "object") {
 	if(typeof(preincludes[nd]) == "object") {
@@ -201,14 +217,63 @@ function latexonhttp(nd) {
     }
     var fm = document.getElementById('form2-' + nd);
     fm.innerHTML="";
-    addinput2(fm,"compiler",cmd);
-    addinput2(fm,"resources",JSON.stringify(jsn));
-      fm.submit();
+    addinputnoenc(fm,"compiler",cmd);
+    addinputnoenc(fm,"resources",JSON.stringify(jsn));
+    fm.submit();
 //    alert(fm.getAttribute("target"));
 //    alert(ifr.getAttribute("name"));
 
 }
 
+
+function latexonhttp(nd) {
+    var jsn=[];
+    if(typeof(preincludes) == "object") {
+	if(typeof(preincludes[nd]) == "object") {
+	    var incl=preincludes[nd];
+	    for(prop in incl) {
+		jsn.push({path: incl[prop],
+			  content: document.getElementById(prop).innerText
+			 })
+	    }
+	}
+    }
+    var p = document.getElementById(nd);
+    var t = p.innerText;
+    // no biber support currently
+    if(t.indexOf("biblatex") !== -1) {
+	t=t.replace(/usepackage\{biblatex/,'usepackage[]\{biblatex');
+	t=t.replace(/\]\{biblatex/,',backend=bibtex]\{biblatex');
+    }
+    jsn.push({main: true, content: t});
+    var b = document.getElementById('lo-' + nd);
+    var ifr= document.getElementById(nd + "ifr");
+    if(ifr == null) {
+	ifr=document.createElement("iframe");
+	ifr.setAttribute("width","100%");
+	ifr.setAttribute("height","500em");
+	ifr.setAttribute("id",nd + "ifr");
+	ifr.setAttribute("name",nd + "ifr");
+	p.parentNode.insertBefore(ifr, b.nextSibling);
+	d=document.createElement("button");
+	d.innerText=buttons["Delete Output"];
+	d.setAttribute("id","del-" + nd);
+	d.setAttribute("onclick",'deleteoutput("' + nd + '")');
+	p.parentNode.insertBefore(d, b.nextSibling);
+    }
+    var cmd="pdflatex";
+    var eng=t.match(engineregex);
+    if(eng != null) {
+	cmd=eng[1].toLowerCase();
+    } else if(t.indexOf("fontspec") !== -1) {
+	cmd="xelatex";
+    }
+    var fm = document.getElementById('form2-' + nd);
+    fm.innerHTML="";
+    addinputnoenc(fm,"compiler",cmd);
+    addinputnoenc(fm,"resources",JSON.stringify(jsn));
+    fm.submit();
+}
 
 //
 
