@@ -170,7 +170,7 @@ function openinoverleaf(nd) {
 
 // https://github.com/YtoTech/latex-on-http
 
-function latexonhttpbuton(nd) {
+function latexonhttpbutton(nd) {
     var jsn=[];
     if(typeof(preincludes) == "object") {
 	if(typeof(preincludes[nd]) == "object") {
