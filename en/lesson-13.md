@@ -14,17 +14,6 @@ preincludes = {
     "pre7": "dedication.tex",
     "pre8": "copyright.tex",
     "pre9": "backcover.tex",
-   },
- "pre10": {
-    "pre1": "front.tex",
-    "pre2": "pref.tex",
-    "pre3": "chap1.tex",
-    "pre4": "chap2.tex",
-    "pre5": "append.tex",
-    "pre6": "frontcover.tex",
-    "pre7": "dedication.tex",
-    "pre8": "copyright.tex",
-    "pre9": "backcover.tex",
    }
 }
 </script>
@@ -224,47 +213,3 @@ The back cover
 <!-- {% endraw %} -->
 
 ----
-
-<!-- pre10 {% raw %} -->
-```latex
-\documentclass{report}
-\usepackage{biblatex}
-\addbibresource{biblatex-examples.bib}
-
-\title{A Sample Book}
-\author{John Doe \and Joe Bloggs}
-
-\IfFileExists{append.aux}
-{
-\includeonly{
-%  front,
-%  chap1,
-  chap2,
-%  append
-  }
-}
-{
-% Do a full document initially to generate
-% all the aux files
-}
-
-\begin{document}
-\frontmatter
-\include{front}
-
-% =========================
-\mainmatter
-\include{chap1}
-\include{chap2}
-\appendix
-\include{append}
-
-% ========================
-\backmatter
-\printbibliography
-\newpage
-\input{backcover}
-\end{document}
-```
-<!-- {% endraw %} -->
-

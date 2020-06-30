@@ -1,12 +1,13 @@
 ---
-title: "LaTeX engines for Japanese"
+title: "縦書き"
+next: "extra-01"
 ---
 
 ## p{{site.latex}}
 
 ```latex
 % !TEX platex
-\documentclass{jsarticle}
+\documentclass{tarticle}
 
 \title{p\LaTeX\ 実験}
 \author{林蓮枝}
@@ -30,7 +31,7 @@ p\LaTeX{}を利用するときには、あらかじめ文章中に\TeX{}コマ�
 
 ```latex
 % !TEX uplatex
-\documentclass[uplatex]{jsarticle}
+\documentclass[uplatex]{utarticle}
 
 \title{up\LaTeX\ 実験}
 \author{林蓮枝}
@@ -55,7 +56,7 @@ up\LaTeX{}を利用するときには、あらかじめ文章中に\TeX{}コマ�
 
 ```latex
 % !TEX lualatex
-\documentclass{ltjarticle}
+\documentclass{ltjtarticle}
 
 \title{Lua\LaTeX\ 実験}
 \author{林蓮枝}
