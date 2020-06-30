@@ -285,7 +285,13 @@ function latexcgi(nd) {
 	    d.setAttribute("onclick",'deleteoutput("' + nd + '")');
 	    p.parentNode.insertBefore(d, b.nextSibling);
 	}
-
+    var  loading=document.createElement("div");
+    loading.id=nd+"load";
+    loading.textContent="Loading . . .";
+    p.parentNode.insertBefore(loading, ifr);
+    setTimeout(function () {
+	p.parentNode.removeChild(document.getElementById(nd+"load"));
+    }, 1000);
     fm.submit();
 }
 
