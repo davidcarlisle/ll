@@ -164,9 +164,9 @@ current system.
 
 Some text
 \begin{equation}
-<span style="color:red;white-space:pre">      </span>
+<span style="background-color:red">      </span>
   1=2
-<span style="color:red;white-space:pre">      </span>
+<span style="background-color:red">      </span>
 \end{equation}
 
 \end{document}
