@@ -1,6 +1,6 @@
 ---
 title: "Common errors"
-erra: "<span style='color:red'>\textbold</span>"
+erra: "\<span style='color:red'\>\\textbold\</span\>"
 ---
 
 Unlike a typical word processing system, LaTeX has an Edit/Run/View cycle
@@ -16,7 +16,7 @@ edit features to try to fix the documents and test the errors go.
 
 ## pdflatex not found
 
-An common first error that people see when starting is:
+A common first error that people see when starting is:
 
 ```
 'pdflatex' is not recognized as an internal or external command,
@@ -24,6 +24,7 @@ operable program or batch file.
 ```
 
 on windows or
+
 ``` bash: pdflatex: command not found ```
 on linux
 
@@ -47,7 +48,7 @@ My command is used here \mycommand.
 ```
 
 
-This produces a multi-line message in the log file.  {{page.erra}} jjj
+This produces a multi-line message in the log file.  {{page.erra}} jjj4
 
 ```
 ! Undefined control sequence.
