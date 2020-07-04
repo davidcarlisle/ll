@@ -15,14 +15,18 @@ edit features to try to fix the documents and test the errors go.
 
 ## pdflatex not found
 
-An error such as
+An common first error that people see when starting is:
 
 ```
 'pdflatex' is not recognized as an internal or external command,
 operable program or batch file.
 ```
 
-on windows or ``` bash: pdflatex: command not found ``` on linux is
+on windows or
+``` bash: pdflatex: command not found ```
+on linux
+
+This is
 not a TeX error but an operating system error saying that TeX is not
 installed or not found.  A common mistake is to install an _editor_
 such a TeXWorks or TeXShop but without installing a TeX system such as
@@ -32,7 +36,7 @@ texlive or MikTeX.
 ```
 \documentclass{article}
 
-\newcommand\mycommand{<span style="color:red">\textbold</span>{hmmm}}
+\newcommand\mycommand\textbold{: style="color: red"}</span>{hmmm}}
 
 \begin{document}
 
