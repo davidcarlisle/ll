@@ -86,7 +86,9 @@ important to see the whole error message.
 
 Beware that some editors show one line "summaries" of the error log
 this can be particularly misleading if shown as
+
 `line 7: undefined command: ...\mycommand`
+
 as it makes it appear that `\mycommand` is not defined.
 
 
@@ -162,9 +164,9 @@ current system.
 
 Some text
 \begin{equation}
-<span style="color:red">      </span>
+<span style="color:red;white-space:pre">      </span>
   1=2
-<span style="color:red">      </span>
+<span style="color:red;white-space:pre">      </span>
 \end{equation}
 
 \end{document}
