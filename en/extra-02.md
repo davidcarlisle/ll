@@ -1,6 +1,5 @@
 ---
 title: "Common errors"
-erra: "\<span style='color:red'\>\\textbold\</span\>"
 ---
 
 Unlike a typical word processing system, LaTeX has an Edit/Run/View cycle
@@ -35,20 +34,20 @@ such a TeXWorks or TeXShop but without installing a TeX system such as
 texlive or MikTeX.
 
 ## Anatomy of a TeX error message
-```
+<pre>
 \documentclass{article}
 
-\newcommand\mycommand\textbold{{page.erra}}{hmmm}}
+\newcommand\mycommand<span style="color:red">\textbold</span>{hmmm}}
 
 \begin{document}
 
 My command is used here \mycommand.
 
 \end{document}
-```
+</pre>
 
 
-This produces a multi-line message in the log file.  {{page.erra}} jjj4
+This produces a multi-line message in the log file.  kk
 
 ```
 ! Undefined control sequence.
