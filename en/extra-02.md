@@ -24,8 +24,11 @@ operable program or batch file.
 
 on windows or
 
-``` bash: pdflatex: command not found ```
-on linux
+```
+bash: pdflatex: command not found
+```
+
+on linux.
 
 This is
 not a TeX error but an operating system error saying that TeX is not
@@ -37,7 +40,7 @@ texlive or MikTeX.
 <pre>
 \documentclass{article}
 
-\newcommand\mycommand<span style="color:red">\textbold</span>{hmmm}}
+\newcommand\mycommand<span style="color:red">\textbold</span>{hmmm}
 
 \begin{document}
 
@@ -89,15 +92,15 @@ as it makes it appear that `\mycommand` is not defined.
 
 ## Mismatched braces
 
-```
+<pre>
 \documentclass{article}
 
 \begin{document}
 
- Text {\large some large text)  normal size?
+ Text {\large some large text<span style="color:red">)</span>  normal size?
 
 \end{document}
-```
+</pre>
 
 In this example the size change was mistakenly ended with `)` rather
 than `}` This is not detected until the end of the file when TeX
@@ -106,15 +109,15 @@ line at which the group was opened `{` It can not detect the actual
 error as the `)` is seen as "normal text".
 
 
-```
+<pre>
 \documentclass{article}
 
-\usepackage[leqno}{amsmath}
+\usepackage[leqno<span style="color:red">}</span>{amsmath}
 
 \begin{document}
 
 \end{document}
-```
+</pre>
 
 Here the error is a similar mis-match, `}` used to end the optional
 argument. Here though the closing brace causes LaTeX's option parsing
@@ -131,15 +134,15 @@ l.3 \usepackage[leqno}
 
 ## Missing files
 
-```
+<pre>
 \documentclass{article}
 
-\usepackage{amsmathz}
+\usepackage{<span style="color:red">amsmathz</span>}
 
 \begin{document}
 
 \end{document}
-```
+</pre>
 
 This produces the error
 
@@ -152,20 +155,20 @@ current system.
 
 ## Blank lines in display math
 
-```
+<pre>
 \documentclass{article}
 
 \begin{document}
 
 Some text
 \begin{equation}
-
+<span style="color:red">      </span>
   1=2
-
+<span style="color:red">      </span>
 \end{equation}
 
 \end{document}
-```
+</pre>
 Produces the slightly mysterious error
 
 `! Missing $ inserted.`
