@@ -1,5 +1,6 @@
 ---
 title: "Common errors"
+erra: "<span style='color:red'>\textbold</span>"
 ---
 
 Unlike a typical word processing system, LaTeX has an Edit/Run/View cycle
@@ -36,11 +37,11 @@ texlive or MikTeX.
 ```
 \documentclass{article}
 
-\newcommand\mycommand\textbold{: style="color: red"}</span>{hmmm}}
+\newcommand\mycommand\textbold{{page.erra}}{hmmm}}
 
 \begin{document}
 
-My command is used here \mycommand.
+My command is used here \mycommand. {{page.erra}} jjj
 
 \end{document}
 ```
