@@ -41,13 +41,13 @@ texlive or MikTeX.
 
 \begin{document}
 
-My command is used here \mycommand. {{page.erra}} jjj
+My command is used here \mycommand.
 
 \end{document}
 ```
 
 
-This produces a multi-line message in the log file.
+This produces a multi-line message in the log file.  {{page.erra}} jjj
 
 ```
 ! Undefined control sequence.
