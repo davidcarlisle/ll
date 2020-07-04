@@ -32,7 +32,7 @@ texlive or MikTeX.
 ```
 \documentclass{article}
 
-\newcommand\mycommand{\textbold{hmmm}}
+\newcommand\mycommand{<span style="color:red">\textbold</span>{hmmm}}
 
 \begin{document}
 
@@ -70,8 +70,8 @@ l.7 My command is used here \mycommand
   are working interactively.
 
 
-Things to note here that TeX does not see the error at the point that
-the definition is made, and in fact if `\mycommand` is defined but not
+Note here that TeX does not see the error at the point that
+the definition is made; and in fact if `\mycommand` is defined but not
 used, no error would be raised. So although the error is reported on
 line 7, the "real" error is in the definition on line 3, so it is
 important to see the whole error message.
@@ -113,8 +113,8 @@ error as the `)` is seen as "normal text".
 
 Here the error is a similar mis-match, `}` used to end the optional
 argument. Here though the closing brace causes LaTeX's option parsing
-to fail and you get an internal and not that helpful error
-`! Argument of \@fileswith@ptions has an extra }.`
+to fail and you get an internal and not that helpful error  
+`! Argument of \@fileswith@ptions has an extra }.`  
 although while the error description is unhelpful the following two
 lines do accurately display the location of the error by the use of
 the linebreak showing how far TeX had read:
@@ -138,7 +138,7 @@ l.3 \usepackage[leqno}
 
 This produces the error
 
-`! LaTeX Error: File `amsmathz.sty' not found.`
+`! LaTeX Error: File \`amsmathz.sty' not found.`
 
 Note the same error may be caused by two different causes, a simple
 typo as here, which may be corrected by fixing the package name, or
