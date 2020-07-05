@@ -116,6 +116,14 @@ detects that there is still an unclosed group. It reports here the
 line at which the group was opened `{` It can not detect the actual
 error as the `)` is seen as "normal text".
 
+```
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 5 ({)
+```
+{: .noedit :}
+
+
 
 <pre>
 \documentclass{article}
@@ -130,7 +138,12 @@ error as the `)` is seen as "normal text".
 Here the error is a similar mismatch, `}` is used to end the optional
 argument. Here though the closing brace causes LaTeX's option parsing
 to fail and you get an internal and not that helpful error  
-`! Argument of \@fileswith@ptions has an extra }.`  
+
+```
+! Argument of \@fileswith@ptions has an extra }.
+```
+{: .noedit :}
+
 although while the error description is unhelpful the following two
 lines do accurately display the location of the error by the use of
 the linebreak showing how far TeX had read:
