@@ -63,6 +63,7 @@ l.7 My command is used here \mycommand
                                       .
 ? 
 ```
+{: .noedit :}
 
 * The first line, marked with `!` gives the general nature of the error (undefined command in this case).
 * The second pair of lines show the line that TeX was processing, with a line break marking the point
