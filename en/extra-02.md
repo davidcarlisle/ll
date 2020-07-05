@@ -31,6 +31,7 @@ on windows or
 ```
 bash: pdflatex: command not found
 ```
+{: .noedit :}
 
 on linux.
 
@@ -156,6 +157,7 @@ This produces the error
 ```
 ! LaTeX Error: File `amsmathz.sty' not found.
 ```
+{: .noedit :}
 
 Note the same error may be caused by two different causes; a simple
 typo as here, which may be corrected by fixing the package name, or
@@ -184,6 +186,7 @@ Produces the slightly mysterious error
 ```
 ! Missing $ inserted.
 ```
+{: .noedit :}
 
 But the fix is simple, blank lines are not allowed in math
 environments and should be deleted.
