@@ -38,7 +38,7 @@ on linux.
 This is
 not a TeX error but an operating system error saying that TeX is not
 installed or not found.  A common mistake is to install an _editor_
-such a TeXdorks or TeXShop but without installing a TeX system such as
+such a TeXworks or TeXShop but without installing a TeX system such as
 TeX Live or MikTeX.
 
 ## Anatomy of a TeX error message
