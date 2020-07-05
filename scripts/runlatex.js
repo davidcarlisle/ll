@@ -5,7 +5,7 @@ var buttons ={
     "edit":             "edit",
     "copy":             "copy",
     "Open in Overleaf": "Open in Overleaf",
-    "LaTeX.Online":     "LaTeX.Online",
+    "LaTeX Online":     "LaTeX Online",
     "Delete Output":    "Delete Output"
 }
 
@@ -14,8 +14,9 @@ var buttons ={
 function llexamples() {
     var p = document.getElementsByTagName("pre");
     for(var i=0;i<p.length;i++) {
-	if(!(p[i].classList.contains('noedit') || p[i].parentNode.parentNode.classList.contains('noedit'))) {
 	p[i].setAttribute("id","pre" + i);
+	// class=noedit on pre or {: .class :} after closing ``` in markdown
+	if(!(p[i].classList.contains('noedit') || p[i].parentNode.parentNode.classList.contains('noedit'))) {
 	// edit
 	var b = document.createElement("button");
 	b.innerText=buttons["edit"];
@@ -56,8 +57,6 @@ function llexamples() {
 
 const commentregex = / %.*/;
 const engineregex = /% *!TEX.*[^a-zA-Z]((pdf|xe|lua|u?p)latex)/i;
-
-
 
 
 // https://www.overleaf.com/devs
