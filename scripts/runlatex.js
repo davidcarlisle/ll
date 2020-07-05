@@ -14,7 +14,7 @@ var buttons ={
 function llexamples() {
     var p = document.getElementsByTagName("pre");
     for(var i=0;i<p.length;i++) {
-	if(!(p[i].classList.contains('noedit') || p[i].parentNode..parentNode.classList.contains('noedit'))) {
+	if(!(p[i].classList.contains('noedit') || p[i].parentNode.parentNode.classList.contains('noedit'))) {
 	p[i].setAttribute("id","pre" + i);
 	// edit
 	var b = document.createElement("button");
