@@ -151,6 +151,7 @@ the linebreak showing how far TeX had read:
 l.3 \usepackage[leqno}
                       {amsmath}
 ```
+{: .noedit :}
 
 
 ## Missing files
