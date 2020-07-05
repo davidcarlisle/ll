@@ -177,9 +177,12 @@ Some text
 
 \end{document}
 </pre>
+
 Produces the slightly mysterious error
 
-`! Missing $ inserted.`
+```
+! Missing $ inserted.
+```
 
 But the fix is simple, blank lines are not allowed in math
 environments and should be deleted.

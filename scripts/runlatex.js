@@ -14,6 +14,7 @@ var buttons ={
 function llexamples() {
     var p = document.getElementsByTagName("pre");
     for(var i=0;i<p.length;i++) {
+	if(!(p[i].classList.contains('noedit') || p[i].parentNode..parentNode.classList.contains('noedit'))) {
 	p[i].setAttribute("id","pre" + i);
 	// edit
 	var b = document.createElement("button");
@@ -48,6 +49,7 @@ function llexamples() {
 	    // action=\"http://localhost/cgi-bin/p2\"
 	    f2.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i + "\" name=\"form2-pre" + i +"\" enctype=\"multipart/form-data\" action=\"https://latexcgi.xyz/cgi-bin/p2\" method=\"post\" target=\"pre" + i + "ifr\"></form>";
 	    p[i].parentNode.insertBefore(f2, p[i].nextSibling);
+	}
 	}
     }
 }
