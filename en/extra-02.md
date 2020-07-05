@@ -10,8 +10,11 @@ reported by the system.
 This page gives examples of several common errors.
 
 Each error example has some discussion about the form of the error
-message. It may be instructive to try the examples but also use the
-edit features to try to fix the documents and test the errors go.
+message.
+
+It may be instructive to try the examples but also use the
+edit features to try to fix the documents and test that you can
+resolve the errors.
 
 ## pdflatex not found
 
@@ -33,8 +36,8 @@ on linux.
 This is
 not a TeX error but an operating system error saying that TeX is not
 installed or not found.  A common mistake is to install an _editor_
-such a TeXWorks or TeXShop but without installing a TeX system such as
-texlive or MikTeX.
+such a TeXdorks or TeXShop but without installing a TeX system such as
+TeX Live or MikTeX.
 
 ## Anatomy of a TeX error message
 <pre>
@@ -50,7 +53,7 @@ My command is used here \mycommand.
 </pre>
 
 
-This produces a multi-line message in the log file.  kk
+This produces a multi-line message in the log file.
 
 ```
 ! Undefined control sequence.
@@ -62,7 +65,7 @@ l.7 My command is used here \mycommand
 ```
 
 * The first line, marked with `!` gives the general nature of the error (undefined command in this case).
-* The second pair of lines show the line that TeX was processing, with a linebreak marking the point
+* The second pair of lines show the line that TeX was processing, with a line break marking the point
   that TeX had reached. The undefined command is the last token read so the last word before the line break
   `\textbold` here. After the line break are the remaining tokens `{hmmm}` that have possibly been read as
   an argument but have not yet been executed by TeX.
@@ -70,11 +73,11 @@ l.7 My command is used here \mycommand
 * The final line starts with `l.` followed by a line number, and then the line in the source file where the
   error is detected.
 
-* The final line is a `?` if using TeX interactively it is possible to
-  enter instructions to TeX at this point but most editors and online
+* The final line is a `?`.  If using TeX interactively it is possible to
+  enter instructions to TeX at this point, but most editors and online
   systems run TeX in a mode that does not stop at errors but will
-  scrol past this and try to process the rest of the document (typing
-  `s` to the prompt will instruct TeX to carry on inthis mode if you
+  scroll past this and try to process the rest of the document. Typing
+  `s` to the prompt will instruct TeX to carry on in this mode if you
   are working interactively.
 
 
@@ -84,8 +87,8 @@ used, no error would be raised. So although the error is reported on
 line 7, the "real" error is in the definition on line 3, so it is
 important to see the whole error message.
 
-Beware that some editors show one line "summaries" of the error log
-this can be particularly misleading if shown as
+Beware that some editors show one line "summaries" of the error log.
+This can be particularly misleading if shown as
 
 `line 7: undefined command: ...\mycommand`
 
@@ -121,7 +124,7 @@ error as the `)` is seen as "normal text".
 \end{document}
 </pre>
 
-Here the error is a similar mis-match, `}` used to end the optional
+Here the error is a similar mismatch, `}` is used to end the optional
 argument. Here though the closing brace causes LaTeX's option parsing
 to fail and you get an internal and not that helpful error  
 `! Argument of \@fileswith@ptions has an extra }.`  
@@ -148,9 +151,11 @@ l.3 \usepackage[leqno}
 
 This produces the error
 
-`! LaTeX Error: File \`amsmathz.sty' not found.`
+```
+! LaTeX Error: File `amsmathz.sty' not found.
+```
 
-Note the same error may be caused by two different causes, a simple
+Note the same error may be caused by two different causes; a simple
 typo as here, which may be corrected by fixing the package name, or
 that the file really is missing and needs to be installed on the
 current system.
@@ -175,6 +180,7 @@ Produces the slightly mysterious error
 
 `! Missing $ inserted.`
 
-But the fix is simple, blank lines are not allowed in display math
-environments and should be delted.
+But the fix is simple, blank lines are not allowed in math
+environments and should be deleted.
 
+	     
