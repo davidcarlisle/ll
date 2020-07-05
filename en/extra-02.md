@@ -24,6 +24,7 @@ A common first error that people see when starting is:
 'pdflatex' is not recognized as an internal or external command,
 operable program or batch file.
 ```
+{: .noedit :}
 
 on windows or
 
