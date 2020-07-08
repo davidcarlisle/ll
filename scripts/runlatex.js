@@ -48,7 +48,7 @@ function llexamples() {
 	    // action=\"https://httpbin.org/post\"
 	    // action=\"http://localhost/cgi-bin/p2-debug\"
 	    // action=\"http://localhost/cgi-bin/p2\"
-	    f2.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i + "\" name=\"form2-pre" + i +"\" enctype=\"multipart/form-data\" action=\"https://latexcgi.xyz/cgi-bin/p2\" method=\"post\" target=\"pre" + i + "ifr\"></form>";
+	    f2.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i + "\" name=\"form2-pre" + i +"\" enctype=\"multipart/form-data\" action=\"https://latexcgi.xyz/cgi-bin/latexcgi\" method=\"post\" target=\"pre" + i + "ifr\"></form>";
 	    p[i].parentNode.insertBefore(f2, p[i].nextSibling);
 	}
 	}
@@ -56,7 +56,8 @@ function llexamples() {
 }
 
 const commentregex = / %.*/;
-const engineregex = /% *!TEX.*[^a-zA-Z]((pdf|xe|lua|u?p)latex)/i;
+const engineregex = /% *!TEX.*[^a-zA-Z]((pdf|xe|lua|u?p)latex) *\n/i;
+const returnregex = /% *!TEX.*[^a-zA-Z](pdfjs|pdf|log) *\n/i;
 
 
 // https://www.overleaf.com/devs
@@ -244,9 +245,6 @@ function deleteoutput(nd){
     ifr.parentNode.removeChild(ifr);
 }
 
-
-
-
 function latexcgi(nd) {
     var fm = document.getElementById('form2-' + nd);
     fm.innerHTML="";
@@ -271,32 +269,40 @@ function latexcgi(nd) {
 	engv="xelatex";
     }
     addinput(fm,"engine",engv);
-    	var b = document.getElementById('lo-' + nd);
-	var ifr= document.getElementById(nd + "ifr");
-	if(ifr == null) {
-	    ifr=document.createElement("iframe");
-	    ifr.setAttribute("width","100%");
-	    ifr.setAttribute("height","500em");
-	    ifr.setAttribute("id",nd + "ifr");
-	    ifr.setAttribute("name",nd + "ifr");
-	    p.parentNode.insertBefore(ifr, b.nextSibling);
-	    d=document.createElement("button");
-	    d.innerText=buttons["Delete Output"];
-	    d.setAttribute("id","del-" + nd);
-	    d.setAttribute("onclick",'deleteoutput("' + nd + '")');
-	    p.parentNode.insertBefore(d, b.nextSibling);
-	}
+    var rtn = t.match(returnregex);
+    var rtnv = "";
+    if(rtn!= null) {
+	rtnv=rtn[1].toLowerCase();
+	addinput(fm,"return",rtnv);
+    }    
+    var b = document.getElementById('lo-' + nd);
+    var ifr= document.getElementById(nd + "ifr");
+    if(ifr == null) {
+	ifr=document.createElement("iframe");
+	ifr.setAttribute("width","100%");
+	ifr.setAttribute("height","500em");
+	ifr.setAttribute("id",nd + "ifr");
+	ifr.setAttribute("name",nd + "ifr");
+	p.parentNode.insertBefore(ifr, b.nextSibling);
+	d=document.createElement("button");
+	d.innerText=buttons["Delete Output"];
+	d.setAttribute("id","del-" + nd);
+	d.setAttribute("onclick",'deleteoutput("' + nd + '")');
+	p.parentNode.insertBefore(d, b.nextSibling);
+    }
     var  loading=document.createElement("div");
     loading.id=nd+"load";
     loading.textContent="Loading . . .";
     p.parentNode.insertBefore(loading, ifr);
+    // scroll only if really close to the bottom
+    var rect = b.getBoundingClientRect();
+    if(document.documentElement.clientHeight - rect.bottom < 50){
+	window.scrollBy(0,50);
+    }
     setTimeout(function () {
 	p.parentNode.removeChild(document.getElementById(nd+"load"));
     }, 1000);
     fm.submit();
 }
-
-
-
 
 window.addEventListener('load', llexamples, false);
