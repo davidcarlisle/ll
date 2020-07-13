@@ -18,6 +18,8 @@ function llexamples() {
     for(var i=0;i<p.length;i++) {
 	p[i].setAttribute("id","pre" + i);
 	dv=document.createElement("div");
+	dv.textContent=p[i].textContent;
+	    p[i].parentNode.insertBefore(dv, p[i]);
 	editor = ace.edit(dv);
 	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
     editor.setTheme("ace/theme/textmate");
@@ -30,7 +32,6 @@ function llexamples() {
 	b.innerText=buttons["edit"];
 	b.setAttribute("onclick",'allowedit("pre' + i + '")');
 	    //	p[i].parentNode.insertBefore(b, p[i]);
-	    p[i].parentNode.insertBefore(dv, p[i]);
 	// copy
 	var c = document.createElement("button");
 	c.innerText=buttons["copy"];
