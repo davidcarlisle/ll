@@ -11,7 +11,6 @@ plugins:
   - jekyll-sitemap
 
 
-highlighter: none
 
 kramdown:
     syntax_highlighter_opts:
