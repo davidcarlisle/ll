@@ -17,11 +17,9 @@ function llexamples() {
     var ht;
     for(var i=0;i<p.length;i++) {
 	p[i].setAttribute("id","pre" + i);
-	ht=p[i].offsetHeight;
-	p[i].setAttribute("style","height: " + ht + "px");
 	editor = ace.edit(p[i]);
 	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
-    editor.setTheme("ace/theme/textmate");
+	editor.setTheme("ace/theme/textmate");
 	editor.getSession().setMode("ace/mode/latex");
 	editor.setOption("minLines",5);
 	editor.setOption("maxLines",100);
@@ -44,23 +42,23 @@ function llexamples() {
 	    r.innerText="LaTeX CGI";
 	    r.setAttribute("onclick",'latexcgi("pre' + i + '")');
 	    r.setAttribute("id","lo-pre" + i);
-//	    p[i].parentNode.insertBefore(r, p[i].nextSibling);
+	    p[i].parentNode.insertBefore(r, p[i].nextSibling);
 	    // overleaf
 	    var o = document.createElement("button");
 	    o.innerText=buttons["Open in Overleaf"];
 	    o.setAttribute("onclick",'openinoverleaf("pre' + i + '")');
-//	    p[i].parentNode.insertBefore(o, p[i].nextSibling);
+	    p[i].parentNode.insertBefore(o, p[i].nextSibling);
 	    var f=document.createElement("span");
 	    // action=\"https://httpbin.org/post\"
 	    // action=\"https://www.overleaf.com/docs\"
 	    f.innerHTML="<form style=\"display:none\" id=\"form-pre" + i +"\" action=\"https://www.overleaf.com/docs\" method=\"post\" target=\"_blank\"></form>";
-//	    p[i].parentNode.insertBefore(f, p[i].nextSibling);
+	    p[i].parentNode.insertBefore(f, p[i].nextSibling);
 	    var f2=document.createElement("span");
 	    // action=\"https://httpbin.org/post\"
 	    // action=\"http://localhost/cgi-bin/p2-debug\"
 	    // action=\"http://localhost/cgi-bin/p2\"
 	    f2.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i + "\" name=\"form2-pre" + i +"\" enctype=\"multipart/form-data\" action=\"https://latexcgi.xyz/cgi-bin/latexcgi\" method=\"post\" target=\"pre" + i + "ifr\"></form>";
-//	    p[i].parentNode.insertBefore(f2, p[i].nextSibling);
+	    p[i].parentNode.insertBefore(f2, p[i].nextSibling);
 	}
 	}
     }
