@@ -17,10 +17,7 @@ function llexamples() {
     var dv;
     for(var i=0;i<p.length;i++) {
 	p[i].setAttribute("id","pre" + i);
-	dv=document.createElement("div");
-	dv.textContent=p[i].textContent;
-	    p[i].parentNode.insertBefore(dv, p[i]);
-	editor = ace.edit(dv);
+	editor = ace.edit(p[i]);
 	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
     editor.setTheme("ace/theme/textmate");
     editor.getSession().setMode("ace/mode/latex");
