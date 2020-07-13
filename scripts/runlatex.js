@@ -24,7 +24,7 @@ function llexamples() {
     editor.setTheme("ace/theme/textmate");
 	editor.getSession().setMode("ace/mode/latex");
 	editor.setOption("minLines",10);
-	editor.setOption("maxLines",{Infinity});
+	editor.setOption("maxLines",100);
 	editor.resize();
 	// class=noedit on pre or {: .class :} after closing ``` in markdown
 	if(!(p[i].classList.contains('noedit') || p[i].parentNode.parentNode.classList.contains('noedit'))) {
