@@ -10,6 +10,8 @@ logo: learnlatex.png
 plugins:
   - jekyll-sitemap
 
+highlighter: nil
+
 kramdown:
     syntax_highlighter: nil
 
