@@ -23,7 +23,7 @@ function llexamples() {
 	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
     editor.setTheme("ace/theme/textmate");
 	editor.getSession().setMode("ace/mode/latex");
-	editor.setOption("minLines",10);
+	editor.setOption("minLines",5);
 	editor.setOption("maxLines",100);
 	editor.resize();
 	// class=noedit on pre or {: .class :} after closing ``` in markdown
