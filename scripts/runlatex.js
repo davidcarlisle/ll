@@ -17,13 +17,6 @@ function llexamples() {
     var ht;
     for(var i=0;i<p.length;i++) {
 	p[i].setAttribute("id","pre" + i);
-	editor = ace.edit(p[i]);
-	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
-	editor.setTheme("ace/theme/textmate");
-	editor.getSession().setMode("ace/mode/latex");
-	editor.setOption("minLines",5);
-	editor.setOption("maxLines",100);
-	editor.resize();
 	// class=noedit on pre or {: .class :} after closing ``` in markdown
 	if(!(p[i].classList.contains('noedit') || p[i].parentNode.parentNode.classList.contains('noedit'))) {
 	// edit
@@ -60,6 +53,14 @@ function llexamples() {
 	    f2.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i + "\" name=\"form2-pre" + i +"\" enctype=\"multipart/form-data\" action=\"https://latexcgi.xyz/cgi-bin/latexcgi\" method=\"post\" target=\"pre" + i + "ifr\"></form>";
 	    p[i].parentNode.insertBefore(f2, p[i].nextSibling);
 	}
+	    	editor = ace.edit(p[i]);
+	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
+	editor.setTheme("ace/theme/textmate");
+	editor.getSession().setMode("ace/mode/latex");
+	editor.setOption("minLines",5);
+	editor.setOption("maxLines",100);
+	editor.resize();
+
 	}
     }
 }
