@@ -14,13 +14,15 @@ var buttons ={
 function llexamples() {
     var p = document.getElementsByTagName("pre");
     var editor;
-    var dv;
+    var ht;
     for(var i=0;i<p.length;i++) {
 	p[i].setAttribute("id","pre" + i);
+	ht=p[i].style.height;
 	editor = ace.edit(p[i]);
 	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
     editor.setTheme("ace/theme/textmate");
-    editor.getSession().setMode("ace/mode/latex");
+	editor.getSession().setMode("ace/mode/latex");
+	p[i].style.height=ht;
 	editor.resize();
 	// class=noedit on pre or {: .class :} after closing ``` in markdown
 	if(!(p[i].classList.contains('noedit') || p[i].parentNode.parentNode.classList.contains('noedit'))) {
