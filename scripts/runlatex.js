@@ -22,7 +22,7 @@ function llexamples() {
 	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
     editor.setTheme("ace/theme/textmate");
 	editor.getSession().setMode("ace/mode/latex");
-	p[i].style.height=ht;
+	editor.style.height=ht;
 	editor.resize();
 	// class=noedit on pre or {: .class :} after closing ``` in markdown
 	if(!(p[i].classList.contains('noedit') || p[i].parentNode.parentNode.classList.contains('noedit'))) {
