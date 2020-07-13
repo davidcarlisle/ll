@@ -17,7 +17,7 @@ function llexamples() {
     var ht;
     for(var i=0;i<p.length;i++) {
 	p[i].setAttribute("id","pre" + i);
-	ht=p[i].style.height;
+	ht=p[i].offsetHeight;
 	p[i].setAttribute("style","height: " + ht + "px");
 	editor = ace.edit(p[i]);
 	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
