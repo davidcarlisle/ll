@@ -18,6 +18,7 @@ function llexamples() {
     for(var i=0;i<p.length;i++) {
 	p[i].setAttribute("id","pre" + i);
 	ht=p[i].style.height;
+	p[i].setAttribute("style","height: " + ht + "px");
 	editor = ace.edit(p[i]);
 	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
     editor.setTheme("ace/theme/textmate");
