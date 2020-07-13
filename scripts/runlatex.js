@@ -13,8 +13,12 @@ var buttons ={
 
 function llexamples() {
     var p = document.getElementsByTagName("pre");
+    var editor;
     for(var i=0;i<p.length;i++) {
 	p[i].setAttribute("id","pre" + i);
+	editor = ace.edit(p[i]);
+    editor.setTheme("ace/theme/textmate");
+    editor.getSession().setMode("ace/mode/latex");
 	// class=noedit on pre or {: .class :} after closing ``` in markdown
 	if(!(p[i].classList.contains('noedit') || p[i].parentNode.parentNode.classList.contains('noedit'))) {
 	// edit
