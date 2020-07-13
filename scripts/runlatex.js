@@ -15,6 +15,7 @@ function llexamples() {
     var p = document.getElementsByTagName("pre");
     var editor;
     for(var i=0;i<p.length;i++) {
+	p[i].outerHTML="<div>"+p[i].textContent+"</div>";
 	p[i].setAttribute("id","pre" + i);
 	editor = ace.edit(p[i]);
 	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
