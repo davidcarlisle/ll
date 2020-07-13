@@ -16,21 +16,21 @@ function llexamples() {
     var editor;
     for(var i=0;i<p.length;i++) {
 	p[i].setAttribute("id","pre" + i);
-	editor = ace.edit(p[i]);
-    editor.setTheme("ace/theme/textmate");
-    editor.getSession().setMode("ace/mode/latex");
+//	editor = ace.edit(p[i]);
+//    editor.setTheme("ace/theme/textmate");
+//    editor.getSession().setMode("ace/mode/latex");
 	// class=noedit on pre or {: .class :} after closing ``` in markdown
 	if(!(p[i].classList.contains('noedit') || p[i].parentNode.parentNode.classList.contains('noedit'))) {
 	// edit
 	var b = document.createElement("button");
 	b.innerText=buttons["edit"];
 	b.setAttribute("onclick",'allowedit("pre' + i + '")');
-	p[i].parentNode.insertBefore(b, p[i]);
+//	p[i].parentNode.insertBefore(b, p[i]);
 	// copy
 	var c = document.createElement("button");
 	c.innerText=buttons["copy"];
 	c.setAttribute("onclick",'copytoclipboard("pre' + i + '")');
-	p[i].parentNode.insertBefore(c, p[i]);
+//	p[i].parentNode.insertBefore(c, p[i]);
 	if(p[i].textContent.indexOf("\\documentclass") !== -1) {
 	    // latexonline
 	    var r = document.createElement("button");
