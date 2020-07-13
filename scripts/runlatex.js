@@ -17,6 +17,7 @@ function llexamples() {
     for(var i=0;i<p.length;i++) {
 	p[i].setAttribute("id","pre" + i);
 	editor = ace.edit(p[i]);
+	editor.resize();
     editor.setTheme("ace/theme/textmate");
     editor.getSession().setMode("ace/mode/latex");
 	// class=noedit on pre or {: .class :} after closing ``` in markdown
