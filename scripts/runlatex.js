@@ -9,12 +9,12 @@ var buttons ={
     "Delete Output":    "Delete Output"
 }
 
+var editors=[];
 
 
 function llexamples() {
     var p = document.getElementsByTagName("pre");
     var editor;
-    var ht;
     for(var i=0;i<p.length;i++) {
 	p[i].setAttribute("id","pre" + i);
 	// class=noedit on pre or {: .class :} after closing ``` in markdown
@@ -53,14 +53,14 @@ function llexamples() {
 	    f2.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i + "\" name=\"form2-pre" + i +"\" enctype=\"multipart/form-data\" action=\"https://latexcgi.xyz/cgi-bin/latexcgi\" method=\"post\" target=\"pre" + i + "ifr\"></form>";
 	    p[i].parentNode.insertBefore(f2, p[i].nextSibling);
 	}
-	    	editor = ace.edit(p[i]);
-	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
-	editor.setTheme("ace/theme/textmate");
-	editor.getSession().setMode("ace/mode/latex");
-	editor.setOption("minLines",5);
-	editor.setOption("maxLines",100);
-	editor.resize();
-
+	    editor = ace.edit(p[i]);
+	    ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
+	    editor.setTheme("ace/theme/textmate");
+	    editor.getSession().setMode("ace/mode/latex");
+	    editor.setOption("minLines",5);
+	    editor.setOption("maxLines",100);
+	    editor.resize();
+	    editors["pre" + i]=editor;
 	}
     }
 }
@@ -99,8 +99,8 @@ function openinoverleaf(nd) {
     var fm = document.getElementById('form-' + nd);
     fm.innerHTML="";
     var p = document.getElementById(nd);
-    var t = p.innerText;
-    // the lax engine comment syntax confuses overleaf
+//ace    var t = p.innerText;
+    var t = editors[nd].getValue();
     addinput(fm,"encoded_snip[]",t.replace(engineregex,''));
     addinput(fm,"snip_name[]","document.tex");
     if(typeof(preincludes) == "object") {
@@ -108,6 +108,7 @@ function openinoverleaf(nd) {
 	    var incl=preincludes[nd];
 	    for(prop in incl) {
 		addinput(fm,"encoded_snip[]",document.getElementById(prop).innerText);
+//ace		addinput(fm,"encoded_snip[]",editors[prop].getValue());
 		addinput(fm,"snip_name[]",incl[prop]);
 	    }
 	}
@@ -259,14 +260,16 @@ function latexcgi(nd) {
     var fm = document.getElementById('form2-' + nd);
     fm.innerHTML="";
     var p = document.getElementById(nd);
-    var t = p.innerText;
+//ace    var t = p.innerText;
+    var t = editors[nd].getValue();
     addtextarea(fm,"filecontents[]",t);
     addinputnoenc(fm,"filename[]","document.tex");
     if(typeof(preincludes) == "object") {
 	if(typeof(preincludes[nd]) == "object") {
 	    var incl=preincludes[nd];
 	    for(prop in incl) {
-		addtextarea(fm,"filecontents[]",document.getElementById(prop).innerText);
+//ace		addtextarea(fm,"filecontents[]",document.getElementById(prop).innerText);
+		addtextarea(fm,"filecontents[]",editors[prop].getValue());
 		addinputnoenc(fm,"filename[]",incl[prop]);
 	    }
 	}
