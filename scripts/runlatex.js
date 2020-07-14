@@ -30,6 +30,11 @@ function llexamples() {
 	c.setAttribute("onclick",'copytoclipboard("pre' + i + '")');
 //	p[i].parentNode.insertBefore(c, p[i]);
 	if(p[i].textContent.indexOf("\\documentclass") !== -1) {
+	    // space
+	    var s = document.createElement("div");
+	    s.setAttribute("class",'spacer');
+	    p[i].parentNode.insertBefore(s, p[i].nextSibling);
+	    // overleaf
 	    // latexonline
 	    var r = document.createElement("button");
 	    r.innerText="LaTeX CGI";
