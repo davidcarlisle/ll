@@ -6,11 +6,11 @@ var buttons ={
     "copy":             "copy",
     "Open in Overleaf": "Open in Overleaf",
     "LaTeX Online":     "LaTeX Online",
-    "Delete Output":    "Delete Output"
+    "Delete Output":    "Delete Output",
+    "Compiling PDF":    "Compiling PDF"
 }
 
 var editors=[];
-
 
 function llexamples() {
     var p = document.getElementsByTagName("pre");
@@ -34,10 +34,9 @@ function llexamples() {
 	    var s = document.createElement("div");
 	    s.setAttribute("class",'spacer');
 	    p[i].parentNode.insertBefore(s, p[i].nextSibling);
-	    // overleaf
 	    // latexonline
 	    var r = document.createElement("button");
-	    r.innerText="LaTeX CGI";
+	    r.innerText=buttons["LaTeX Online"];
 	    r.setAttribute("onclick",'latexcgi("pre' + i + '")');
 	    r.setAttribute("id","lo-pre" + i);
 	    p[i].parentNode.insertBefore(r, p[i].nextSibling);
@@ -58,22 +57,22 @@ function llexamples() {
 	    f2.innerHTML="<form style=\"display:none\" id=\"form2-pre" + i + "\" name=\"form2-pre" + i +"\" enctype=\"multipart/form-data\" action=\"https://latexcgi.xyz/cgi-bin/latexcgi\" method=\"post\" target=\"pre" + i + "ifr\"></form>";
 	    p[i].parentNode.insertBefore(f2, p[i].nextSibling);
 	}
-	    editor = ace.edit(p[i]);
-	    ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
-	    editor.setTheme("ace/theme/textmate");
-	    editor.getSession().setMode("ace/mode/latex");
-	    editor.setOption("minLines",5);
-	    editor.setOption("maxLines",100);
-	    editor.resize();
-	    editors["pre" + i]=editor;
 	}
+	editor = ace.edit(p[i]);
+	ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
+	editor.setTheme("ace/theme/textmate");
+	editor.getSession().setMode("ace/mode/latex");
+	editor.setOption("minLines",5);
+	editor.setOption("maxLines",100);
+	editor.resize();
+	editors["pre" + i]=editor;
     }
 }
 
 const commentregex = / %.*/;
 const engineregex = /% *!TEX.*[^a-zA-Z]((pdf|xe|lua|u?p)latex) *\n/i;
 const returnregex = /% *!TEX.*[^a-zA-Z](pdfjs|pdf|log) *\n/i;
-
+const makeindexregex = /% *!TEX.*[^a-zA-Z]makeindex( [a-z0-9\.\- ]*)\n/ig;
 
 // https://www.overleaf.com/devs
 function addinput(f,n,v) {
@@ -112,8 +111,8 @@ function openinoverleaf(nd) {
 	if(typeof(preincludes[nd]) == "object") {
 	    var incl=preincludes[nd];
 	    for(prop in incl) {
-		addinput(fm,"encoded_snip[]",document.getElementById(prop).innerText);
-//ace		addinput(fm,"encoded_snip[]",editors[prop].getValue());
+//ace		addinput(fm,"encoded_snip[]",document.getElementById(prop).innerText);
+		addinput(fm,"encoded_snip[]",editors[prop].getValue());
 		addinput(fm,"snip_name[]",incl[prop]);
 	    }
 	}
@@ -292,7 +291,12 @@ function latexcgi(nd) {
     if(rtn!= null) {
 	rtnv=rtn[1].toLowerCase();
 	addinput(fm,"return",rtnv);
-    }    
+    }
+    var mki = makeindexregex.exec(t);
+    while (mki != null) {
+	addinputnoenc(fm,"makeindex[]",mki[1]);
+	mki = makeindexregex.exec(t);
+    }
     var b = document.getElementById('lo-' + nd);
     var ifr= document.getElementById(nd + "ifr");
     if(ifr == null) {
@@ -310,12 +314,12 @@ function latexcgi(nd) {
     }
     var  loading=document.createElement("div");
     loading.id=nd+"load";
-    loading.textContent="Loading . . .";
+    loading.textContent=buttons["Compiling PDF"] + " . . .";
     p.parentNode.insertBefore(loading, ifr);
     // scroll only if really close to the bottom
     var rect = b.getBoundingClientRect();
     if(document.documentElement.clientHeight - rect.bottom < 50){
-	window.scrollBy(0,50);
+	window.scrollBy(0,150);
     }
     setTimeout(function () {
 	p.parentNode.removeChild(document.getElementById(nd+"load"));
