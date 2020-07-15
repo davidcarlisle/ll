@@ -131,6 +131,6 @@ TEST
   window.addEventListener('load', function(){
       if(editors['pre0'] != null) editors['pre0'].moveCursorTo(8, 15, false);
       if(editors['pre3'] != null) editors['pre3'].moveCursorTo(3, 5, false);
-      if(editors['pre6'] != null) editors['pre6'].moveCursorTo(3, 30, false);
+      if(editors['pre6'] != null) editors['pre6'].moveCursorTo(4, 30, false);
   }, false);
 </script>
