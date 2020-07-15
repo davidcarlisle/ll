@@ -133,6 +133,5 @@ TEST
       if(editors['pre1'] != null) editors['pre1'].moveCursorTo(8, 15, false);
       if(editors['pre4'] != null) editors['pre4'].moveCursorTo(3, 5, false);
       if(editors['pre7'] != null) editors['pre7'].moveCursorTo(3, 30, false);
-
   }, false);
 </script>
