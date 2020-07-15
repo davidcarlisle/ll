@@ -2,7 +2,7 @@
 title: "More on: Dealing with errors"
 ---
 
-## Errors reported at ends of environments99
+## Errors reported at ends of environments
 
 Some environments (notably `amsmath` alignments and `tabularx` tables)
 scan the whole environment body before processing the content. This means that
