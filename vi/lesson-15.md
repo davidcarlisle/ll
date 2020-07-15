@@ -1,101 +1,192 @@
 ---
-title: "Tiếp cận các hướng dẫn sử dụng gói và tìm kiếm sự trợ giúp"
+title: "Xử lý lỗi"
 ---
 
+Không giống như các hệ thống xử lý văn bản thường gặp khác, LaTeX có một chu
+trình "Sửa/Biên dịch/Xem kết quả" giống như nhiều ngôn ngữ lập trình, và như
+trong lập trình thì quá trình biên dịch có thể xảy ra lỗi và người dùng phải xử
+lý những lỗi này.
 
-Có nhiều cách để đọc hướng dẫn sử dụng của một gói hay lớp văn bản nào đó.
+Bài này đưa ra một số ví dụ của những lỗi thường gặp nhất trong LaTeX.
 
-## `texdoc`
+Bạn nên sử dụng chức năng chỉnh sửa mã để thử sửa văn bản và kiểm tra xem bạn đã
+sửa được những lỗi này hay chưa.
 
-Nếu bạn đã cài một hệ thống TeX (ví dụ: TeX Live hay MiKTeX) với đầy đủ các
-hướng dẫn sử dụng, bạn có thể đọc được những văn bản này bằng lệnh `texdoc`.
-Trong cửa sổ lệnh bạn gõ lệnh
+## Không tìm thấy pdflatex
 
-```
-texdoc <gói>
-```
-
-Khi đó lệnh sẽ mở hướng dẫn sử dụng của `<gói>`. Lệnh này sẽ tìm kiếm trong tất
-cả các hướng dẫn sử dụng có sẵn và mở văn bản mà nó thấy là phù hợp nhất trong
-các kết quả tìm kiếm có được. Bạn có thể in ra danh sách những văn bản tìm thấy
-được bằng việc dùng tùy chọn `-l`:
+Khi bắt đầu với LaTeX thì mọi người thường gặp lỗi dạng sau:
 
 ```
-texdoc -l <gói>
+'pdflatex' is not recognized as an internal or external command,
+operable program or batch file.
 ```
+{: .noedit :}
 
-## texdoc.net
+trên Windows hay
 
-Đây là một [trang web](https://texdoc.net) hoạt động tương tự lệnh `texdoc`. Bạn
-có thể tìm kiếm giống như khi bạn dùng `texdoc -l` và chọn từ những kết quả tìm
-được.
+```
+bash: pdflatex: command not found
+```
+{: .noedit :}
 
-## CTAN
+trên Linux.
 
-[CTAN](https://ctan.org), viết tắt của Comprehensive TeX Archive Network, là hệ
-thống lưu trữ hầu hết các công cụ trong LaTeX. Bạn có thể tìm kiếm gói lệnh
-trong trang này để đọc hướng dẫn sử dụng của nó. Thông thường gói lệnh sẽ được
-lưu dưới URL `https://ctan.org/pkg/<tên gói>`, và bạn có thể đọc tệp README hoặc
-hướng dẫn sử dụng ở đường dẫn này.
+Đây không phải là một lỗi TeX, nó là một lỗi từ hệ điều hành cho thấy TeX chưa
+được cài đặt đúng cách. Một lỗi thường gặp là việc bạn cài đặt một _trình soạn
+thảo mã nguồn_ như TeXworks hay TeXShop nhưng không cài đặt một _hệ thống TeX_
+như TeX Live hay MiKTeX.
 
-## Sách về LaTeX
+## Cấu trúc của một thông báo lỗi {{ site.tex }}
 
-Có nhiều cuốn sách có sẵn mà bạn có thể đọc để học thêm về LaTeX. Là người mới
-học LaTeX thì việc đọc những hướng dẫn cơ bản sẽ có ích rất nhiều, vì những sách
-như vậy thường cung cấp nhiều thông tin hơn những gì ta nói tới ở đây.
-
-Đội ngũ phát triển lõi LaTeX có một
-[danh sách](https://www.latex-project.org/help/books) các cuốn sách được viết
-bởi các thành viên. Hai cuốn đáng chú ý nhất là [Hướng dẫn sử dụng LaTeX của
-Lamport](https://www.informit.com/store/latex-a-document-preparation-system-9780201529838)
-(ta còn nhớ trong [bài này](more-01) rằng Lamport chính là cha đẻ của LaTeX),
-hay [LaTeX Companion](https://www.informit.com/store/latex-companion-9780201362992).
-
-Một vài cuốn sách khác có nội dung tương tự:
-
-- [_Guide to
-  LaTeX_](https://www.informit.com/store/guide-to-latex-9780132651714) bởi Helmut
-  Kopka và Patrick Daly: có sẵn dưới dạng sách điện tử
-- [_LaTeX for Complete Novices_](https://www.dickimaw-books.com/latex/novices/) bởi
-  Nicola Talbot: có sẵn dưới dạng sách điện tử miễn phí hoặc sách in có giá thấp
-- [_Using LaTeX to write a PhD
-  thesis_](https://www.dickimaw-books.com/latex/thesis/) bởi
-  Nicola Talbot: có sẵn dưới dạng sách điện tử miễn phí hoặc sách in có giá thấp
-- [_LaTeX Beginner's Guide_](https://www.packtpub.com/gb/hardware-and-creative/latex-beginners-guide)
-  bởi Stefan Kottwitz: có sẵn dưới dạng sách điện tử và sách in
-- [_LaTeX and Friends_](https://www.springer.com/gp/book/9783642238154) bởi
-  Marc van Dongen: có sẵn dưới dạng sách điện tử và sách in
-
-## Tìm kiếm sự trợ giúp trong LaTeX
-
-Có nhiều diễn đàn trên mạng để bạn có thể hỏi các câu hỏi LaTeX; có lẽ diễn đàn
-có nhiều người truy cập nhất là
-[TeX &ndash; LaTeX StackExchange](https://tex.stackexchange.com). Mỗi khi bạn
-hỏi một câu hỏi ở bất kỳ diễn đàn nào, tốt nhất bạn nên chuẩn bị một đoạn mã ví
-dụ &ndash; thường được gọi là "minimal working example" (MWE). Đoạn mã này nên
-được tối giản hóa sao cho vấn đề của bạn vẫn xuất hiện trên đó nhưng những thứ
-không liên quan được gạch bỏ đi, để hỗ trợ mọi người trả lời bạn tốt hơn.
-
-Làm cách nào để tạo ra một MWE? Thông thường cách dễ nhất là bắt đầu từ
-
-```latex
+<div class="highlight">
+<pre>
 \documentclass{article}
+
+\newcommand\mycommand{<span style="color:red">\textbold</span>{hmmm}}
+
 \begin{document}
-Text
+
+My command is used here \mycommand.
+
 \end{document}
+</pre>
+</div>
+
+Tệp này tạo ra một thông báo lỗi như sau trong tệp log:
+
 ```
+! Undefined control sequence.
+\mycommand ->\textbold 
+                       {hmmm}
+l.7 My command is used here \mycommand
+                                      .
+? 
+```
+{: .noedit :}
 
-và thêm những dòng mã có liên quan vào cho đến khi vấn đề của bạn xuất hiện. Bạn
-cũng có thể bỏ đi những phần không cần thiết trong tệp LaTeX thực tế của bạn,
-nhưng quá trình đó phức tạp hơn một chút.
+* Dòng đầu tiên, đánh dấu với `!`, cho ta thông báo lỗi chính (lệnh không được
+  định nghĩa (undefined command) trong trường hợp này).
+* Hai dòng kế tiếp cho ta biết dòng mã mà TeX đang xử lý, với một ký tự xuống
+  dòng đánh dấu vị trí TeX đã đi tới. Trong ví dụ trên, lệnh chưa định nghĩa
+  chính là token cuối cùng được TeX đọc, tức là `\textbold`, từ cuối cùng trước
+  ký tự xuống dòng. Sau dấu xuống dòng là các token còn lại `{hmmm}`; dù những
+  token này có thể được đọc bởi TeX như đối số của `\textbold` nhưng TeX chưa xử
+  lý chúng.
+* Có thể có thêm một vài dòng sau điểm này cung cấp cho ta thêm thông tin về lỗi.
+* Dòng tiếp theo bắt đầu với `l.` đi cùng một số. Đây là số thứ tự của dòng mã
+  mà ở đó TeX phát hiện lỗi.
 
-Nếu bạn cần một lượng chữ lớn để xuất hiện trên nhiều trang, bạn có thể dùng
-những gói như `lipsum`. Như ta đã biết, gói này tạo ra những đoạn văn không có ý
-nghĩa với chiều dài tùy ý để test trong khi vẫn làm kích thước tệp của bạn đủ
-nhỏ.
+* Dòng cuối cùng là một ký tự `?`. Nếu bạn dùng TeX trong chế độ tương tác, bạn
+  có thể đưa lệnh cho TeX tại điểm này, và nếu bạn gõ lệnh `s` thì TeX sẽ tiếp
+  tục xử lý phần còn lại của văn bản. Tuy nhiên, hầu hết các trình mã nguồn và
+  các hệ thống TeX online chạy TeX trong một chế độ không dừng tại lỗi mà vẫn
+  tiếp tục tự động cố gắng xử lý phần còn lại của văn bản.
 
-Một trong những thứ mà mọi người có thể yêu cầu bạn cung cấp đó là tệp log, tệp
-này được tạo ra bởi LaTeX mỗi khi bạn chạy nó, và có đuôi tệp là `.log`. Tệp này
-bao gồm tất cả những thông tin trong quá trình chạy, đặc biệt là những thông tin
-quan trọng như phiên bản gói lệnh, các thông báo lỗi hay các cảnh báo từ LaTeX,
-v.v...
+Chú ý rằng TeX không phát hiện lỗi tại điểm mà lệnh được định nghĩa, và trên
+thực tế, nếu `\mycommand` được định nghĩa nhưng không được sử dụng, quá trình
+biên dịch sẽ không có lỗi gì cả. Vì thế, mặc dù lỗi được phát hiện ở dòng 7, lỗi
+"thực" lại nằm ở việc định nghĩa `\mycommand` tại dòng 3. Do đó, việc đọc toàn
+bộ thông báo lỗi là một việc quan trọng.
+
+Chú ý rằng một số trình sửa mã nguồn hiện những bản "tóm tắt" của thông báo lỗi.
+Những tóm tắt này có thể dễ gây hiểu nhầm, ví dụ như
+
+`line 7: undefined command: ...\mycommand`
+
+vì nó làm cho ta tưởng rằng `\mycommand` không được định nghĩa.
+
+
+## Ngoặc nhọn không khớp
+
+<div class="highlight">
+<pre>
+\documentclass{article}
+
+\usepackage[leqno<span style="color:red">}</span>{amsmath}
+
+\begin{document}
+
+\end{document}
+</pre>
+</div>
+
+Ở đây, lỗi là một dấu đóng ngoặc nhọn `}` được dùng để kết thúc một đối số không
+bắt buộc. Ngoặc nhọn này không khớp với bất kỳ ký tự mở ngoặc nhọn `{` nào, do
+đó nó sinh lỗi trong quá trình LaTeX xử lý các đối số, và bạn nhận được một lỗi
+internal không rõ ràng lắm:
+
+```
+! Argument of \@fileswith@ptions has an extra }.
+```
+{: .noedit :}
+
+Mặc dù thông báo lỗi không giúp ích được nhiều, hai dòng kế tiếp có cho ta thấy
+vị trí của lỗi bằng việc sử dụng ký tự xuống dòng tại điểm lỗi:
+
+```
+l.3 \usepackage[leqno}
+                      {amsmath}
+```
+{: .noedit :}
+
+
+## Không tìm thấy tệp
+
+<div class="highlight">
+<pre>
+\documentclass{article}
+
+\usepackage{<span style="color:red">amsmathz</span>}
+
+\begin{document}
+
+\end{document}
+</pre>
+</div>
+
+Tệp này sinh ra lỗi sau
+
+```
+! LaTeX Error: File `amsmathz.sty' not found.
+```
+{: .noedit :}
+
+Chú ý rằng lỗi này có thể được gây ra bởi hai lý do khác nhau: một lỗi đánh máy
+như ở ví dụ này (có thể sửa được bằng cách sửa tên gói lệnh), hay việc tệp cần
+tìm đang thật sự bị thiếu và cần phải được cài đặt đúng cách.
+
+## Dòng trống trong các môi trường toán
+
+<div class="highlight">
+<pre>
+\documentclass{article}
+
+\begin{document}
+
+Some text
+\begin{equation}
+<span style="background-color:red">      </span>
+  1=2
+<span style="background-color:red">      </span>
+\end{equation}
+
+\end{document}
+</pre>
+</div>
+
+cho ta một lỗi khá tối nghĩa:
+
+```
+! Missing $ inserted.
+```
+{: .noedit :}
+
+Nhưng việc sửa lỗi khá đơn giản. Các môi trường toán không được chứa các dòng
+trống, do vậy những dòng trống này cần phải được xóa đi.
+
+## Bài tập
+
+Thử sửa các lỗi trong các ví dụ trên.
+
+Tạo ra một văn bản nhỏ với những lỗi khác nhau và ghi nhớ cấu trúc những thông
+báo lỗi bạn nhận được.
