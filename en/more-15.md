@@ -126,7 +126,7 @@ error as the `)` is seen as "normal text".
 ```
 {: .noedit :}
 
-TEST
+
 <script>
   window.addEventListener('load', function(){
       if(editors['pre0'] != null) editors['pre0'].moveCursorTo(8, 15, false);
