@@ -192,5 +192,8 @@ Produce small documents with different errors and note the form of the error mes
 <script>
   window.addEventListener('load', function(){
       if(editors['pre2'] != null) editors['pre2'].moveCursorTo(2, 31, false);
+      if(editors['pre4'] != null) editors['pre4'].moveCursorTo(2, 18, false);
+      if(editors['pre7'] != null) editors['pre7'].moveCursorTo(2, 20, false);
+      if(editors['pre9'] != null) editors['pre9'].moveCursorTo(6, 0, false);
   }, false);
 </script>
