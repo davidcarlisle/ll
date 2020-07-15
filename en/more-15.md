@@ -5,7 +5,7 @@ title: "More on: Dealing with errors"
 ## Errors reported at ends of environments99
 
 Some environments (notably `amsmath` alignments and `tabularx` tables)
-scan the whole envionment body before processing the content. This means that
+scan the whole environment body before processing the content. This means that
 any error within the environment is reported on the last line. However, as seen in the
 main lesson, TeX's display of the error context should still pinpoint the error location.
 
