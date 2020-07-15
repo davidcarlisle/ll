@@ -4,12 +4,12 @@ title: "Using the learnlatex.org site"
 
 ## Navigating the site
 
-The course consists of 15 core lessons that can be reached from the table
+The course consists of 16 core lessons that can be reached from the table
 of contents on the [home page](/).
 
 Each lesson has a link to one associated lesson on the same subject
 that goes into greater depth. It should be possible to work through
-all 15 lessons _without_  reading the additional lessons.
+all 16 lessons _without_  reading the additional lessons.
 
 At the end of the course there are one or more lessons specific to the
 language being used for the lessons, and finally a gallery of examples
@@ -29,18 +29,18 @@ Example text.
 
 The example is complete. However you may wish to edit it to make small
 changes, perhaps as part of an Exercise set at the end of the lesson.
-
-The <button style="padding:0 1px;font-size:90%">Edit</button> button enables editing within the page; this is
-marked by the removal of the LaTeX syntax highlighting and a green
-border added around the code block. Note that this is just a basic edit facility provided by your browser;
-there is no TeX specific editing help as found in typical editing systems that you would use with TeX.
+The editor being used is [ACE](https://ace.c9.io/).
 
 Whether or not the code block has been edited, there are three basic ways that you can run the example.
 
 1. Use a  **LaTeX Online** service. The <button style="padding:0 1px;font-size:90%">LaTeX Online</button> button
-   will submit the code to one of the services
-   [LaTeX.Online](https://latexonline.cc/) or
-   [LaTeX-on-HTTP](https://github.com/YtoTech/latex-on-http).
+   will submit the code to the
+   [LaTeX CGI](https://latexcgi.xyz/) service[^1].
+
+
+   The LaTeX CGI service was developed specifically to support this site, and
+   in particular makes use of [PDF.js](https://mozilla.github.io/pdf.js/)
+   to enable display of PDF on mobile and other browsers without built in PDF readers.
 
    The resulting PDF document (or section of the error log) will be
    shown inline immediately below the example. A <button style="padding:0 1px;font-size:90%">Delete
@@ -48,19 +48,11 @@ Whether or not the code block has been edited, there are three basic ways that y
    (or you may leave it in place and continue the rest of the lesson
    below).
 
-   Note that  **LaTeX Online** requires no login or signup of any sort
+   Note that **LaTeX Online** requires no login or signup of any sort
    so it is very convenient for small examples, but neither this site
-   nor the `latexonline.cc` or `latex-on-http` sites provide any mechanism to save your
-   document. Any changes that you make to the example are lost if you
-   move off the page.
-
-   **Warning:** Displaying the PDF result in the page requires that your
-     browser has a built-in PDF viewer that can work in an `iframe`.
-     In mobile browsers where this is often not the case, you may be offered a
-     dialog to download the result as `compile.pdf` which you can then
-     view in your PDF reading app, or it may not work at all.
-     The exact behaviour depends on the details of browser and mobile operating system
-     settings.  You may prefer to use the **Overleaf** link in some cases.
+   nor the `latexcgi`, `latexonline.cc` or `latex-on-http` sites
+   provide any mechanism to save your document. Any changes that you
+   make to the example are lost if you move off the page.
 
 
 2. Use the **Overleaf** Service. The <button style="padding:0 1px;font-size:90%">Open in Overleaf</button>
@@ -84,19 +76,20 @@ Whether or not the code block has been edited, there are three basic ways that y
 
 3. If you have a TeX system installed locally, then you may copy the
    example code off the page, either explicitly selecting it, or by
-   using the <button style="padding:0 1px;font-size:90%">Copy</button>
-   button.  This will place the code in your operating system
+   using select all keyboard shortcuts in the editor (ctrl-A Ctrl-C
+   in windows for exammple). This will place the code in your operating system
    clipboard so you can start a blank document using your local
    editor, and paste in the text.
 
 
 ## Choosing the {{ site.tex }} engine
 
-When submitting projects to Overleaf or LaTeX.Online, by default the
+When submitting example documents, by default the
 `pdflatex` engine will be used unless the example uses the `fontspec`
 package in which case `xelatex` is used.
 
-You can force the choice of `pdflatex`, `xelatex`, `lualatex`, `platex` or `uplatex` by using a comment of the form:
+You can force the choice of `pdflatex`, `xelatex`, `lualatex`,
+`platex` or `uplatex` by using a comment of the form:
 
 `% !TEX ` _any text_ `lualatex`
 
@@ -110,3 +103,34 @@ the online systems being used.
 
 You can see an example of a comment being used to specify LuaLaTeX in
 [some of the examples on this site](more-14).
+
+If `platex` or `uplatex` is specified; then the `dvipdfmx` program is
+also used to produce the PDF result from the DVI file that these variants generate.
+
+
+## Choosing how to display the output
+
+If you use the LaTeX online system, then the PDF
+output from running an example is shown using
+[PDF.js](https://mozilla.github.io/pdf.js/) by default. This provides
+consistent behavior over the widest range of browsers.
+
+If you would prefer to use your browser's default PDF reader (either
+its built in one, or an external application that you have configured)
+then add a comment of the form:
+
+`% !TEX ` _any text_ `pdf`
+
+The default behavior can be explicitly specified by using `pdfjs` as
+the final token. For debugging you may sometimes want the log file
+returned, even if the document produces a PDF with
+no errors. This can be specified by using `log` as the final token in
+the comment.
+
+---
+
+[^1]: Note that during development of the site we have also used 
+      [LaTeX.Online](https://latexonline.cc/) and
+      [LaTeX-on-HTTP](https://github.com/YtoTech/latex-on-http)
+      and we thank the developers of those services for making updates to enable
+      the examples on this site to be available at an early stage.
