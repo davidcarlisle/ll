@@ -22,6 +22,7 @@
     </style>
     <script src="../scripts/runlatex.js"></script>
     <script src="includes/buttons.js"></script>
+    <style> td code {white-space: nowrap}</style>
     {% endif %}
     <script>
  {% if site.title and site.title == page.title %}
@@ -65,7 +66,7 @@
 
       {% if site.github.private != true and site.github.license %}
       <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
-        This site is under construction <a href="{{ site.github.repository_url }}/tree/master/{{ page.path }}">Git Source</a>.
+        <a href="{{ "/" | absolute_url }}about">This site</a> is under construction <a href="{{ site.github.repository_url }}/tree/master/{{ page.path }}">Git Source</a>.
       </div>
       {% endif %}
     </div>
