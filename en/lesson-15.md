@@ -187,7 +187,7 @@ environments and should be deleted.
 
 Attempt to fix the errors in the supplied examples.
 
-Produce small documents with different errors and note the form of the error messages199.
+Produce small documents with different errors and note the form of the error messages.
 
 <script>
   window.addEventListener('load', function(){
