@@ -8,15 +8,6 @@ var buttons ={
 }
 
 
-var buttons ={
-    "edit":             "editar",
-    "copy":             "copiar",
-    "Open in Overlaf":  "Aberto em Overleaf",
-    "LaTeX Online":     "LaTeX Online",
-    "Delete Output":    "Excluir saída"
-}
-
-
 function openinoverleaf(nd) {
     var fm = document.getElementById('form-' + nd);
     fm.innerHTML="";
