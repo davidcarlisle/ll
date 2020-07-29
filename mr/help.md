@@ -8,6 +8,7 @@ Translation to be added _after_ English text completed.
 test
 
 ```latex
+% !TeX xelatex
 \documentclass{article}
 \usepackage{marathi}
 
