@@ -61,8 +61,9 @@ function llexamples() {
 	    ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12') ;
 	    editor.setTheme("ace/theme/textmate");
 	    editor.getSession().setMode("ace/mode/latex");
-	    editor.setOption("minLines",5);
+	    editor.setOption("minLines",2);
 	    editor.setOption("maxLines",100);
+	    editor.setShowPrintMargin(false);
 	    editor.resize();
 	    editors["pre" + i]=editor;
 	}
@@ -70,7 +71,7 @@ function llexamples() {
 }
 
 const commentregex = / %.*/;
-const engineregex = /% *!TEX.*[^a-zA-Z]((pdf|xe|lua|u?p)latex) *\n/i;
+const engineregex = /% *!TEX.*[^a-zA-Z]((pdf|xe|lua|u?p)latex(-dev)?) *\n/i;
 const returnregex = /% *!TEX.*[^a-zA-Z](pdfjs|pdf|log) *\n/i;
 const makeindexregex = /% *!TEX.*[^a-zA-Z]makeindex( [a-z0-9\.\- ]*)\n/ig;
 
@@ -105,14 +106,17 @@ function openinoverleaf(nd) {
     var p = document.getElementById(nd);
 //ace    var t = p.innerText;
     var t = editors[nd].getValue();
-    addinput(fm,"encoded_snip[]",t.replace(engineregex,''));
+    addinput(fm,"encoded_snip[]","\n" + t);
     addinput(fm,"snip_name[]","document.tex");
     if(typeof(preincludes) == "object") {
 	if(typeof(preincludes[nd]) == "object") {
 	    var incl=preincludes[nd];
 	    for(prop in incl) {
-//ace		addinput(fm,"encoded_snip[]",document.getElementById(prop).innerText);
-		addinput(fm,"encoded_snip[]",editors[prop].getValue());
+		if(editors[prop]==null) {
+		    addinput(fm,"encoded_snip[]",document.getElementById(prop).textContent);
+		} else {
+		    addinput(fm,"encoded_snip[]",editors[prop].getValue());
+		}
 		addinput(fm,"snip_name[]",incl[prop]);
 	    }
 	}
@@ -121,7 +125,7 @@ function openinoverleaf(nd) {
     var eng=t.match(engineregex);
     if(eng != null) {
 	engv=eng[1].toLowerCase();
-	if(engv == "platex" || engv == "uplatex") {
+	if(engv.indexOf("platex") != -1) {
 	    addinput(fm,"encoded_snip[]","$latex = '" + engv + "';\n$bibtex = 'pbibtex';\n$dvipdf = 'dvipdfmx %O -o %D %S';");
 	    addinput(fm,"snip_name[]","latexmkrc");
 	    engv="latex_dvipdf";
@@ -272,8 +276,11 @@ function latexcgi(nd) {
 	if(typeof(preincludes[nd]) == "object") {
 	    var incl=preincludes[nd];
 	    for(prop in incl) {
-//ace		addtextarea(fm,"filecontents[]",document.getElementById(prop).innerText);
-		addtextarea(fm,"filecontents[]",editors[prop].getValue());
+		if(editors[prop]==null) {
+		    addtextarea(fm,"filecontents[]",document.getElementById(prop).textContent);
+		} else {
+		    addtextarea(fm,"filecontents[]",editors[prop].getValue());
+		}
 		addinputnoenc(fm,"filename[]",incl[prop]);
 	    }
 	}
