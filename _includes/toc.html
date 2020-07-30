@@ -4,9 +4,9 @@
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains include.prefix %}
 {% if l == "en" %}
-<li data-l="{{l}}"><a href="{{page.path | replace: '.md',''}}">
+<li><a href="{{page.path | replace: '.md',''}}">
 {% else %}
-<li data-l="{{l}}"><a href="{{page.path | replace: '.md','' | remove_first: l |remove_first: "/"}}">
+<li><a href="{{page.path | replace: '.md','' | remove_first: l | remove_first: "/"}}">
 {% endif %}
 <b style="display:inline-block;width:1.5em;text-align:right;font-variant-numeric: tabular-nums;">
 {% if page.path contains "-0" %}
