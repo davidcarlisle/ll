@@ -1,5 +1,6 @@
 <ul>
-{% assign l = include.prefix | slice: 0, 3 %}
+{% assign splitprefix = include.prefix | split: "/" %}
+{% assign l = splitprefix[0] %}
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains include.prefix %}
 {% if l == "en/" %}

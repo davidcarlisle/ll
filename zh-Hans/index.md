@@ -50,7 +50,7 @@ errors, you might want to check if your LaTeX system is up-to-date.
 The focused lessons here are not meant to cover everything you'll ever need to
 know about LaTeX; we want to give you enough to get started and to _understand_
 examples and advice elsewhere. We cover getting more information in [the last
-lesson](lesson-15), but it's worth saying now that getting access to a book
+lesson](lesson-16), but it's worth saying now that getting access to a book
 about LaTeX is still the  best way to learn the detail. We've given some
 recommendations in the last lesson.
 
