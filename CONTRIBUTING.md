@@ -13,6 +13,10 @@ Please note any significant change to the content of questions in
 [`CHANGELOG.md`](CHANGELOG.md), including which lesson is changed in the
 format `Q-<number>`.
 
+Please note any significant change to the content of questions in
+[`CHANGELOG.md`](CHANGELOG), including which lesson is changed in the
+format `Q-<number>`.
+
 Commit messages where the content of a single lesson is changed should start
 with `L-<name>`. Changes to the _content_ of lessons should always be made in
 separate commits: formatting, typos or other 'non-significant' changes can be
