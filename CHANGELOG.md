@@ -1,5 +1,6 @@
 ---
 title: CONTRIBUTING
+permalink: /CONTRIBUTING
 ---
 
 # Changelog
