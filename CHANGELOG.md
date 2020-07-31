@@ -1,6 +1,6 @@
 ---
-title: CONTRIBUTING
-permalink: /CONTRIBUTING
+title: Change Log
+permalink: /CHANGELOG
 ---
 
 # Changelog
