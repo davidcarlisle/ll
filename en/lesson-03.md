@@ -1,4 +1,5 @@
 ---
+layout: "learnlatex"
 title: "Your first LaTeX document"
 ---
 
