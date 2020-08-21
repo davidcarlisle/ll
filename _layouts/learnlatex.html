@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+    {% if site.title and site.title == page.title %}
+      <title>{{ page.title }}</title>
+    {% else %}
+      <title>{{ page.title }} | {{site.title}}</title>
+    {% endif %}
+    
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml" sizes="any">
+    
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+
+    <link rel="canonical" href="https://www.learnlatex.org/">
+    
+    {% if page.path contains "-" or page.path contains "help" %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.min.js"></script>
+    <style type="text/css" media="screen">
+      .ace_editor {
+	  border: 1px solid lightgray;
+	  margin-bottom: 1px !important;
+	  width: 100%;
+      }
+      .ace_constant{color:blue !important;}
+      div.spacer {
+	  margin-top:16px;
+      }
+    </style>
+    <script src="/assets/scripts/runlatex.js"></script>
+    <script src="includes/buttons.js"></script>
+    <style> td code {white-space: nowrap}</style>
+    {% endif %}
+    <script>
+ {% if site.title and site.title == page.title %}
+  function switchlang(e) {
+      window.location.href="{{ "/" | absolute_url }}" + e.value;
+  }
+      {% else %}
+  function switchlang(e) {
+      window.location.href=window.location.href.replace(/\/([^l][a-z]|[a-z][^l](-[a-zA-Z]+)?)\//,'/'+e.value+'/').replace(/\/language-.*/,'');
+  }
+      {% endif %}
+      
+</script>
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <div class="container-lg px-3 my-5 markdown-body">
+
+        <!-- Start Language Selection -->
+        <div style="float:right;">
+          <select id = "myList" onchange="switchlang(this);">
+            {% assign lang = "en" %}
+            {%- for l in site.langs -%}
+              {% assign lx = "/" | prepend: l %}
+              {%- if page.path contains lx -%}
+                {% assign lang = l %}
+                <option selected value = "{{l}}">{{l}}</option>
+                {%- else -%}
+                <option value = "{{l}}">{{l}}</option>
+              {%- endif -%}
+            {%- endfor -%}
+          </select>
+        </div>
+        <!-- End Language Selection -->
+
+        <!-- Start Website Header -->
+        {% include website-header.html %}
+        <!-- End Website Header -->
+
+        <!-- Start title -->
+        {% if site.title and site.title != page.title %}
+          <h1>
+            {% if lang =="en" %}
+              <a href="{{ "/" | absolute_url }}">{{ site.title }}</a>
+            {%- else -%}
+              <a href="{{ "/" | absolute_url }}{{ lang }}">{{ site.title }}</a>
+            {% endif %}
+          </h1>
+        {% endif %}
+        <!-- End title -->
+
+        {{ content }}
+
+        {% include website-footer.html %}
+
+    </div>
+  </body>
+</html>
