@@ -27,25 +27,26 @@ operable program or batch file.
 ```
 {: .noedit :}
 
-on windows or
+on Windows or
 
 ```
 bash: pdflatex: command not found
 ```
 {: .noedit :}
 
-on linux.
+on Linux.
 
 This is
 not a TeX error but an operating system error saying that TeX is not
 installed or not found.  A common mistake is to install an _editor_
 such as TeXworks or TeXShop but without installing a TeX system such as
-TeX Live or MikTeX.
+TeX Live or MiKTeX.
 
 ## Anatomy of a {{ site.tex }} error message
 
 ```latex
 \documentclass{article}
+\usepackage[T1]{fontenc}
 
 \newcommand\mycommand{\textbold{hmmm}}
 
@@ -62,7 +63,7 @@ This produces a multi-line message in the log file.
 ! Undefined control sequence.
 \mycommand ->\textbold 
                        {hmmm}
-l.7 My command is used here \mycommand
+l.8 My command is used here \mycommand
                                       .
 ? 
 ```
@@ -104,6 +105,7 @@ as it makes it appear that `\mycommand` is not defined.
 
 ```latex
 \documentclass{article}
+\usepackage[T1]{fontenc}
 
 \usepackage[leqno}{amsmath}
 
@@ -126,7 +128,7 @@ lines do accurately display the location of the error by the use of
 the linebreak showing how far TeX had read:
 
 ```
-l.3 \usepackage[leqno}
+l.4 \usepackage[leqno}
                       {amsmath}
 ```
 {: .noedit :}
@@ -136,6 +138,7 @@ l.3 \usepackage[leqno}
 
 ```latex
 \documentclass{article}
+\usepackage[T1]{fontenc}
 
 \usepackage{amsmathz}
 
@@ -158,8 +161,9 @@ current system.
 
 ## Blank lines in display math
 
-```
+```latex
 \documentclass{article}
+\usepackage[T1]{fontenc}
 
 \begin{document}
 
@@ -191,9 +195,9 @@ Produce small documents with different errors and note the form of the error mes
 
 <script>
   window.addEventListener('load', function(){
-      if(editors['pre2'] != null) editors['pre2'].moveCursorTo(2, 31, false);
-      if(editors['pre4'] != null) editors['pre4'].moveCursorTo(2, 18, false);
-      if(editors['pre7'] != null) editors['pre7'].moveCursorTo(2, 20, false);
-      if(editors['pre9'] != null) editors['pre9'].moveCursorTo(6, 0, false);
+      if(editors['pre2'] != null) editors['pre2'].moveCursorTo(3, 31, false);
+      if(editors['pre4'] != null) editors['pre4'].moveCursorTo(3, 18, false);
+      if(editors['pre7'] != null) editors['pre7'].moveCursorTo(3  , 20, false);
+      if(editors['pre9'] != null) editors['pre9'].moveCursorTo(7, 0, false);
   }, false);
 </script>
