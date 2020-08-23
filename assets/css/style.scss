@@ -39,7 +39,7 @@
 @font-face {
   font-family: 'roboto_regular';
   font-display: fallback;
-  src: url('/assets/fonts/roboto_regular.woff2') format('woff2');
+  src: url({{'/assets/fonts/roboto_regular.woff2' | | relative_url}}) format('woff2');
 }
 
 :root {
@@ -48,7 +48,7 @@
 @font-face {
   font-family: 'roboto_light';
   font-display: fallback;
-  src: url('/assets/fonts/roboto_light.woff2') format('woff2');
+  src: url({{'/assets/fonts/roboto_light.woff2' | relative_url}}) format('woff2');
 }
 
 :root {
@@ -57,7 +57,7 @@
 @font-face {
   font-family: 'roboto_light_italic';
   font-display: fallback;
-  src: url('/assets/fonts/roboto_light_italic.woff2') format('woff2');
+  src: url({{'/assets/fonts/roboto_light_italic.woff2'| relative_url}}) format('woff2');
 }
 
 
