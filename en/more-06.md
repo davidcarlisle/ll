@@ -63,6 +63,7 @@ If we take the example from the main lesson, we could make the color
 optional, defaulting to blue.
 
 ```
+\documentclass{article}
 \usepackage[T1]{fontenc}
 
 \usepackage{xcolor}
@@ -103,6 +104,6 @@ Something about \kw{apples} and \kw[red]{oranges}.
 \end{document}
 ```
 
-`\NewDocumentCommand`  allows many more forms of commands to be defined, but her ewe just give this simple example
+`\NewDocumentCommand`  allows many more forms of commands to be defined, but here we just give this simple example
 where the first argument is optional, defaulting to blue (`O{blue}`) and the second argument is mandatory (`m`).
 Unlike `\newcommand` the optional argument does not have to be first, and there may be more than one.
