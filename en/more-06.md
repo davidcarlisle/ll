@@ -1,5 +1,5 @@
 ---
-title: "More on: Extending LaTeX using packages"
+title: "More on: Extending LaTeX using packages and definitions"
 ---
 
 ## Loading multiple packages
@@ -20,6 +20,7 @@ a German keyboard.
 
 ```latex
 \documentclass{article}
+\usepackage[T1]{fontenc}
 
 \usepackage[ngerman]{babel} % Notice that the option name is 'ngerman'
 
@@ -42,9 +43,10 @@ can 'see' this list. So to pass the language of a document to all packages,
 we might use:
 
 ```latex
-\documentclass[ngerman]{article}
+\documentclass[ngerman]{article} % Notice that the option name is 'ngerman'
+\usepackage[T1]{fontenc}
 
-\usepackage{babel} % Notice that the option name is 'ngerman'
+\usepackage{babel}
 
 \begin{document}
 
@@ -52,3 +54,32 @@ H"ohe
 
 \end{document}
 ```
+
+## More definitions
+
+`\newcommand` allows commands with up to nine arguments, the first of which may be optional.
+
+If we take the example from the main lesson, we could make the color
+optional, defaulting to blue.
+
+```
+\usepackage[T1]{fontenc}
+
+\usepackage{xcolor}
+
+\newcommand\kw[2][blue]{\textcolor{#1}{\itshape #2}}
+
+\begin{document}
+
+Something about \kw{apples} and \kw[red]{oranges}.
+
+\end{document}
+```
+
+Optional arguments are delimited with `[]` and if omitted, the default
+value specified in the definition is used.
+
+## `\NewDocumentCommand`
+
+From the October 2020 LaTeX release, an extended definition system is available.
+In older LaTeX Rreleases

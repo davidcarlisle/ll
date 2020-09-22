@@ -1,5 +1,5 @@
 ---
-title: "Extending LaTeX using packages"
+title: "Extending LaTeX using packages and definitions"
 ---
 
 After having declared a class, in the preamble you can modify functionality in
@@ -20,6 +20,7 @@ rules, so it's important to tell LaTeX which one to use. This is handled by the
 
 ```latex
 \documentclass{article}
+\usepackage[T1]{fontenc}
 
 %\usepackage[french]{babel}
 
@@ -50,6 +51,7 @@ specifically about margins.
 
 ```latex
 \documentclass{book}
+\usepackage[T1]{fontenc}
 \usepackage[margin=1in]{geometry}
 
 \begin{document}
@@ -89,6 +91,54 @@ One of LaTeX's strengths is that you can choose from thousands of packages,
 including ones for writing mathematical text, for hyperlinking, for
 sophisticated capabilities with color, etc. We will see some more common
 packages in later lessons.
+
+
+## Defining commands
+
+Sometimes you need a command specific to your document, either some
+functionality not found in the available packages or simply a cpmmand
+to enter a common expression that is used multiple times.
+
+The following example shows a command to produce
+_x_<sup>2</2>+_y_<sup>2</sup>
+for different _x_ and _y_ .
+
+```
+\documentclass{article}
+\usepackage[T1]{fontenc}
+
+\newcommand\kw[1]{\textbf{\itshape #1}}
+
+\begin{document}
+
+Something about \kw{apples} and \kw{oranges}.
+
+\end{document}
+```
+
+Defining commands does not just reduce the typing required to produce
+a document. It helps to separate out the styling information. If it is
+decided to use a different style for keywords, rather than having to
+edit the entire document, you simply need to use a different
+definition. Here we load the `xcolor` package to provide colors, and
+use blue in place of bold in the formatting.
+
+```
+\documentclass{article}
+\usepackage[T1]{fontenc}
+
+\usepackage{xcolor}
+
+\newcommand\kw[1]{\textcolor{blue}{\itshape #1}}
+
+\begin{document}
+
+Something about \kw{apples} and \kw{oranges}.
+
+\end{document}
+```
+
+
 
 ## Exercises
 
