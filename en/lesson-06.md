@@ -99,9 +99,8 @@ Sometimes you need a command specific to your document, either some
 functionality not found in the available packages or simply a cpmmand
 to enter a common expression that is used multiple times.
 
-The following example shows a command to produce
-_x_<sup>2</2>+_y_<sup>2</sup>
-for different _x_ and _y_ .
+The following example shows a command to produce keywords with a
+specific style applied.
 
 ```
 \documentclass{article}
