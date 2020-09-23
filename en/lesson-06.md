@@ -117,7 +117,7 @@ Something about \kw{apples} and \kw{oranges}.
 
 In the definition `#1` denotes the first argument that is supplied
 (`apples` or `oranges` in this example). You may have up to nine
-arguments, but often it is usually best to have just one argument, or
+arguments, but it is usually best to have just one argument, or
 sometimes none at all.
 
 Defining commands does not just reduce the typing required to produce
