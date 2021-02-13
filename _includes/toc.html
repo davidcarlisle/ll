@@ -15,9 +15,9 @@
 {% else %}
 {% assign pp = "-" | prepend: include.prefix %}
 {% endif %}
-{% assign pageno = page.path | replace: '.md','' | replace: pp ,'' %}
-xx
-{{ digits[5] }}
+{% assign pageno = page.path | replace: '.md','' | replace: pp ,'' | floor%}
+x2x
+{{ digits[pageno] }}
 zz</b>
 &mdash; {{page.title}}</a></li>
 {%- endif -%}
