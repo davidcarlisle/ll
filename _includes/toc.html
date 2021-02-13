@@ -1,5 +1,5 @@
 <ul>
-  {% assign digits="०;,१,२,३,४,५,६,७,८,९,१॰,११,१२,१३,१४,१५,१६,१,७" | split: "," %}
+  {% assign digits="०;,१,२,३,४,५,६,७,८,९,१॰,११,१२,१३,१४,१५,१६,१७" | split: "," %}
   {% assign splitprefix = include.prefix | split: "/" %}
 {% assign l = splitprefix[0] %}
 {%- for page in site.pages | sort: 'path' -%}
