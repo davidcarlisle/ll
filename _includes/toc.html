@@ -1,5 +1,6 @@
 <ul>
-{% assign splitprefix = include.prefix | split: "/" %}
+  {% assign digits="A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P" | split: "," %}
+  {% assign splitprefix = include.prefix | split: "/" %}
 {% assign l = splitprefix[0] %}
 {%- for page in site.pages | sort: 'path' -%}
 {%- if page.path  contains include.prefix %}
@@ -14,8 +15,8 @@
 {% else %}
 {% assign pp = "-" | prepend: include.prefix %}
 {% endif %}
-{{page.path | replace: '.md','' | replace: pp ,''}}
-</b>
+{{digits[page.path | replace: '.md','' | replace: pp ,'']}}
+zz</b>
 &mdash; {{page.title}}</a></li>
 {%- endif -%}
 {%- endfor -%}
