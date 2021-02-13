@@ -1,5 +1,5 @@
 <ul>
-  {% assign digits="A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P" | split: "," %}
+  {% assign digits="?,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P" | split: "," %}
   {% assign splitprefix = include.prefix | split: "/" %}
 {% assign l = splitprefix[0] %}
 {%- for page in site.pages | sort: 'path' -%}
@@ -16,9 +16,8 @@
 {% assign pp = "-" | prepend: include.prefix %}
 {% endif %}
 {% assign pageno = page.path | replace: '.md','' | replace: pp ,'' | floor%}
-x2x
 {{ digits[pageno] }}
-zz</b>
+</b>
 &mdash; {{page.title}}</a></li>
 {%- endif -%}
 {%- endfor -%}
